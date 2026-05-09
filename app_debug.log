@@ -1,0 +1,166 @@
+2026-05-09 09:39:22 - INFO - --- Unified App: Processing Request ---
+2026-05-09 09:39:22 - INFO - Input Narrative: Pasien datang dengan keluhan demam sejak 3 hari disertai batuk dan pilek. Pasien juga mengeluh nafsu makan menurun namun tidak ada sesak napas. Pada pemeriksaan didapatkan keadaan umum lemah ringan, s...
+2026-05-09 09:39:22 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 09:39:33 - INFO - AI Raw Response: ```json
+{
+  "SOAP": {
+    "Subjective": "Pasien datang dengan keluhan demam sejak 3 hari disertai batuk dan pilek. Nafsu makan menurun, tidak ada sesak napas.",
+    "Objective": {
+      "Keadaan_Umum": "Lemah ringan, sadar compos mentis",
+      "Tanda_Vital": {
+        "Tekanan_Darah": "120/80 mmHg",
+        "Nadi": "88 x/menit",
+        "Respirasi": "20 x/menit",
+        "Suhu": "38,2°C"
+      },
+      "Pemeriksaan_Fisik": {
+        "Tenggorokan": "Hiperemis ringan",
+        "Paru": "Suara napas vesikuler normal, ronki tidak ditemukan, wheezing tidak ditemukan"
+      }
+    },
+    "Assessment": "ISPA non spesifik",
+    "Plan": {
+      "Terapi": [
+        "Paracetamol 500 mg 3x1",
+        "CTM 3x1"
+      ],
+      "Edukasi": [
+        "Istirahat cukup",
+        "Memperbanyak minum air putih",
+        "Kontrol kembali apabila keluhan memberat atau muncul sesak napas"
+      ]
+    }
+  }
+}
+```
+2026-05-09 09:39:33 - INFO - Successfully parsed JSON response.
+2026-05-09 09:43:41 - INFO - --- Unified App: Processing Request ---
+2026-05-09 09:43:41 - INFO - Input Narrative: Pasien datang dengan keluhan demam sejak 3 hari disertai batuk dan pilek. Pasien juga mengeluh nafsu makan menurun namun tidak ada sesak napas. Pada pemeriksaan didapatkan keadaan umum lemah ringan, s...
+2026-05-09 09:43:41 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 09:43:48 - INFO - AI Raw Response: {
+    "S": "Pasien mengeluh demam sejak 3 hari disertai batuk dan pilek. Nafsu makan menurun. Tidak ada sesak napas.",
+    "O": "Keadaan umum: lemah ringan, kesadaran: compos mentis. Tanda vital: TD 120/80 mmHg, nadi 88 x/menit, respirasi 20 x/menit, suhu 38,2°C. Pemeriksaan fisik: tenggorokan hiperemis ringan, suara napas vesikuler normal, ronki (-), wheezing (-).",
+    "A": "ISPA non spesifik",
+    "P": "Terapi: Paracetamol 500 mg 3x1, CTM 3x1. Edukasi: istirahat cukup, perbanyak minum air putih. Anjuran: kontrol kembali jika keluhan memberat atau muncul sesak napas."
+}
+2026-05-09 09:43:48 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 09:46:17 - INFO - --- Unified App: Processing Request ---
+2026-05-09 09:46:17 - INFO - Input Narrative: pasien ini ada keluhan gatal-gatal pada tangan, sudah diberi salem hidro...
+2026-05-09 09:46:17 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 09:46:22 - INFO - AI Raw Response: {
+    "S": "Pasien mengeluhkan gatal-gatal pada tangan. Pasien melaporkan sudah menggunakan salep hidro (hidrokortison) sebelumnya.",
+    "O": "Belum dilakukan pemeriksaan fisik (perlu observasi lesi kulit pada tangan).",
+    "A": "Dermatitis kontak atau kemungkinan iritasi/alergi kulit pada tangan.",
+    "P": "Melakukan pemeriksaan fisik lesi kulit, evaluasi efektivitas penggunaan salep sebelumnya, serta memberikan edukasi mengenai penggunaan salep dan menghindari pemicu alergi."
+}
+2026-05-09 09:46:22 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 10:21:28 - INFO - --- Unified App: Processing Request ---
+2026-05-09 10:21:28 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 10:21:28 - INFO - Input Narrative: Pasien datang dengan keluhan demam sejak 3 hari disertai batuk dan pilek. Pasien juga mengeluh nafsu makan menurun namun tidak ada sesak napas. Pada pemeriksaan didapatkan keadaan umum lemah ringan, s...
+2026-05-09 10:21:31 - INFO - AI Raw Response: {
+    "S": "Pasien mengeluh demam sejak 3 hari yang lalu, disertai batuk dan pilek. Terdapat keluhan nafsu makan menurun, namun pasien menyangkal adanya sesak napas.",
+    "O": "Keadaan umum: Lemah ringan, Kesadaran: Compos mentis. Tanda vital: Tekanan darah 120/80 mmHg, Nadi 88 x/menit, Respirasi 20 x/menit, Suhu 38,2°C. Pemeriksaan fisik: Tenggorokan hiperemis ringan, suara napas vesikuler normal, tidak ditemukan ronki maupun wheezing.",
+    "A": "ISPA (Infeksi Saluran Pernapasan Akut) non spesifik.",
+    "P": "Terapi obat: Paracetamol 500 mg 3x1, CTM 3x1. Edukasi: Istirahat cukup dan memperbanyak minum air putih. Instruksi kontrol kembali jika keluhan memberat atau muncul sesak napas."
+}
+2026-05-09 10:21:31 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 10:25:12 - INFO - --- Unified App: Processing Request ---
+2026-05-09 10:25:12 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 10:25:12 - INFO - Input Narrative: Pasien datang dengan keluhan demam sejak 3 hari disertai batuk dan pilek. Pasien juga mengeluh nafsu makan menurun namun tidak ada sesak napas. Pada pemeriksaan didapatkan keadaan umum lemah ringan, s...
+2026-05-09 10:25:14 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan demam sejak 3 hari yang lalu, disertai batuk dan pilek. Nafsu makan menurun, tidak ada sesak napas.",
+        "O": "Keadaan umum lemah ringan, kesadaran compos mentis. Tanda vital: TD 120/80 mmHg, Nadi 88 x/menit, Respirasi 20 x/menit, Suhu 38,2°C. Pemeriksaan fisik: Tenggorokan hiperemis ringan, suara napas vesikuler normal, tidak ditemukan ronki maupun wheezing.",
+        "A": "ISPA non spesifik.",
+        "P": "Pemberian terapi paracetamol 500 mg 3x1 dan CTM 3x1. Edukasi istirahat cukup dan memperbanyak minum air putih. Pasien dianjurkan kontrol kembali jika keluhan memberat atau muncul sesak napas."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi",
+        "Current_Medication": "Paracetamol 500 mg 3x1, CTM 3x1",
+        "Allergies": "Jamur",
+        "Weight_kg": 67,
+        "Height_cm": 170,
+        "Medical_History": "RSA UGM, ISPA non spesifik"
+    }
+}
+2026-05-09 10:25:14 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 10:26:57 - INFO - --- Unified App: Processing Request ---
+2026-05-09 10:26:57 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 10:26:57 - INFO - Input Narrative: Pasien dengan User_ID U001 dan kode BPJS 0001234567890 atas nama Budi Santoso, lahir pada tanggal 12 Mei 1985, berjenis kelamin laki-laki dengan golongan darah O. Pasien memiliki berat badan 72 kg dan...
+2026-05-09 10:27:12 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien atas nama Budi Santoso, lahir 12 Mei 1985, melaporkan riwayat kesehatan rutin dengan kondisi kronis hipertensi dan diabetes melitus.",
+        "O": "Tekanan darah: 120/80 mmHg (20 Des 2025) dan 125/85 mmHg (21 Des 2025). Saturasi oksigen: 98% dan 97%. Berat badan: 72 kg, Tinggi badan: 170 cm. Golongan darah: O.",
+        "A": "Hipertensi dan Diabetes Melitus terkontrol, riwayat fraktur tangan kanan (2023), riwayat operasi pemasangan pen (2007), riwayat vertigo berat (2020), dan alergi antibiotik golongan penisilin.",
+        "P": "Melanjutkan konsumsi rutin Metformin 500 mg dan Amlodipine 5 mg per hari di bawah pengawasan dr. Andi Pratama, Sp.PD."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi (Hipertensi), Diabetes Melitus",
+        "Current_Medication": "Metformin 500 mg, Amlodipine 5 mg",
+        "Allergies": "Jamur, Antibiotik golongan penisilin",
+        "Weight_kg": 72,
+        "Height_cm": 170,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (2023), operasi pen (2007, sudah dilepas), vertigo berat (2020)"
+    }
+}
+2026-05-09 10:27:12 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 10:30:54 - INFO - --- Unified App: Processing Request ---
+2026-05-09 10:30:54 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 10:30:54 - INFO - Input Narrative: Pasien dengan User_ID U001 dan kode BPJS 0001234567890 atas nama Budi Santoso, lahir pada tanggal 12 Mei 1985, berjenis kelamin laki-laki dengan golongan darah O. Pasien memiliki berat badan 72 kg dan...
+2026-05-09 10:31:07 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien atas nama Budi Santoso, lahir 12 Mei 1985, melaporkan riwayat kesehatan rutin dengan kondisi kronis hipertensi dan diabetes melitus.",
+        "O": "Tekanan darah: 120/80 mmHg (20 Des 2025) dan 125/85 mmHg (21 Des 2025). Saturasi oksigen: 98% dan 97%. Berat badan: 72 kg, Tinggi badan: 170 cm.",
+        "A": "Hipertensi dan Diabetes Melitus terkontrol, status pasca-fraktur tangan kanan (2023), riwayat operasi pemasangan/pelepasan pen, dan riwayat vertigo (2020).",
+        "P": "Melanjutkan konsumsi Metformin 500 mg dan Amlodipine 5 mg setiap hari. Pemantauan rutin oleh dr. Andi Pratama, Sp.PD."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi (Hipertensi), Diabetes Melitus",
+        "Current_Medication": "Metformin 500 mg 1x1, Amlodipine 5 mg 1x1",
+        "Allergies": "Jamur, Antibiotik golongan Penisilin",
+        "Weight_kg": 72,
+        "Height_cm": 170,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (rawat inap RSUD Sleman 2023), operasi pemasangan pen (2007), vertigo berat (rawat jalan 2020)"
+    }
+}
+2026-05-09 10:31:07 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 10:34:36 - INFO - --- Unified App: Processing Request ---
+2026-05-09 10:34:36 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 10:34:36 - INFO - Input Narrative: Pasien dengan User_ID U015 dan kode BPJS 0009876543210 atas nama Agus Suhendar, lahir pada tanggal 3 Agustus 1992, berjenis kelamin perempuan dengan golongan darah A. Pasien memiliki berat badan 58 kg...
+2026-05-09 10:34:47 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien (Agus Suhendar) melaporkan kondisi kesehatan terkini. Pasien memiliki riwayat asma sejak remaja dengan penggunaan inhaler salbutamol saat sesak dan konsumsi rutin vitamin D.",
+        "O": "Tanda vital (15-18 Januari 2026): TD 110/70 - 115/75 mmHg, Saturasi Oksigen 98-99%. Data antropometri: BB 58 kg, TB 162 cm.",
+        "A": "Riwayat asma bronkial, riwayat demam berdarah dengue (2021), riwayat gastritis akut (2024), dan status kesehatan terkini stabil.",
+        "P": "Pemantauan rutin asma, edukasi menghindari alergen makanan (udang dan cumi-cumi), serta kontrol berkala dengan dr. Rina Maharani, Sp.P."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi, Hipertensi, Diabetes Melitus, Asma",
+        "Current_Medication": "Paracetamol 500 mg 3x1, CTM 3x1, Metformin 500 mg 1x1, Amlodipine 5 mg 1x1, Inhaler Salbutamol (prn), Vitamin D",
+        "Allergies": "Jamur, Antibiotik golongan Penisilin, Makanan laut (udang dan cumi-cumi)",
+        "Weight_kg": 58,
+        "Height_cm": 162,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (2023), operasi pen (2007), vertigo berat (2020), rawat inap demam berdarah dengue (RS PKU Muhammadiyah Yogyakarta 2021), gastritis akut (2024)"
+    }
+}
+2026-05-09 10:34:47 - INFO - Successfully parsed and normalized JSON response.
+2026-05-09 10:36:59 - INFO - --- Unified App: Processing Request ---
+2026-05-09 10:36:59 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-09 10:36:59 - INFO - Input Narrative: Pasien dengan kode BPJS BPJS01 atas nama Agus Suhendar, lahir pada tanggal 3 Agustus 1992, berjenis kelamin perempuan dengan golongan darah A. Pasien memiliki berat badan 58 kg dan tinggi badan 162 cm...
+2026-05-09 10:37:11 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien atas nama Agus Suhendar (usia 33 tahun) melaporkan memiliki riwayat asma sejak remaja dengan penggunaan rutin inhaler salbutamol saat sesak dan konsumsi vitamin D.",
+        "O": "BB 58 kg, TB 162 cm. Tekanan darah: 110/70 mmHg (15/01/26) dan 115/75 mmHg (18/01/26). Saturasi oksigen: 99% (15/01/26) dan 98% (18/01/26).",
+        "A": "Asma terkontrol, status klinis stabil dengan tanda vital dalam batas normal.",
+        "P": "Melanjutkan penggunaan inhaler salbutamol sesuai kebutuhan (as needed) dan suplementasi vitamin D. Observasi berkala terkait kondisi asma dan pemantauan profil kesehatan pasien."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi (Hipertensi), Diabetes Melitus, Asma",
+        "Current_Medication": "Paracetamol 500 mg 3x1, CTM 3x1, Metformin 500 mg 1x1, Amlodipine 5 mg 1x1, Salbutamol inhaler (as needed), Vitamin D",
+        "Allergies": "Jamur, Antibiotik golongan Penisilin, Makanan laut (udang dan cumi-cumi)",
+        "Weight_kg": 58,
+        "Height_cm": 162,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (2023), operasi pemasangan pen (2007), vertigo berat (2020), Demam Berdarah Dengue (RS PKU Muhammadiyah Yogyakarta 2021), Gastritis akut (2024)"
+    }
+}
+2026-05-09 10:37:11 - INFO - Successfully parsed and normalized JSON response.
