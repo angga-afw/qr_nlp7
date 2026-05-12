@@ -164,3 +164,249 @@
     }
 }
 2026-05-09 10:37:11 - INFO - Successfully parsed and normalized JSON response.
+2026-05-11 09:46:57 - INFO - --- Unified App: Processing Request ---
+2026-05-11 09:46:57 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-11 09:46:57 - INFO - Input Narrative: Pasien dengan User_ID U015 dan kode BPJS BPJS01 atas nama Agus Suhendar, lahir pada tanggal 3 Agustus 1992, berjenis kelamin perempuan dengan golongan darah A. Pasien memiliki berat badan 58 kg dan ti...
+2026-05-11 09:47:14 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien atas nama Agus Suhendar dengan riwayat asma sejak remaja, rutin menggunakan inhaler salbutamol jika sesak kambuh dan mengonsumsi vitamin D.",
+        "O": "Tekanan darah 110/70 mmHg (15/01/2026), saturasi O2 99%; Tekanan darah 115/75 mmHg (18/01/2026), saturasi O2 98%. BB: 58 kg, TB: 162 cm.",
+        "A": "Pasien dengan asma terkontrol dan riwayat medis DBD (2021) serta gastritis akut (2024). Terdapat diskrepansi data profil antara data lama (Laki-laki/1992) dan narasi (Perempuan/1992).",
+        "P": "Melanjutkan pengobatan sesuai kondisi asma, pemantauan tanda vital berkala, dan verifikasi data profil pasien."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi (Hipertensi), Diabetes Melitus, Asma",
+        "Current_Medication": "Paracetamol 500 mg 3x1, CTM 3x1, Metformin 500 mg 1x1, Amlodipine 5 mg 1x1, Salbutamol inhaler (as needed), Vitamin D",
+        "Allergies": "Jamur, Antibiotik golongan Penisilin, Makanan laut (udang dan cumi-cumi)",
+        "Weight_kg": 58,
+        "Height_cm": 162,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (rawat inap RSUD Sleman 2023), operasi pemasangan pen (2007), vertigo berat (2020), Demam Berdarah Dengue (RS PKU Muhammadiyah Yogyakarta 2021), Gastritis akut (2024)"
+    }
+}
+2026-05-11 09:47:14 - INFO - Successfully parsed and normalized JSON response.
+2026-05-11 09:51:10 - INFO - --- Unified App: Processing Request ---
+2026-05-11 09:51:10 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-11 09:51:10 - INFO - Input Narrative: saya baru saja operasi kaki di rumah sakit panti rapih, saat ini diberi obat ..., tekanan darah 110/90 ...
+2026-05-11 09:51:56 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien melaporkan baru saja menjalani operasi kaki di Rumah Sakit Panti Rapih dan saat ini sedang dalam masa pemulihan.",
+        "O": "Tekanan darah 110/90 mmHg.",
+        "A": "Post-operasi kaki (prosedur spesifik belum disebutkan), hipertensi terkontrol.",
+        "P": "Observasi pasca operasi, verifikasi jenis obat yang diberikan di RS Panti Rapih, edukasi kepatuhan minum obat rutin (Metformin, Amlodipine) dan inhaler asma."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi, Diabetes Melitus, Asma",
+        "Current_Medication": "Paracetamol 500 mg 3x1, CTM 3x1, Metformin 500 mg 1x1, Amlodipine 5 mg 1x1, Salbutamol inhaler (as needed), Vitamin D, [Obat pasca operasi dari RS Panti Rapih perlu diidentifikasi]",
+        "Allergies": "Jamur, Antibiotik golongan Penisilin, Makanan laut (udang dan cumi-cumi)",
+        "Weight_kg": 58,
+        "Height_cm": 162,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (rawat inap RSUD Sleman 2023), operasi pemasangan pen (2007), vertigo berat (rawat jalan 2020), Demam Berdarah Dengue (RS PKU Muhammadiyah Yogyakarta 2021), Gastritis akut (2024), Operasi kaki (RS Panti Rapih, 2024)"
+    }
+}
+2026-05-11 09:51:56 - INFO - Successfully parsed and normalized JSON response.
+2026-05-11 10:00:07 - INFO - --- Unified App: Processing Request ---
+2026-05-11 10:00:07 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-11 10:00:07 - INFO - Input Narrative: Saya mengalami sesak napas habis meminum obat...
+2026-05-11 10:00:16 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan sesak napas yang muncul segera setelah mengonsumsi obat.",
+        "O": "Diperlukan pemeriksaan fisik segera untuk menilai status respirasi, saturasi oksigen, suara napas (wheezing/stridor), serta tanda-tanda reaksi anafilaksis lainnya (ruam, pembengkakan wajah, tekanan darah).",
+        "A": "Dispnea akut pasca konsumsi obat, curiga reaksi alergi obat atau eksaserbasi asma yang dipicu oleh konsumsi obat.",
+        "P": "Hentikan segera semua konsumsi obat saat ini, observasi tanda vital, berikan oksigenasi jika perlu, nebulisasi atau pemberian bronkodilator/kortikosteroid/antihistamin sesuai protokol anafilaksis/reaksi alergi berat, dan identifikasi obat spesifik yang baru saja diminum."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Darah Tinggi, Diabetes Melitus, Asma",
+        "Current_Medication": "Paracetamol 500 mg 3x1, CTM 3x1, Metformin 500 mg 1x1, Amlodipine 5 mg 1x1, Salbutamol inhaler (as needed), Vitamin D",
+        "Allergies": "Jamur, Antibiotik golongan Penisilin, Makanan laut (udang dan cumi-cumi), potensi alergi obat yang memicu sesak napas (perlu identifikasi lebih lanjut)",
+        "Weight_kg": 58,
+        "Height_cm": 162,
+        "Medical_History": "RSA UGM, ISPA non spesifik, fraktur tangan kanan (rawat inap RSUD Sleman 2023), operasi pemasangan pen (2007), vertigo berat (2020), Demam Berdarah Dengue (RS PKU Muhammadiyah Yogyakarta 2021), Gastritis akut (2024), episode sesak napas akut pasca konsumsi obat"
+    }
+}
+2026-05-11 10:00:16 - INFO - Successfully parsed and normalized JSON response.
+2026-05-12 17:11:32 - INFO - --- Unified App: Processing Request ---
+2026-05-12 17:11:32 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-12 17:11:32 - INFO - Input Narrative: tekanan darah saya 110/90...
+2026-05-12 17:11:59 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien melaporkan nilai tekanan darah saat ini adalah 110/90 mmHg.",
+        "O": "Tekanan Darah: 110/90 mmHg.",
+        "A": "Tekanan darah dalam batas normal untuk sistolik, namun terdapat diastolik yang cenderung tinggi (prehipertensi/hipertensi derajat 1 perlu pemantauan lebih lanjut).",
+        "P": "Melakukan pemantauan tekanan darah secara berkala (home blood pressure monitoring) dan tetap menjaga pola hidup sehat. Jika muncul gejala pusing atau sakit kepala, segera konsultasikan ke dokter."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "nan",
+        "Blood_Pressure": "110/90",
+        "Oxygen_Saturation": "nan",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "nan"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": 110,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-12 17:11:59 - INFO - Successfully parsed and normalized JSON response.
+2026-05-12 17:41:15 - INFO - --- Unified App: Processing Request ---
+2026-05-12 17:41:15 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-12 17:41:15 - INFO - Input Narrative: tensi saya 130/90 dan oksigen 97%...
+2026-05-12 17:41:43 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien melaporkan pengukuran tekanan darah mandiri sebesar 130/90 mmHg dan saturasi oksigen 97%.",
+        "O": "Tekanan Darah: 130/90 mmHg, SpO2: 97%.",
+        "A": "Hipertensi Stage 1 (berdasarkan pengukuran mandiri). Perlu pemantauan berkala mengingat adanya peningkatan dari data sebelumnya (110/90 mmHg).",
+        "P": "Edukasi gaya hidup sehat (diet rendah garam, aktivitas fisik). Disarankan untuk melakukan pemantauan tekanan darah secara rutin (home blood pressure monitoring) selama 3-7 hari ke depan. Segera ke fasilitas kesehatan jika muncul gejala nyeri kepala hebat, pandangan kabur, atau nyeri dada."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "nan",
+        "Blood_Pressure": "130/90",
+        "Oxygen_Saturation": "97",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "nan"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": 97,
+        "bps": 130,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-12 17:41:43 - INFO - Successfully parsed and normalized JSON response.
+2026-05-12 17:47:56 - INFO - --- Unified App: Processing Request ---
+2026-05-12 17:47:56 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-12 17:47:56 - INFO - Input Narrative: Saya pusing sejak kemarin dan rasa mual...
+2026-05-12 17:48:04 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan pusing sejak kemarin disertai dengan rasa mual.",
+        "O": "Tidak ada data fisik yang diberikan oleh pasien dalam keluhan ini.",
+        "A": "Susp. Vertigo atau Dispepsia/Gastrointestinal distress.",
+        "P": "Edukasi pasien untuk istirahat cukup, menjaga pola makan, dan hidrasi. Disarankan untuk memantau tekanan darah secara mandiri. Jika keluhan berlanjut, segera periksa ke fasilitas kesehatan terdekat untuk pemeriksaan fisik (tanda vital) lebih lanjut."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": null,
+        "Current_Medication": null,
+        "Allergies": null,
+        "Blood_Pressure": null,
+        "Oxygen_Saturation": null,
+        "Hospitalization_History": null,
+        "Responsible_Doctor": null,
+        "Weight_kg": null,
+        "Height_cm": null,
+        "Medical_History": "Mengeluhkan pusing dan mual sejak 1 hari yang lalu."
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": null,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-12 17:48:04 - INFO - Successfully parsed and normalized JSON response.
+2026-05-12 17:49:10 - INFO - --- Unified App: Processing Request ---
+2026-05-12 17:49:10 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-12 17:49:10 - INFO - Input Narrative: saya ada riwayat penyakit vertigo dan ada obat rutin yang diminum amlodipine...
+2026-05-12 17:49:27 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien menyatakan memiliki riwayat penyakit vertigo dan rutin mengonsumsi obat Amlodipine.",
+        "O": "Tidak ada data pemeriksaan fisik terbaru yang dilaporkan oleh pasien.",
+        "A": "Riwayat medis: Vertigo; Hipertensi (berdasarkan penggunaan rutin Amlodipine).",
+        "P": "Melakukan evaluasi kepatuhan minum obat, pemantauan tekanan darah secara berkala, dan edukasi terkait pemicu vertigo. Disarankan untuk kontrol rutin ke dokter untuk memantau efektivitas terapi hipertensi dan gejala vertigo."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Vertigo, Hipertensi",
+        "Current_Medication": "Amlodipine",
+        "Allergies": "nan",
+        "Blood_Pressure": "nan",
+        "Oxygen_Saturation": "nan",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "Vertigo"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": null,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-12 17:49:27 - INFO - Successfully parsed and normalized JSON response.
+2026-05-12 17:52:06 - INFO - --- Unified App: Processing Request ---
+2026-05-12 17:52:06 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-12 17:52:06 - INFO - Input Narrative: Tensi saya 140/90 dan oksigen 95%...
+2026-05-12 17:52:23 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien melaporkan kenaikan tekanan darah menjadi 140/90 mmHg dan penurunan saturasi oksigen menjadi 95%.",
+        "O": "TD: 140/90 mmHg, SpO2: 95%.",
+        "A": "Hipertensi (Stage 1) dan observasi penurunan saturasi oksigen.",
+        "P": "Melakukan pemantauan tekanan darah berkala, evaluasi penyebab kenaikan TD, dan observasi saturasi oksigen. Jika saturasi turun di bawah 94% atau terdapat sesak napas, disarankan segera ke fasilitas kesehatan terdekat."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "nan",
+        "Blood_Pressure": "140/90",
+        "Oxygen_Saturation": "95",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "nan"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": 95,
+        "bps": 140,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-12 17:52:23 - INFO - Successfully parsed and normalized JSON response.
+2026-05-12 17:53:43 - INFO - --- Unified App: Processing Request ---
+2026-05-12 17:53:43 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-12 17:53:43 - INFO - Input Narrative: Tensi saya 140/90 dan oksigen 95%...
+2026-05-12 17:54:00 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien melaporkan pengukuran tekanan darah mandiri sebesar 140/90 mmHg dan saturasi oksigen sebesar 95%.",
+        "O": "TD: 140/90 mmHg, SpO2: 95%.",
+        "A": "Hipertensi (Stage 1) dan penurunan saturasi oksigen ringan.",
+        "P": "Edukasi untuk observasi tekanan darah berkala, monitor saturasi oksigen, dan disarankan untuk melakukan pemeriksaan fisik langsung ke dokter atau fasilitas kesehatan terdekat jika terdapat gejala penyerta seperti pusing atau sesak napas."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "nan",
+        "Blood_Pressure": "140/90",
+        "Oxygen_Saturation": "95",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "nan"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": 95,
+        "bps": 140,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-12 17:54:00 - INFO - Successfully parsed and normalized JSON response.
