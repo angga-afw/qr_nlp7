@@ -4,6 +4,7 @@ import google.generativeai as genai
 import qrcode
 import os
 import json
+import time
 from io import BytesIO
 from datetime import datetime
 from geopy.distance import geodesic
@@ -37,6 +38,7 @@ st.set_page_config(
 # Database Files
 DATA_FILE = "medical_registry_v3.csv"
 ENCOUNTER_FILE = "medical_encounters.csv"
+COMPARISON_LOG_FILE = "model_comparison_results.csv"  # New file for paper data
 MASTER_PASSWORD = "access123"
 
 # Ensure Data Structures
@@ -49,12 +51,20 @@ DATA_STRUCTURE = [
 ]
 
 ENCOUNTER_STRUCTURE = ["Timestamp", "User_ID", "S", "O", "A", "P"]
+COMPARISON_STRUCTURE = [
+    "Timestamp", "Model_Name", "Input_Narrative", 
+    "S_Result", "O_Result", "A_Result", "P_Result", 
+    "RR", "SpO2", "BPS", "HR", "AVPU", "Latency_sec"
+]
 
 if not os.path.exists(DATA_FILE):
     pd.DataFrame(columns=DATA_STRUCTURE).to_csv(DATA_FILE, index=False)
 
 if not os.path.exists(ENCOUNTER_FILE):
     pd.DataFrame(columns=ENCOUNTER_STRUCTURE).to_csv(ENCOUNTER_FILE, index=False)
+
+if not os.path.exists(COMPARISON_LOG_FILE):
+    pd.DataFrame(columns=COMPARISON_STRUCTURE).to_csv(COMPARISON_LOG_FILE, index=False)
 
 HOSPITALS = [
     {"name": "RSUP Dr. Sardjito", "lat": -7.7684, "lon": 110.3737},
@@ -139,13 +149,16 @@ def process_narrative(narrative, api_key, patient_data=None):
     if not api_key:
         logger.error("API Key missing for narrative processing.")
         return None
+    
+    start_time = time.time()
+    model_name = os.getenv("GOOGLE_MODEL_NAME", "gemini-1.5-flash")
+    
     try:
         logger.info(f"--- Unified App: Processing Request ---")
-        logger.info(f"Using Model: {os.getenv('GOOGLE_MODEL_NAME', 'gemini-1.5-flash')}")
+        logger.info(f"Using Model: {model_name}")
         logger.info(f"Input Narrative: {narrative[:200]}...")
         
         genai.configure(api_key=api_key)
-        model_name = os.getenv("GOOGLE_MODEL_NAME", "gemini-1.5-flash")
         model = genai.GenerativeModel(model_name)
         
         patient_context = ""
@@ -245,6 +258,30 @@ def process_narrative(narrative, api_key, patient_data=None):
             final_result["triage_vitals"] = result["triage_vitals"]
             
         logger.info("Successfully parsed and normalized JSON response.")
+        
+        # LOGGING FOR COMPARISON (PAPER DATA)
+        latency = time.time() - start_time
+        try:
+            log_data = {
+                "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "Model_Name": model_name,
+                "Input_Narrative": narrative,
+                "S_Result": final_result["soap"].get("S", ""),
+                "O_Result": final_result["soap"].get("O", ""),
+                "A_Result": final_result["soap"].get("A", ""),
+                "P_Result": final_result["soap"].get("P", ""),
+                "RR": final_result["triage_vitals"].get("rr", ""),
+                "SpO2": final_result["triage_vitals"].get("spo2", ""),
+                "BPS": final_result["triage_vitals"].get("bps", ""),
+                "HR": final_result["triage_vitals"].get("hr", ""),
+                "AVPU": final_result["triage_vitals"].get("avpu", ""),
+                "Latency_sec": round(latency, 2)
+            }
+            pd.DataFrame([log_data]).to_csv(COMPARISON_LOG_FILE, mode='a', header=False, index=False)
+            logger.info(f"Comparison log entry added for model {model_name}")
+        except Exception as log_err:
+            logger.error(f"Failed to write comparison log: {log_err}")
+
         return final_result
     except Exception as e:
         error_msg = f"Error in AI Processing (Unified): {str(e)}"
@@ -264,8 +301,18 @@ with st.sidebar:
     # API status check
     api_key_env = os.getenv("GOOGLE_API_KEY", "")
     model_name_env = os.getenv("GOOGLE_MODEL_NAME", "gemini-1.5-flash")
+    
+    st.markdown("### 🤖 Konfigurasi AI")
+    selected_model = st.selectbox(
+        "Pilih Model (untuk Paper/Test)",
+        ["gemini-1.5-flash", "gemini-3.1-flash-lite", "gemini-1.0-pro"],
+        index=0 if model_name_env == "gemini-1.5-flash" else 1
+    )
+    # Update environment variable for current session
+    os.environ["GOOGLE_MODEL_NAME"] = selected_model
+
     if api_key_env:
-        st.success(f"✅ AI Connected ({model_name_env})")
+        st.success(f"✅ AI Connected ({selected_model})")
     else:
         st.error("❌ AI Key Missing (.env)")
     
@@ -625,10 +672,42 @@ with t_emergency:
 with t_admin:
     pwd = st.text_input("Password Admin", type="password")
     if pwd == MASTER_PASSWORD:
-        st.subheader("Data Master Pasien")
-        st.dataframe(pd.read_csv(DATA_FILE), use_container_width=True)
-        st.subheader("Data Transaksi SOAP")
-        st.dataframe(pd.read_csv(ENCOUNTER_FILE), use_container_width=True)
+        st.subheader("📊 Data Master Pasien")
+        df_master = pd.read_csv(DATA_FILE)
+        st.dataframe(df_master, use_container_width=True)
+        
+        st.subheader("📑 Data Transaksi SOAP")
+        df_soap = pd.read_csv(ENCOUNTER_FILE)
+        st.dataframe(df_soap, use_container_width=True)
+
+        st.divider()
+        st.subheader("🔬 Model Comparison Results (for Paper)")
+        if os.path.exists(COMPARISON_LOG_FILE):
+            df_comp = pd.read_csv(COMPARISON_LOG_FILE)
+            st.dataframe(df_comp, use_container_width=True)
+            
+            # Simple stats for the paper
+            st.markdown("#### Quick Stats")
+            col_s1, col_s2, col_s3 = st.columns(3)
+            with col_s1:
+                st.metric("Total Test Cases", len(df_comp))
+            with col_s2:
+                avg_latency = df_comp["Latency_sec"].mean() if not df_comp.empty else 0
+                st.metric("Avg Latency", f"{avg_latency:.2f}s")
+            with col_s3:
+                model_counts = df_comp["Model_Name"].value_counts().to_dict()
+                st.write("Model Usage:", model_counts)
+
+            st.download_button(
+                label="📥 Download Dataset for Analysis",
+                data=df_comp.to_csv(index=False).encode('utf-8'),
+                file_name="model_comparison_dataset.csv",
+                mime="text/csv",
+                use_container_width=True
+            )
+        else:
+            st.info("Belum ada data perbandingan yang tersimpan.")
+
     elif pwd: st.error("Salah password")
 
     st.divider()
