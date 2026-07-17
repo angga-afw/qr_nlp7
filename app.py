@@ -928,6 +928,37 @@ with t_admin:
         else:
             st.info("Belum ada data perbandingan yang tersimpan.")
 
+        st.divider()
+        st.subheader("📚 Knowledge Base (RAG)")
+        if os.path.exists(GUIDELINES_FILE):
+            with open(GUIDELINES_FILE, "r", encoding="utf-8") as f:
+                guideline_content = f.read()
+            
+            new_guidelines = st.text_area(
+                "Update Clinical Guidelines (clinical_guidelines.txt)",
+                value=guideline_content,
+                height=400,
+                help="Gunakan format '=== PANDUAN KLINIS: Nama Judul ===' untuk setiap bagian baru agar sistem RAG dapat memecah konten dengan benar."
+            )
+            
+            c_kb1, c_kb2 = st.columns(2)
+            with c_kb1:
+                if st.button("💾 Simpan Perubahan Knowledge Base", use_container_width=True):
+                    with open(GUIDELINES_FILE, "w", encoding="utf-8") as f:
+                        f.write(new_guidelines)
+                    # Clear cache so RAG re-embeds the new content
+                    if "guidelines_cache" in st.session_state:
+                        del st.session_state.guidelines_cache
+                    st.success("Knowledge base berhasil diperbarui dan cache RAG telah dibersihkan!")
+            with c_kb2:
+                # Add refresh button to force re-indexing
+                if st.button("🔄 Refresh RAG Cache", use_container_width=True):
+                    if "guidelines_cache" in st.session_state:
+                        del st.session_state.guidelines_cache
+                        st.info("Cache RAG dikosongkan. AI akan memproses ulang file pada chat berikutnya.")
+        else:
+            st.error(f"File {GUIDELINES_FILE} tidak ditemukan!")
+
     elif pwd: st.error("Salah password")
 
     st.divider()
