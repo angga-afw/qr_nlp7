@@ -4,3 +4,4 @@ qrcode[pil]
 geopy
 google-generativeai
 python-dotenv
+numpy

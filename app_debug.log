@@ -516,3 +516,210 @@ google.api_core.exceptions.NotFound: 404 models/gemini-1.5-flash is not found fo
 }
 2026-05-16 16:44:33 - INFO - Successfully parsed and normalized JSON response.
 2026-05-16 16:44:33 - INFO - Comparison log entry added for model gemini-3.1-flash-lite
+2026-05-21 09:55:58 - INFO - --- Unified App: Processing Request ---
+2026-05-21 09:55:58 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-21 09:55:58 - INFO - Input Narrative: kaki saya terasa sakit, demam, dan tensi saya 100/80...
+2026-05-21 09:56:04 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan nyeri pada kaki dan merasa demam.",
+        "O": "Tekanan darah pasien saat ini 100/80 mmHg.",
+        "A": "Febris (demam) dan nyeri ekstremitas bawah (etiologi belum dapat dipastikan, perlu evaluasi lebih lanjut terhadap kemungkinan infeksi atau cedera lokal).",
+        "P": "Edukasi untuk istirahat cukup, kompres hangat, monitor suhu tubuh, dan disarankan segera melakukan pemeriksaan fisik secara langsung ke fasilitas kesehatan untuk evaluasi penyebab demam dan nyeri kaki."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "nan",
+        "Blood_Pressure": "100/80",
+        "Oxygen_Saturation": "nan",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "Keluhan demam dan nyeri kaki"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": 100,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-05-21 09:56:04 - INFO - Successfully parsed and normalized JSON response.
+2026-05-21 09:56:04 - INFO - Comparison log entry added for model gemini-3.1-flash-lite
+2026-05-26 09:11:35 - INFO - --- Unified App: Processing Request ---
+2026-05-26 09:11:35 - INFO - Using Model: gemini-3.1-flash-lite
+2026-05-26 09:11:35 - INFO - Input Narrative: Saya kaki terasa sakit...
+2026-05-26 09:11:37 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan rasa sakit pada bagian kaki.",
+        "O": "Data fisik tidak tersedia dalam keluhan pasien.",
+        "A": "Nyeri pada ekstremitas bawah (etiologi belum ditentukan).",
+        "P": "Melakukan anamnesis lebih lanjut mengenai durasi, lokasi spesifik nyeri, mekanisme cedera, dan gejala penyerta. Disarankan untuk pemeriksaan fisik langsung pada area yang sakit."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "nan",
+        "Blood_Pressure": "nan",
+        "Oxygen_Saturation": "nan",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "nan",
+        "Weight_kg": "nan",
+        "Height_cm": "nan",
+        "Medical_History": "nan"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": null,
+        "hr": null,
+        "avpu": null
+    }
+}
+2026-05-26 09:11:37 - INFO - Successfully parsed and normalized JSON response.
+2026-05-26 09:11:37 - INFO - Comparison log entry added for model gemini-3.1-flash-lite
+2026-07-10 11:47:25 - INFO - --- Unified App: Processing Request ---
+2026-07-10 11:47:25 - INFO - Using Model: gemini-3.1-flash-lite
+2026-07-10 11:47:25 - INFO - Input Narrative: Saya pusing kepala sejak kemarin, tensi sempat 140/89, saya cemas vertigo saya kambung...
+2026-07-10 11:47:26 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 11:47:26 - INFO - RAG Patient History retrieved: 0 records
+2026-07-10 11:47:26 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 11:47:26 - INFO - RAG Clinical Guidelines retrieved: 0 chunks
+2026-07-10 11:47:28 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan pusing kepala sejak kemarin disertai rasa cemas akan kekambuhan vertigo.",
+        "O": "Tekanan darah dilaporkan 140/89 mmHg. Data vital lain tidak disebutkan.",
+        "A": "Cephalgia (Sakit kepala) dengan riwayat hipertensi (berdasarkan catatan profil 140/90 mmHg dan keluhan saat ini). Perlu dievaluasi lebih lanjut mengenai kemungkinan vertigo terkait.",
+        "P": "1. Observasi tekanan darah secara berkala. 2. Edukasi pola hidup sehat untuk kontrol tekanan darah. 3. Jika pusing berlanjut atau disertai gejala neurologis (mual hebat, muntah proyektil, penurunan kesadaran), segera ke IGD. 4. Pertimbangkan pemeriksaan penunjang (EKG/Lab darah) jika keluhan menetap."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "Suspek Hipertensi",
+        "Current_Medication": "nan",
+        "Allergies": "Udang",
+        "Blood_Pressure": "140/89",
+        "Oxygen_Saturation": "null",
+        "Hospitalization_History": "RSA UGM",
+        "Responsible_Doctor": "dr. Alvin",
+        "Weight_kg": "67",
+        "Height_cm": "160",
+        "Medical_History": "Cephalgia, kecemasan akan vertigo"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": 140,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-07-10 11:47:28 - INFO - Successfully parsed and normalized JSON response.
+2026-07-10 11:47:28 - INFO - Comparison log entry added for model gemini-3.1-flash-lite
+2026-07-10 11:55:11 - INFO - --- Unified App: Processing Request ---
+2026-07-10 11:55:11 - INFO - Using Model: gemini-3.1-flash-lite
+2026-07-10 11:55:11 - INFO - Input Narrative: Saat ini saya terasa lemas, panas, pusing...
+2026-07-10 11:55:11 - INFO - RAG Patient History retrieved: 0 records
+2026-07-10 11:55:11 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 11:55:11 - INFO - RAG Clinical Guidelines retrieved: 0 chunks
+2026-07-10 11:55:13 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan merasa lemas, badan terasa panas, dan pusing.",
+        "O": "Tidak tersedia data objektif fisik (tanda vital) saat ini. Perlu dilakukan pengukuran suhu tubuh, tekanan darah, dan pemeriksaan fisik segera.",
+        "A": "Febris (demam) dengan suspek infeksi sistemik/viral illness (diferensial diagnosis: perlu evaluasi kemungkinan rekurensi atau infeksi baru mengingat riwayat rawat inap karena gejala thypus sebelumnya).",
+        "P": "1. Observasi tanda-tanda vital secara berkala (terutama suhu dan tekanan darah). 2. Anjuran tirah baring dan hidrasi cukup. 3. Konsumsi obat penurun panas/analgesik (Paracetamol) jika demam berlanjut. 4. Pertimbangkan pemeriksaan darah rutin (DL) dan tes serologi untuk menyingkirkan diagnosis banding demam tifoid atau infeksi lainnya."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "tidak ada",
+        "Blood_Pressure": "120/90",
+        "Oxygen_Saturation": "98",
+        "Hospitalization_History": "Gejala Types",
+        "Responsible_Doctor": "dr Endang",
+        "Weight_kg": "67",
+        "Height_cm": "170",
+        "Medical_History": "Keluhan lemas, panas, dan pusing per tanggal saat ini."
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": null,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-07-10 11:55:13 - INFO - Successfully parsed and normalized JSON response.
+2026-07-10 11:55:13 - INFO - Comparison log entry added for model gemini-3.1-flash-lite
+2026-07-10 11:56:01 - INFO - --- Unified App: Processing Request ---
+2026-07-10 11:56:01 - INFO - Using Model: gemini-3.1-flash-lite
+2026-07-10 11:56:01 - INFO - Input Narrative: takanan darah 130/70 dan saturasi 80...
+2026-07-10 11:56:01 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 11:56:01 - INFO - RAG Patient History retrieved: 0 records
+2026-07-10 11:56:02 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 11:56:02 - INFO - RAG Clinical Guidelines retrieved: 0 chunks
+2026-07-10 11:56:03 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien melaporkan pengukuran mandiri tekanan darah sebesar 130/70 mmHg dan saturasi oksigen sebesar 80%.",
+        "O": "Tekanan darah 130/70 mmHg, Saturasi Oksigen (SpO2) 80%.",
+        "A": "Hipoksia (Saturasi Oksigen rendah/80%) - Kondisi gawat darurat (perlu evaluasi segera), Tekanan darah dalam batas pre-hipertensi.",
+        "P": "Segera lakukan pemeriksaan fisik komprehensif, evaluasi jalan napas, berikan oksigen tambahan jika diperlukan, dan rujuk ke fasilitas gawat darurat (UGD) terdekat untuk observasi lanjut karena saturasi 80% berada di bawah rentang normal (hipoksemia berat)."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "tidak ada",
+        "Blood_Pressure": "130/70",
+        "Oxygen_Saturation": "80",
+        "Hospitalization_History": "Gejala Types",
+        "Responsible_Doctor": "dr Endang",
+        "Weight_kg": "67",
+        "Height_cm": "170",
+        "Medical_History": "Hipoksemia (Saturasi 80%)"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": 80,
+        "bps": 130,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-07-10 11:56:03 - INFO - Successfully parsed and normalized JSON response.
+2026-07-10 11:56:03 - INFO - Comparison log entry added for model gemini-3.1-flash-lite
+2026-07-10 13:44:42 - INFO - --- Unified App: Processing Request ---
+2026-07-10 13:44:42 - INFO - Using Model: gemini-3.1-flash-lite
+2026-07-10 13:44:42 - INFO - Input Narrative: saya setelah makan mie ayam, terasa kenyang, tetapi badan terasa lemas, tensi naik dari sebelumnya...
+2026-07-10 13:44:43 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 13:44:43 - INFO - RAG Patient History retrieved: 0 records
+2026-07-10 13:44:43 - ERROR - Error generating embedding: 404 models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+2026-07-10 13:44:43 - INFO - RAG Clinical Guidelines retrieved: 0 chunks
+2026-07-10 13:44:45 - INFO - AI Raw Response: {
+    "soap": {
+        "S": "Pasien mengeluhkan rasa lemas setelah makan mie ayam (postprandial) dan merasa tekanan darahnya meningkat dibanding sebelumnya.",
+        "O": "Kesadaran Alert (asumsi dari kemampuan berkomunikasi). Data vital spesifik terkait nadi, respirasi, dan saturasi oksigen saat ini tidak tersedia dalam narasi. Riwayat saturasi terakhir 80% (hipoksemia kronis/recurrent).",
+        "A": "1. Postprandial malaise (lemas pasca makan). 2. Suspek hipertensi (perlu verifikasi pengukuran). 3. Hipoksemia (berdasarkan riwayat medis).",
+        "P": "1. Monitoring tanda-tanda vital secara berkala (terutama tekanan darah dan saturasi oksigen). 2. Evaluasi diet (kandungan natrium pada mie ayam). 3. Segera ke fasilitas kesehatan jika saturasi oksigen menetap di bawah 90% atau sesak napas memberat. 4. Pertimbangkan pemeriksaan elektrolit dan profil lipid untuk evaluasi jangka panjang."
+    },
+    "profile_updates": {
+        "Chronic_Diseases": "nan",
+        "Current_Medication": "nan",
+        "Allergies": "tidak ada",
+        "Blood_Pressure": "null",
+        "Oxygen_Saturation": "null",
+        "Hospitalization_History": "nan",
+        "Responsible_Doctor": "dr Endang",
+        "Weight_kg": "67",
+        "Height_cm": "170",
+        "Medical_History": "Hipoksemia, Gejala Types, Postprandial malaise"
+    },
+    "triage_vitals": {
+        "rr": null,
+        "spo2": null,
+        "bps": null,
+        "hr": null,
+        "avpu": "Alert"
+    }
+}
+2026-07-10 13:44:45 - INFO - Successfully parsed and normalized JSON response.
+2026-07-10 13:44:45 - INFO - Comparison log entry added for model gemini-3.1-flash-lite

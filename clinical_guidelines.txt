@@ -1,0 +1,47 @@
+=== PANDUAN KLINIS: HIPERTENSI ===
+Definisi & Klasifikasi:
+- Hipertensi didefinisikan sebagai tekanan darah sistolik >= 140 mmHg atau tekanan darah diastolik >= 90 mmHg pada pengukuran berulang.
+- Hipertensi Stage 1: Sistolik 140-159 mmHg atau Diastolik 90-99 mmHg.
+- Hipertensi Stage 2: Sistolik >= 160 mmHg atau Diastolik >= 100 mmHg.
+Tatalaksana & Terapi:
+- Modifikasi gaya hidup: Diet rendah garam (<2 gram natrium per hari atau 1 sendok teh garam), kurangi berat badan, olahraga teratur (aerobik 30 menit/hari), hindari rokok dan alkohol.
+- Terapi Farmakologi: Golongan obat utama meliputi ACE inhibitor (misal Captopril, Ramipril), ARB (misal Valsartan, Candesartan), Calcium Channel Blocker / CCB (misal Amlodipine), atau Diuretik Thiazide.
+Edukasi Pasien:
+- Minum obat teratur setiap hari walaupun tidak ada keluhan.
+- Lakukan pemantauan tekanan darah mandiri (Home Blood Pressure Monitoring) secara rutin dan catat hasilnya.
+- Waspadai tanda bahaya (red flags): Nyeri dada hebat, sesak napas berat, sakit kepala hebat, pandangan kabur, atau kelemahan anggota gerak mendadak (segera ke IGD).
+
+=== PANDUAN KLINIS: DIABETES MELITUS ===
+Definisi & Kriteria Diagnosis:
+- Diabetes Melitus (DM) ditandai dengan kadar gula darah puasa (GDP) >= 126 mg/dL, gula darah 2 jam post-prandial (GD2PP) >= 200 mg/dL, atau HbA1c >= 6.5%.
+Tatalaksana & Terapi:
+- Terapi Nutrisi Medis: Pengaturan makan 3J (Jumlah kalori, Jadwal makan, Jenis makanan). Kurangi karbohidrat sederhana.
+- Aktivitas fisik ringan-sedang minimal 150 menit per minggu.
+- Terapi Farmakologi: Obat Antihiperglikemik Oral (OHO) seperti Metformin (pilihan pertama, golongan Biguanide), Glimepiride/Glibenclamide (Sulfonilurea), Acarbose (Alfa-glukosidase inhibitor), atau terapi Insulin jika diperlukan.
+Edukasi Pasien:
+- Rutin memeriksa kadar gula darah secara berkala.
+- Jaga kebersihan kaki untuk mencegah luka/ulkus diabetikum (selalu gunakan alas kaki).
+- Waspadai gejala Hipoglikemia (gula darah terlalu rendah <70 mg/dL): Keringat dingin, gemetar, lapar, pusing, jantung berdebar. Segera konsumsi teh manis atau permen jika mengalaminya.
+
+=== PANDUAN KLINIS: ASMA BRONKIAL ===
+Definisi & Gejala:
+- Asma adalah penyakit inflamasi kronis pada saluran napas yang ditandai dengan gejala mengi (wheezing), sesak napas, dada terasa berat, dan batuk yang bervariasi dalam waktu dan intensitas.
+Tatalaksana & Terapi:
+- Hindari faktor pencetus (debu, dingin, bulu hewan, stres, asap rokok).
+- Terapi Reliever (Pelega): Inhaler Bronkodilator jangka pendek seperti Salbutamol (Albuterol) dihirup saat terjadi serangan sesak.
+- Terapi Controller (Pengendali): Inhaler Kortikosteroid (misal Fluticasone, Budesonide) digunakan rutin setiap hari untuk mencegah kekambuhan.
+Edukasi Pasien:
+- Selalu bawa inhaler pelega (Salbutamol) ke mana saja.
+- Waspadai tanda serangan asma berat (red flags): Sesak napas hebat hingga tidak bisa berbicara satu kalimat penuh, bibir/kuku kebiruan, atau tidak ada respon setelah penggunaan inhaler pelega 3 kali dalam 1 jam (Segera ke IGD).
+
+=== PANDUAN KLINIS: ISPA & DEMAM ===
+Definisi & Gejala:
+- Infeksi Saluran Pernapasan Akut (ISPA) bagian atas umumnya disebabkan oleh virus (common cold/influenza) dengan gejala demam, batuk, pilek, nyeri tenggorokan, dan sakit kepala.
+Tatalaksana & Terapi:
+- Suportif: Istirahat yang cukup, perbanyak minum air hangat, konsumsi makanan bergizi.
+- Simptomatik: Paracetamol 500 mg (3-4 kali sehari jika demam >37.5°C atau sakit kepala/nyeri otot), CTM atau Cetirizine untuk mengurangi pilek/alergi, GG (Guaifenesin) atau Dextromethorphan untuk batuk.
+- Antibiotik: TIDAK diberikan pada ISPA yang disebabkan virus. Antibiotik hanya diberikan jika ada indikasi infeksi bakteri (misal tonsilofaringitis bakteri dengan eksudat, demam menetap >5 hari dengan dahak purulen hijau-kuning).
+Edukasi Pasien:
+- Istirahat total di rumah untuk mencegah penularan.
+- Gunakan masker dan terapkan etika batuk/bersin.
+- Waspadai tanda bahaya: Sesak napas, napas cepat, tidak bisa minum atau menyusu, atau demam tinggi menetap >3-4 hari meskipun sudah minum obat penurun demam.

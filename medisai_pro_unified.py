@@ -10,6 +10,7 @@ from datetime import datetime
 from geopy.distance import geodesic
 import logging
 import traceback
+import numpy as np
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -19,7 +20,6 @@ load_dotenv()
 # 0. LOGGING CONFIGURATION
 # ==========================================
 logging.basicConfig(
-    filename='app_debug.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
@@ -124,10 +124,131 @@ if "soap_record" not in st.session_state:
     st.session_state.soap_record = {"S": "-", "O": "-", "A": "-", "P": "-"}
 if "extracted_vitals" not in st.session_state:
     st.session_state.extracted_vitals = {}
+if "retrieved_history" not in st.session_state:
+    st.session_state.retrieved_history = []
+if "retrieved_guidelines" not in st.session_state:
+    st.session_state.retrieved_guidelines = []
 
 # ==========================================
 # 2. HELPER FUNCTIONS
 # ==========================================
+
+# --- RAG HELPERS ---
+GUIDELINES_FILE = "clinical_guidelines.txt"
+
+def get_embedding(text, api_key, task_type="retrieval_document"):
+    if not text or not text.strip():
+        return None
+    try:
+        genai.configure(api_key=api_key)
+        result = genai.embed_content(
+            model="models/text-embedding-004",
+            content=text,
+            task_type=task_type
+        )
+        return result['embedding']
+    except Exception as e:
+        logger.error(f"Error generating embedding: {e}")
+        return None
+
+def cosine_similarity_val(v1, v2):
+    if v1 is None or v2 is None:
+        return 0.0
+    v1 = np.array(v1)
+    v2 = np.array(v2)
+    dot_prod = np.dot(v1, v2)
+    norm_v1 = np.linalg.norm(v1)
+    norm_v2 = np.linalg.norm(v2)
+    if norm_v1 == 0 or norm_v2 == 0:
+        return 0.0
+    return float(dot_prod / (norm_v1 * norm_v2))
+
+def load_guideline_chunks():
+    if not os.path.exists(GUIDELINES_FILE):
+        return []
+    with open(GUIDELINES_FILE, "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    sections = content.split("=== PANDUAN KLINIS: ")
+    chunks = []
+    for sec in sections:
+        if not sec.strip():
+            continue
+        parts = sec.split("===", 1)
+        if len(parts) == 2:
+            title = parts[0].strip()
+            body = parts[1].strip()
+            chunks.append({
+                "title": f"Panduan Klinis: {title}",
+                "content": body
+            })
+        else:
+            chunks.append({
+                "title": "Panduan Umum",
+                "content": sec.strip()
+            })
+    return chunks
+
+def get_cached_guidelines(api_key):
+    if "guidelines_cache" not in st.session_state:
+        chunks = load_guideline_chunks()
+        cached = []
+        for chunk in chunks:
+            text_to_embed = f"{chunk['title']}\n{chunk['content']}"
+            emb = get_embedding(text_to_embed, api_key, task_type="retrieval_document")
+            cached.append({"chunk": chunk, "embedding": emb})
+        st.session_state.guidelines_cache = cached
+    return st.session_state.guidelines_cache
+
+def retrieve_guidelines(query, api_key, top_k=2):
+    query_emb = get_embedding(query, api_key, task_type="retrieval_query")
+    if not query_emb:
+        return []
+    
+    cached_data = get_cached_guidelines(api_key)
+    results = []
+    for item in cached_data:
+        if item["embedding"]:
+            sim = cosine_similarity_val(query_emb, item["embedding"])
+            results.append((sim, item["chunk"]))
+    
+    results.sort(key=lambda x: x[0], reverse=True)
+    return [r[1] for r in results[:top_k] if r[0] > 0.35]
+
+def retrieve_patient_history(query, user_id, api_key, top_k=2):
+    if not os.path.exists(ENCOUNTER_FILE):
+        return []
+    df_e = pd.read_csv(ENCOUNTER_FILE)
+    p_encounters = df_e[df_e["User_ID"].astype(str) == str(user_id)]
+    if p_encounters.empty:
+        return []
+    
+    query_emb = get_embedding(query, api_key, task_type="retrieval_query")
+    if not query_emb:
+        return []
+    
+    results = []
+    for _, row in p_encounters.iterrows():
+        enc_text = f"Tanggal: {row.get('Timestamp', '-')}\n" \
+                   f"Subjective: {row.get('S', '-')}\n" \
+                   f"Objective: {row.get('O', '-')}\n" \
+                   f"Assessment: {row.get('A', '-')}\n" \
+                   f"Plan: {row.get('P', '-')}"
+        
+        enc_emb = get_embedding(enc_text, api_key, task_type="retrieval_document")
+        if enc_emb:
+            sim = cosine_similarity_val(query_emb, enc_emb)
+            results.append((sim, {
+                "timestamp": row.get('Timestamp', '-'),
+                "S": row.get('S', '-'),
+                "O": row.get('O', '-'),
+                "A": row.get('A', '-'),
+                "P": row.get('P', '-'),
+                "full_text": enc_text
+            }))
+    
+    results.sort(key=lambda x: x[0], reverse=True)
+    return [r[1] for r in results[:top_k] if r[0] > 0.35]
 
 def calculate_news2(rr, spo2, bps, hr, avpu):
     score = 0
@@ -161,6 +282,23 @@ def process_narrative(narrative, api_key, patient_data=None):
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel(model_name)
         
+        # RAG 1: Retrieve Patient History
+        retrieved_history = []
+        if patient_data is not None and "User_ID" in patient_data:
+            try:
+                retrieved_history = retrieve_patient_history(narrative, patient_data["User_ID"], api_key)
+                logger.info(f"RAG Patient History retrieved: {len(retrieved_history)} records")
+            except Exception as e:
+                logger.error(f"Error in patient history RAG: {e}")
+                
+        # RAG 2: Retrieve Clinical Guidelines
+        retrieved_guidelines = []
+        try:
+            retrieved_guidelines = retrieve_guidelines(narrative, api_key)
+            logger.info(f"RAG Clinical Guidelines retrieved: {len(retrieved_guidelines)} chunks")
+        except Exception as e:
+            logger.error(f"Error in clinical guidelines RAG: {e}")
+
         patient_context = ""
         if patient_data is not None:
             patient_context = f"""
@@ -180,13 +318,23 @@ def process_narrative(narrative, api_key, patient_data=None):
             - Riwayat Medis: {patient_data.get('Medical_History')}
             """
 
+        history_context = ""
+        if retrieved_history:
+            history_context = "\nRIWAYAT REKAM MEDIS RELEVAN DARI RAG:\n" + "\n---\n".join([h["full_text"] for h in retrieved_history])
+        
+        guidelines_context = ""
+        if retrieved_guidelines:
+            guidelines_context = "\nPANDUAN KLINIS RELEVAN DARI RAG:\n" + "\n---\n".join([f"Judul: {g['title']}\nKonten:\n{g['content']}" for g in retrieved_guidelines])
+
         prompt = f"""
         Anda adalah asisten medis profesional. Analisis keluhan atau kondisi yang disampaikan oleh PASIEN berikut.
+        Gunakan data profil pasien, riwayat rekam medis lama yang relevan, serta panduan klinis pendukung untuk membuat rekam medis SOAP berkualitas tinggi dan berbasis panduan medis.
+        
         1. Konversi menjadi format SOAP (Subjective, Objective, Assessment, Plan) dari sudut pandang medis.
            - Subjective: Keluhan utama dan riwayat penyakit dari pasien.
            - Objective: Jika ada data fisik yang disebutkan (tanda vital: tensi, nadi, saturasi, nafas, kesadaran).
-           - Assessment: Kemungkinan diagnosis atau ringkasan kondisi.
-           - Plan: Saran tindakan, obat, atau pemeriksaan lanjutan.
+           - Assessment: Kemungkinan diagnosis atau ringkasan kondisi (hubungkan dengan riwayat lama jika ada kesamaan gejala).
+           - Plan: Saran tindakan, obat, atau pemeriksaan lanjutan (sesuaikan dengan panduan klinis jika relevan).
         2. Deteksi apakah ada informasi baru yang dapat memperbarui profil medis pasien (seperti alergi baru, riwayat penyakit kronis baru, obat yang sedang dikonsumsi, tekanan darah, atau kadar oksigen).
         3. EKSTRAKSI DATA VITAL (NEWS2): Jika pasien menyebutkan angka-angka berikut, ambil nilainya:
            - Respirasi (RR): bpm
@@ -197,6 +345,8 @@ def process_narrative(narrative, api_key, patient_data=None):
         
         DATA PROFIL MEDIS SAAT INI:
         {patient_context}
+        {history_context}
+        {guidelines_context}
         
         KELUHAN/NARASI PASIEN: 
         "{narrative}"
@@ -222,10 +372,10 @@ def process_narrative(narrative, api_key, patient_data=None):
                 "Medical_History": "tambahkan riwayat baru jika ada"
             }},
             "triage_vitals": {{
-                "rr": "angka (int) atau null",
-                "spo2": "angka (int) atau null",
-                "bps": "angka (int) atau null",
-                "hr": "angka (int) atau null",
+                "rr": "angka (int) or null",
+                "spo2": "angka (int) or null",
+                "bps": "angka (int) or null",
+                "hr": "angka (int) or null",
                 "avpu": "Alert/Voice/Pain/Unresponsive atau null"
             }}
         }}
@@ -243,7 +393,9 @@ def process_narrative(narrative, api_key, patient_data=None):
         final_result = {
             "soap": {"S": "-", "O": "-", "A": "-", "P": "-"}, 
             "profile_updates": {},
-            "triage_vitals": {}
+            "triage_vitals": {},
+            "retrieved_history": retrieved_history,
+            "retrieved_guidelines": retrieved_guidelines
         }
         
         if "soap" in result:
@@ -281,7 +433,7 @@ def process_narrative(narrative, api_key, patient_data=None):
             logger.info(f"Comparison log entry added for model {model_name}")
         except Exception as log_err:
             logger.error(f"Failed to write comparison log: {log_err}")
-
+ 
         return final_result
     except Exception as e:
         error_msg = f"Error in AI Processing (Unified): {str(e)}"
@@ -382,7 +534,12 @@ with t_reg:
             d["User_ID"] = st.text_input("User ID", value=auto_id, help="ID ini dibuat otomatis oleh sistem", disabled=True)
             d["BPJS_ID"] = st.text_input("BPJS_ID")
             d["Name"] = st.text_input("Nama Lengkap")
-            d["Birth_Date"] = st.date_input("Tanggal Lahir")
+            d["Birth_Date"] = st.date_input(
+                "Tanggal Lahir",
+                value=datetime(1990, 1, 1).date(),
+                min_value=datetime(1900, 1, 1).date(),
+                max_value=datetime.now().date()
+            )
             d["Gender"] = st.selectbox("Jenis Kelamin", ["Male", "Female"])
         with c2:
             d["Blood_Type"] = st.selectbox("Gol. Darah", ["A", "B", "AB", "O"])
@@ -433,6 +590,8 @@ with t_chat:
                     if ai_response:
                         st.session_state.soap_record = ai_response.get("soap", {})
                         st.session_state.profile_updates = ai_response.get("profile_updates", {})
+                        st.session_state.retrieved_history = ai_response.get("retrieved_history", [])
+                        st.session_state.retrieved_guidelines = ai_response.get("retrieved_guidelines", [])
                         # Update extracted vitals for Triage
                         new_vitals = ai_response.get("triage_vitals", {})
                         if new_vitals:
@@ -455,6 +614,22 @@ with t_chat:
                 <div class="soap-label">Plan</div><div class="soap-content">{st.session_state.soap_record.get('P', '-')}</div>
             </div>
             """, unsafe_allow_html=True)
+            
+            # Display RAG References
+            if st.session_state.get("retrieved_history") or st.session_state.get("retrieved_guidelines"):
+                with st.expander("🔍 Referensi RAG Terkait (Context)", expanded=True):
+                    if st.session_state.get("retrieved_history"):
+                        st.markdown("**Riwayat Medis Pasien Terkait (CSV RAG):**")
+                        for idx, hist in enumerate(st.session_state.retrieved_history):
+                            st.caption(f"**{idx+1}. Tanggal: {hist['timestamp']}** (Diagnosis: *{hist['A']}*)")
+                            st.write(f"- **S**: {hist['S']}")
+                            st.write(f"- **P**: {hist['P']}")
+                    
+                    if st.session_state.get("retrieved_guidelines"):
+                        st.markdown("**Panduan Klinis Medis Terkait (External Doc RAG):**")
+                        for idx, guide in enumerate(st.session_state.retrieved_guidelines):
+                            st.markdown(f"📖 **{guide['title']}**")
+                            st.text(guide['content'])
             
             if st.button("💾 Simpan Rekam Medis (SOAP)", use_container_width=True, type="primary"):
                 new_enc = {
@@ -524,6 +699,11 @@ with t_chat:
                 if st.button("🆙 Perbarui Profil Pasien (Smart Merge)", use_container_width=True):
                     try:
                         df_all = pd.read_csv(DATA_FILE)
+                        # Cast text columns to object dtype to prevent dtype float64 errors when columns are empty
+                        for col in ["Chronic_Diseases", "Current_Medication", "Allergies", "Medical_History", "Hospitalization_History", "Responsible_Doctor", "Blood_Pressure"]:
+                            if col in df_all.columns:
+                                df_all[col] = df_all[col].astype(object)
+                        
                         # Find the row to update
                         idx = df_all[df_all["User_ID"].astype(str) == str(active_patient["User_ID"])].index[0]
                         
