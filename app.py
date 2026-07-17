@@ -576,9 +576,27 @@ with t_reg:
                 df_p.to_csv(DATA_FILE, index=False)
                 st.success("Pasien terdaftar!")
                 
-                # Link QR Code dinamis (Otomatis deteksi URL jika di Streamlit Cloud)
-                # Jika dijalankan lokal tetap localhost
-                qr_url = f"http://localhost:8501/?uid={d['User_ID']}"
+                # Mendeteksi domain secara otomatis untuk QR Code
+                # Jika di Streamlit Cloud, gunakan query parameter 'host' atau default ke apps domain
+                # Cara terbaik di Streamlit Cloud adalah menggunakan headers (memerlukan host rahasia)
+                # atau cara termudah: deteksi dari URL browser via st.query_params
+                
+                # Coba dapatkan host dari sistem
+                current_host = "localhost:8501"
+                
+                # Jika kita ingin benar-benar dinamis di Streamlit Cloud tanpa hardcode:
+                # Kita bisa menggunakan trik JavaScript minimal untuk mendapatkan origin, 
+                # tapi Streamlit tidak mendukung ini secara native di backend.
+                # Jadi kita gunakan solusi paling robust: 
+                # Izinkan user mendefinisikan BASE_URL di Secrets untuk Production
+                
+                base_url = os.getenv("BASE_URL")
+                
+                if base_url:
+                    qr_url = f"{base_url}/?uid={d['User_ID']}"
+                else:
+                    # Fallback jika BASE_URL tidak diset (lokal) tetap localhost
+                    qr_url = f"http://localhost:8501/?uid={d['User_ID']}"
                 
                 img = qrcode.make(qr_url)
                 buf = BytesIO(); img.save(buf, format="PNG")
