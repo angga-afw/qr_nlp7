@@ -533,11 +533,14 @@ with t_reg:
     next_id = 1
     if not df_p.empty:
         try:
-            # Try to get the max numeric part if format is PID-001
-            ids = df_p["User_ID"].str.extract('(\d+)').astype(float).dropna()
-            if not ids.empty:
-                next_id = int(ids.max().iloc[0]) + 1
-        except:
+            # Mengambil angka terakhir dari User_ID (Format MAI-2026-0001)
+            # Kita pecah berdasarkan '-' dan ambil bagian terakhir
+            last_ids = df_p["User_ID"].astype(str).str.split("-").str[-1]
+            valid_ids = pd.to_numeric(last_ids, errors='coerce').dropna()
+            if not valid_ids.empty:
+                next_id = int(valid_ids.max()) + 1
+        except Exception as e:
+            logger.error(f"Error generating next ID: {e}")
             next_id = len(df_p) + 1
     
     auto_id = f"MAI-{datetime.now().year}-{next_id:04d}"
