@@ -1,3 +1,3 @@
 User_ID,BPJS_ID,Name,Birth_Date,Gender,Blood_Type,Weight_kg,Height_cm,Chronic_Diseases,Current_Medication,Allergies,Emergency_Contact_Name,Emergency_Contact_Phone,Blood_Pressure,Oxygen_Saturation,Hospitalization_History,Responsible_Doctor,Medical_History,Last_Update
-MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,,,Udang,,8752662222,140/90,95,RSA UGM,dr. Alvin,,2026-05-12
+MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,,,Udang,,8752662222,120/85,95,RSA UGM,dr. Alvin,,2026-07-17
 MAI-2026-2027,BPJS -2,Aguas Salim,2016-08-10,Male,A,67,170,,,tidak ada,,86765777,130/70,80,Gejala Types,dr Endang,Hipoksemia (Saturasi 80%),2026-07-10
