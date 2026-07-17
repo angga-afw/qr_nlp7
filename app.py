@@ -502,18 +502,28 @@ with st.sidebar:
 # ==========================================
 # 4. MAIN INTERFACE (TABS)
 # ==========================================
-# Determine initial tab
-default_tab_index = 0
-if st.query_params.get("uid"):
-    default_tab_index = 3 # Tab Emergency (CDSS)
+# Streamlit standard tabs don't support programmatic switching yet.
+# To achieve the requirement, we reorder the tabs if UID is present.
 
-t_reg, t_chat, t_hist, t_emergency, t_admin = st.tabs([
+tab_list = [
     "📝 Registrasi", 
     "💬 AI Chat SOAP", 
     "🕒 Riwayat Medis", 
     "🚑 Emergency (CDSS)", 
     "🔐 Admin"
-], default_tab_index=default_tab_index)
+]
+
+if st.query_params.get("uid"):
+    # Move Emergency to the first position
+    tab_list.insert(0, tab_list.pop(3))
+
+t_emergency_or_reg, t_chat_or_reg, t_hist, t_emergency_or_else, t_admin = st.tabs(tab_list)
+
+# Assign tabs back to meaningful names based on their content
+if st.query_params.get("uid"):
+    t_emergency, t_reg, t_chat, t_hist, t_admin = t_emergency_or_reg, t_chat_or_reg, t_hist, t_emergency_or_else, t_admin
+else:
+    t_reg, t_chat, t_hist, t_emergency, t_admin = t_emergency_or_reg, t_chat_or_reg, t_hist, t_emergency_or_else, t_admin
 
 # --- TAB 1: REGISTRATION ---
 with t_reg:
