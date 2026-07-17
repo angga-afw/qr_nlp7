@@ -502,13 +502,18 @@ with st.sidebar:
 # ==========================================
 # 4. MAIN INTERFACE (TABS)
 # ==========================================
+# Determine initial tab
+default_tab_index = 0
+if st.query_params.get("uid"):
+    default_tab_index = 3 # Tab Emergency (CDSS)
+
 t_reg, t_chat, t_hist, t_emergency, t_admin = st.tabs([
     "📝 Registrasi", 
     "💬 AI Chat SOAP", 
     "🕒 Riwayat Medis", 
     "🚑 Emergency (CDSS)", 
     "🔐 Admin"
-])
+], default_tab_index=default_tab_index)
 
 # --- TAB 1: REGISTRATION ---
 with t_reg:
