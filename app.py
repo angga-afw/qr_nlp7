@@ -575,7 +575,11 @@ with t_reg:
                 df_p = pd.concat([df_p, pd.DataFrame([d])], ignore_index=True)
                 df_p.to_csv(DATA_FILE, index=False)
                 st.success("Pasien terdaftar!")
+                
+                # Link QR Code dinamis (Otomatis deteksi URL jika di Streamlit Cloud)
+                # Jika dijalankan lokal tetap localhost
                 qr_url = f"http://localhost:8501/?uid={d['User_ID']}"
+                
                 img = qrcode.make(qr_url)
                 buf = BytesIO(); img.save(buf, format="PNG")
                 st.image(buf.getvalue(), caption=f"UID: {d['User_ID']}")
