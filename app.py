@@ -609,7 +609,7 @@ with t_reg:
 # --- TAB 2: AI CHAT SOAP ---
 with t_chat:
     if active_patient is None or (isinstance(active_patient, pd.Series) and active_patient.empty):
-        st.warning("Silakan pilih pasien di sidebar terlebih dahulu.")
+        st.warning("Silakan scan QR Code pasien untuk mengakses fitur darurat.")
     else:
         st.info("💡 **Untuk Pasien:** Sampaikan keluhan Anda secara naratif (misal: 'Saya pusing sejak kemarin dan rasa mual'). AI akan membantu merangkumnya untuk dokter.")
         c_l, c_r = st.columns([1, 1])
@@ -885,7 +885,7 @@ with t_emergency:
                 st.write(active_patient["Hospitalization_History"] if active_patient["Hospitalization_History"] else "Tidak ada riwayat")
 
     else:
-        st.warning("⚠️ Silakan scan QR Code pasien atau pilih pasien di sidebar untuk mengakses fitur darurat.")
+        st.warning("⚠️ Silakan scan QR Code pasien untuk mengakses fitur darurat.")
         st.info("Fitur ini akan menampilkan informasi kritis seperti Golongan Darah, Alergi, dan riwayat medis penting dalam hitungan detik.")
 
 # --- TAB 5: ADMIN ---
