@@ -3,6 +3,7 @@ import pandas as pd
 import google.generativeai as genai
 import qrcode
 import os
+import csv
 import json
 import re
 import time
@@ -53,9 +54,10 @@ DATA_STRUCTURE = [
 
 ENCOUNTER_STRUCTURE = ["Timestamp", "User_ID", "S", "O", "A", "P"]
 COMPARISON_STRUCTURE = [
-    "Timestamp", "Model_Name", "Input_Narrative", 
+    "Timestamp", "User_ID", "Model_Name", "Input_Narrative", 
     "S_Result", "O_Result", "A_Result", "P_Result", 
-    "RR", "SpO2", "BPS", "HR", "AVPU", "Latency_sec"
+    "RR", "SpO2", "BPS", "HR", "AVPU", "Latency_sec",
+    "Knowledge_Source", "RAG_History_Used", "RAG_Guidelines_Used", "RAG_Used"
 ]
 
 if not os.path.exists(DATA_FILE):
@@ -64,8 +66,64 @@ if not os.path.exists(DATA_FILE):
 if not os.path.exists(ENCOUNTER_FILE):
     pd.DataFrame(columns=ENCOUNTER_STRUCTURE).to_csv(ENCOUNTER_FILE, index=False)
 
-if not os.path.exists(COMPARISON_LOG_FILE):
-    pd.DataFrame(columns=COMPARISON_STRUCTURE).to_csv(COMPARISON_LOG_FILE, index=False)
+def normalize_comparison_log_file(path):
+    if not os.path.exists(path):
+        pd.DataFrame(columns=COMPARISON_STRUCTURE).to_csv(path, index=False)
+        return
+
+    try:
+        df = pd.read_csv(path)
+        expected_cols = list(COMPARISON_STRUCTURE)
+        missing = [c for c in expected_cols if c not in df.columns]
+        if not missing:
+            return
+        for col in missing:
+            df[col] = ""
+        df = df[expected_cols]
+        df.to_csv(path, index=False)
+        return
+    except Exception:
+        pass
+
+    try:
+        with open(path, "r", encoding="utf-8", newline="") as f:
+            rows = list(csv.reader(f))
+        if not rows:
+            pd.DataFrame(columns=COMPARISON_STRUCTURE).to_csv(path, index=False)
+            return
+
+        header = [h.strip() for h in rows[0]]
+        if header and header[:len(COMPARISON_STRUCTURE)] == COMPARISON_STRUCTURE[:len(header)]:
+            df_norm = pd.DataFrame(rows[1:], columns=COMPARISON_STRUCTURE[:len(header)])
+            for col in COMPARISON_STRUCTURE:
+                if col not in df_norm.columns:
+                    df_norm[col] = ""
+            df_norm = df_norm[COMPARISON_STRUCTURE]
+            df_norm.to_csv(path, index=False)
+            return
+
+        normalized_rows = []
+        base_cols = ["Timestamp", "Model_Name", "Input_Narrative", "S_Result", "O_Result", "A_Result", "P_Result", "RR", "SpO2", "BPS", "HR", "AVPU", "Latency_sec"]
+        for row in rows[1:]:
+            if not row or all((cell is None or str(cell).strip() == "") for cell in row):
+                continue
+            norm_row = row[:len(base_cols)] + [""] * (len(base_cols) - len(row[:len(base_cols)]))
+            if len(row) > len(base_cols):
+                extras = row[len(base_cols):]
+                norm_row += extras[:4]
+                norm_row += [""] * (len(COMPARISON_STRUCTURE) - len(norm_row))
+            else:
+                norm_row += [""] * (len(COMPARISON_STRUCTURE) - len(norm_row))
+            normalized_rows.append(norm_row)
+
+        if normalized_rows:
+            pd.DataFrame(normalized_rows, columns=COMPARISON_STRUCTURE).to_csv(path, index=False)
+        else:
+            pd.DataFrame(columns=COMPARISON_STRUCTURE).to_csv(path, index=False)
+    except Exception:
+        pd.DataFrame(columns=COMPARISON_STRUCTURE).to_csv(path, index=False)
+
+normalize_comparison_log_file(COMPARISON_LOG_FILE)
 
 HOSPITALS = [
     {"name": "RSUP Dr. Sardjito", "lat": -7.7684, "lon": 110.3737},
@@ -129,6 +187,8 @@ if "retrieved_history" not in st.session_state:
     st.session_state.retrieved_history = []
 if "retrieved_guidelines" not in st.session_state:
     st.session_state.retrieved_guidelines = []
+if "rag_debug_history" not in st.session_state:
+    st.session_state.rag_debug_history = []
 
 # ==========================================
 # 2. HELPER FUNCTIONS
@@ -335,6 +395,33 @@ def get_triage_default_vitals(active_patient=None, extracted=None):
     return defaults
 
 
+def build_rag_debug_summary(query, retrieved_history, retrieved_guidelines, patient_data=None):
+    reasons = []
+    if not query or not str(query).strip():
+        reasons.append("Query kosong.")
+    if patient_data is None:
+        reasons.append("Pasien belum dipilih / profil tidak tersedia.")
+    if retrieved_history:
+        reasons.append(f"Riwayat pasien relevan ditemukan: {len(retrieved_history)} item.")
+    else:
+        reasons.append("Tidak ada riwayat pasien yang melewati threshold similaritas.")
+    if retrieved_guidelines:
+        reasons.append(f"Panduan klinis relevan ditemukan: {len(retrieved_guidelines)} item.")
+    else:
+        reasons.append("Tidak ada guideline yang melewati threshold similaritas.")
+
+    rag_active = bool(retrieved_history or retrieved_guidelines)
+    return {
+        "rag_active": rag_active,
+        "knowledge_source": "RAG" if rag_active else "General",
+        "history_count": len(retrieved_history),
+        "guideline_count": len(retrieved_guidelines),
+        "query_length": len((query or "").strip()),
+        "patient_selected": bool(patient_data is not None),
+        "reasons": reasons,
+    }
+
+
 def process_narrative(narrative, api_key, patient_data=None):
     if not api_key:
         logger.error("API Key missing for narrative processing.")
@@ -459,12 +546,14 @@ def process_narrative(narrative, api_key, patient_data=None):
         result = json.loads(text)
         
         # Normalization
+        rag_debug = build_rag_debug_summary(narrative, retrieved_history, retrieved_guidelines, patient_data)
         final_result = {
             "soap": {"S": "-", "O": "-", "A": "-", "P": "-"}, 
             "profile_updates": {},
             "triage_vitals": {},
             "retrieved_history": retrieved_history,
-            "retrieved_guidelines": retrieved_guidelines
+            "retrieved_guidelines": retrieved_guidelines,
+            "rag_debug": rag_debug
         }
         
         if "soap" in result:
@@ -482,9 +571,18 @@ def process_narrative(narrative, api_key, patient_data=None):
         
         # LOGGING FOR COMPARISON (PAPER DATA)
         latency = time.time() - start_time
+        rag_history_used = bool(retrieved_history)
+        rag_guidelines_used = bool(retrieved_guidelines)
+        rag_used = rag_history_used or rag_guidelines_used
+        knowledge_source = "RAG" if rag_used else "General"
         try:
+            patient_id = ""
+            if patient_data is not None:
+                patient_id = str(patient_data.get("User_ID", "")).strip()
+
             log_data = {
                 "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "User_ID": patient_id,
                 "Model_Name": model_name,
                 "Input_Narrative": narrative,
                 "S_Result": final_result["soap"].get("S", ""),
@@ -496,10 +594,14 @@ def process_narrative(narrative, api_key, patient_data=None):
                 "BPS": final_result["triage_vitals"].get("bps", ""),
                 "HR": final_result["triage_vitals"].get("hr", ""),
                 "AVPU": final_result["triage_vitals"].get("avpu", ""),
-                "Latency_sec": round(latency, 2)
+                "Latency_sec": round(latency, 2),
+                "Knowledge_Source": knowledge_source,
+                "RAG_History_Used": int(rag_history_used),
+                "RAG_Guidelines_Used": int(rag_guidelines_used),
+                "RAG_Used": int(rag_used)
             }
             pd.DataFrame([log_data]).to_csv(COMPARISON_LOG_FILE, mode='a', header=False, index=False)
-            logger.info(f"Comparison log entry added for model {model_name}")
+            logger.info(f"Comparison log entry added for model {model_name} with source={knowledge_source}")
         except Exception as log_err:
             logger.error(f"Failed to write comparison log: {log_err}")
  
@@ -701,6 +803,13 @@ with t_chat:
                         st.session_state.profile_updates = ai_response.get("profile_updates", {})
                         st.session_state.retrieved_history = ai_response.get("retrieved_history", [])
                         st.session_state.retrieved_guidelines = ai_response.get("retrieved_guidelines", [])
+                        rag_debug = ai_response.get("rag_debug", {})
+                        if rag_debug:
+                            st.session_state.rag_debug_history.insert(0, {
+                                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                **rag_debug
+                            })
+                            st.session_state.rag_debug_history = st.session_state.rag_debug_history[:10]
                         # Update extracted vitals for Triage
                         new_vitals = ai_response.get("triage_vitals", {})
                         if new_vitals:
@@ -969,27 +1078,98 @@ with t_admin:
         st.dataframe(df_soap, use_container_width=True)
 
         st.divider()
-        st.subheader("🔬 Model Comparison Results (for Paper)")
+        st.subheader("� RAG Debug: Mengapa RAG Tidak Aktif?")
+        debug_history = st.session_state.get("rag_debug_history", [])
+        if debug_history:
+            debug_df = pd.DataFrame(debug_history)
+            st.dataframe(debug_df, use_container_width=True)
+            for idx, item in enumerate(debug_history[:3]):
+                st.markdown(f"### Request {idx + 1}: {item.get('knowledge_source', 'Unknown')}")
+                st.write(f"- Query length: {item.get('query_length', 0)}")
+                st.write(f"- History count: {item.get('history_count', 0)}")
+                st.write(f"- Guideline count: {item.get('guideline_count', 0)}")
+                st.write(f"- Patient selected: {item.get('patient_selected', False)}")
+                for reason in item.get("reasons", []):
+                    st.write(f"- {reason}")
+                st.divider()
+        else:
+            st.info("Belum ada request chat yang diproses. Setelah ada chat baru, debug RAG akan muncul di sini.")
+
+        st.divider()
+        st.subheader("�🔬 Model Comparison Results (for Paper)")
         if os.path.exists(COMPARISON_LOG_FILE):
+            normalize_comparison_log_file(COMPARISON_LOG_FILE)
             df_comp = pd.read_csv(COMPARISON_LOG_FILE)
-            st.dataframe(df_comp, use_container_width=True)
-            
-            # Simple stats for the paper
+
+            st.markdown("#### Filter Analisis")
+            analysis_scope = st.radio(
+                "Mode Analisis",
+                ["Keseluruhan", "Per Pasien"],
+                horizontal=True
+            )
+
+            df_comp_view = df_comp.copy()
+            if analysis_scope == "Per Pasien":
+                if "User_ID" not in df_comp.columns:
+                    st.warning("Kolom User_ID belum tersedia pada log lama. Jalankan chat baru agar metrik per pasien bisa dipakai.")
+                    df_comp_view = df_comp.iloc[0:0]
+                else:
+                    patient_ids = sorted([
+                        uid for uid in df_comp["User_ID"].fillna("").astype(str).str.strip().unique().tolist() if uid
+                    ])
+                    if not patient_ids:
+                        st.info("Belum ada User_ID di log comparison. Jalankan chat pasien baru untuk mengisi data ini.")
+                        df_comp_view = df_comp.iloc[0:0]
+                    else:
+                        selected_patient_id = st.selectbox("Pilih ID Pasien", patient_ids)
+                        df_comp_view = df_comp[
+                            df_comp["User_ID"].fillna("").astype(str).str.strip() == selected_patient_id
+                        ]
+
+            st.dataframe(df_comp_view, use_container_width=True)
+
             st.markdown("#### Quick Stats")
             col_s1, col_s2, col_s3 = st.columns(3)
             with col_s1:
-                st.metric("Total Test Cases", len(df_comp))
+                st.metric("Total Test Cases", len(df_comp_view))
             with col_s2:
-                avg_latency = df_comp["Latency_sec"].mean() if not df_comp.empty else 0
+                avg_latency = df_comp_view["Latency_sec"].mean() if not df_comp_view.empty else 0
                 st.metric("Avg Latency", f"{avg_latency:.2f}s")
             with col_s3:
-                model_counts = df_comp["Model_Name"].value_counts().to_dict()
+                model_counts = df_comp_view["Model_Name"].value_counts().to_dict() if not df_comp_view.empty else {}
                 st.write("Model Usage:", model_counts)
 
+            st.markdown("#### Persentase Penggunaan Informasi")
+            if "Knowledge_Source" in df_comp_view.columns and not df_comp_view.empty:
+                source_counts = df_comp_view["Knowledge_Source"].value_counts(normalize=True).mul(100)
+                general_pct = float(source_counts.get("General", 0.0))
+                rag_pct = float(source_counts.get("RAG", 0.0))
+
+                col_g1, col_g2, col_g3 = st.columns(3)
+                with col_g1:
+                    st.metric("Informasi Umum (General)", f"{general_pct:.1f}%")
+                with col_g2:
+                    st.metric("Informasi dari RAG", f"{rag_pct:.1f}%")
+                with col_g3:
+                    st.metric("Total RAG Events", int((df_comp_view["RAG_Used"] == 1).sum())) if "RAG_Used" in df_comp_view.columns else st.metric("Total RAG Events", 0)
+
+                sub_cols = st.columns(3)
+                with sub_cols[0]:
+                    history_pct = float((df_comp_view["RAG_History_Used"].fillna(0) == 1).mean() * 100) if "RAG_History_Used" in df_comp_view.columns else 0
+                    st.metric("RAG History", f"{history_pct:.1f}%")
+                with sub_cols[1]:
+                    guidelines_pct = float((df_comp_view["RAG_Guidelines_Used"].fillna(0) == 1).mean() * 100) if "RAG_Guidelines_Used" in df_comp_view.columns else 0
+                    st.metric("RAG Guidelines", f"{guidelines_pct:.1f}%")
+                with sub_cols[2]:
+                    both_pct = float(((df_comp_view["RAG_History_Used"].fillna(0) == 1) & (df_comp_view["RAG_Guidelines_Used"].fillna(0) == 1)).mean() * 100) if "RAG_History_Used" in df_comp_view.columns and "RAG_Guidelines_Used" in df_comp_view.columns else 0
+                    st.metric("RAG Both", f"{both_pct:.1f}%")
+            else:
+                st.info("Belum ada data yang cocok untuk filter ini atau metadata sumber pengetahuan belum tersedia.")
+
             st.download_button(
-                label="📥 Download Dataset for Analysis",
-                data=df_comp.to_csv(index=False).encode('utf-8'),
-                file_name="model_comparison_dataset.csv",
+                label="📥 Download Dataset (Sesuai Filter)",
+                data=df_comp_view.to_csv(index=False).encode('utf-8'),
+                file_name="model_comparison_dataset_filtered.csv",
                 mime="text/csv",
                 use_container_width=True
             )
