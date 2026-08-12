@@ -11,9 +11,9 @@ __pycache__/
 
 # Data files (CSV) - Keep if these are template/master data, 
 # but ignore if they contain sensitive patient data
-# medical_registry_v3.csv
-# medical_encounters.csv
-# model_comparison_results.csv
+medical_registry_v3.csv
+medical_encounters.csv
+model_comparison_results.csv
 
 # Streamlit logs/config
 .streamlit/

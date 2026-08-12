@@ -4,6 +4,7 @@ import google.generativeai as genai
 import qrcode
 import os
 import json
+import re
 import time
 from io import BytesIO
 from datetime import datetime
@@ -265,6 +266,74 @@ def calculate_news2(rr, spo2, bps, hr, avpu):
     if score >= 7: return score, "RED (CRITICAL)", "#d32f2f"
     elif score >= 5: return score, "ORANGE (URGENT)", "#f57c00"
     return score, "GREEN (STABLE)", "#388e3c"
+
+
+def parse_int_value(value, default=None):
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return default
+
+    if isinstance(value, str):
+        cleaned = value.strip()
+        if not cleaned or cleaned.lower() in ["nan", "none", "null"]:
+            return default
+        match = re.search(r"(\d{1,3})", cleaned)
+        if match:
+            return int(match.group(1))
+
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def parse_systolic_bp(value, default=120):
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return default
+
+    if isinstance(value, str):
+        cleaned = value.strip()
+        if not cleaned or cleaned.lower() in ["nan", "none", "null"]:
+            return default
+        if "/" in cleaned:
+            cleaned = cleaned.split("/")[0].strip()
+        match = re.search(r"(\d{2,3})", cleaned)
+        if match:
+            return int(match.group(1))
+
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return default
+
+
+def get_triage_default_vitals(active_patient=None, extracted=None):
+    extracted = extracted or {}
+    defaults = {
+        "rr": extracted.get("rr", 20),
+        "spo2": extracted.get("spo2", 95),
+        "bps": extracted.get("bps", 120),
+        "hr": extracted.get("hr", 80),
+        "avpu": extracted.get("avpu", "Alert"),
+    }
+
+    if active_patient is not None:
+        patient_spo2 = parse_int_value(active_patient.get("Oxygen_Saturation"), defaults["spo2"])
+        patient_bps = parse_systolic_bp(active_patient.get("Blood_Pressure"), defaults["bps"])
+        defaults["spo2"] = patient_spo2
+        defaults["bps"] = patient_bps
+
+    # Preserve AI-extracted values only when patient data is absent or not available.
+    for key, value in extracted.items():
+        if value is None or value == "":
+            continue
+        if key in ["spo2", "bps"] and active_patient is not None:
+            continue
+        if key == "avpu" and active_patient is not None and active_patient.get("Name"):
+            continue
+        defaults[key] = value
+
+    return defaults
+
 
 def process_narrative(narrative, api_key, patient_data=None):
     if not api_key:
@@ -839,19 +908,18 @@ with t_emergency:
 
             with st.expander("Input Tanda-Tanda Viral", expanded=True):
                 v_c1, v_c2 = st.columns(2)
-                
-                # Fetch values from session state if extracted by AI
-                ev = st.session_state.extracted_vitals
-                
+
+                triage_defaults = get_triage_default_vitals(active_patient, st.session_state.extracted_vitals)
+
                 with v_c1:
-                    v_rr = st.number_input("Respirasi (bpm)", 5, 50, int(ev.get('rr', 20)))
-                    v_spo2 = st.number_input("SpO2 (%)", 50, 100, int(ev.get('spo2', 95)))
-                    v_bps = st.number_input("Tekanan Darah Sistolik", 50, 250, int(ev.get('bps', 120)))
+                    v_rr = st.number_input("Respirasi (bpm)", 5, 50, int(triage_defaults.get('rr', 20)))
+                    v_spo2 = st.number_input("SpO2 (%)", 50, 100, int(triage_defaults.get('spo2', 95)))
+                    v_bps = st.number_input("Tekanan Darah Sistolik", 50, 250, int(triage_defaults.get('bps', 120)))
                 with v_c2:
-                    v_hr = st.number_input("Denyut Jantung (bpm)", 20, 200, int(ev.get('hr', 80)))
-                    
+                    v_hr = st.number_input("Denyut Jantung (bpm)", 20, 200, int(triage_defaults.get('hr', 80)))
+
                     avpu_options = ["Alert", "Voice", "Pain", "Unresponsive"]
-                    default_avpu = ev.get('avpu', "Alert")
+                    default_avpu = triage_defaults.get('avpu', "Alert")
                     if default_avpu not in avpu_options: default_avpu = "Alert"
                     v_avpu = st.selectbox("Kesadaran (AVPU)", avpu_options, index=avpu_options.index(default_avpu))
                 

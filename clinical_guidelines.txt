@@ -45,3 +45,5 @@ Edukasi Pasien:
 - Istirahat total di rumah untuk mencegah penularan.
 - Gunakan masker dan terapkan etika batuk/bersin.
 - Waspadai tanda bahaya: Sesak napas, napas cepat, tidak bisa minum atau menyusu, atau demam tinggi menetap >3-4 hari meskipun sudah minum obat penurun demam.
+
+===
