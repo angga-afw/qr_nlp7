@@ -719,12 +719,14 @@ with t_reg:
     auto_id = f"MAI-{datetime.now().year}-{next_id:04d}"
 
     with st.form("reg_form", clear_on_submit=True):
-        c1, c2 = st.columns(2)
         d = {}
-        with c1:
+        st.markdown("#### Identitas Pasien")
+        identity_left, identity_right = st.columns(2)
+        with identity_left:
             d["User_ID"] = st.text_input("User ID", value=auto_id, help="ID ini dibuat otomatis oleh sistem", disabled=True)
             d["BPJS_ID"] = st.text_input("BPJS_ID")
             d["Name"] = st.text_input("Nama Lengkap")
+        with identity_right:
             d["Birth_Date"] = st.date_input(
                 "Tanggal Lahir",
                 value=datetime(1990, 1, 1).date(),
@@ -732,17 +734,34 @@ with t_reg:
                 max_value=datetime.now().date()
             )
             d["Gender"] = st.selectbox("Jenis Kelamin", ["Male", "Female"])
-        with c2:
+
+        st.markdown("#### Kondisi Fisik")
+        physical_left, physical_right = st.columns(2)
+        with physical_left:
             d["Blood_Type"] = st.selectbox("Gol. Darah", ["A", "B", "AB", "O"])
             d["Weight_kg"] = st.number_input("Berat (kg)", 0, 200)
             d["Height_cm"] = st.number_input("Tinggi (cm)", 0, 250)
+        with physical_right:
             d["Blood_Pressure"] = st.text_input("Tekanan Darah (mmHg)", placeholder="120/80")
             d["Oxygen_Saturation"] = st.number_input("Kadar Oksigen (%)", 0, 100, 98)
+
+        st.markdown("#### Informasi Medis")
+        medical_left, medical_right = st.columns(2)
+        with medical_left:
+            d["Chronic_Diseases"] = st.text_area("Penyakit Kronis")
+            d["Current_Medication"] = st.text_area("Obat yang Sedang Dikonsumsi")
+            d["Allergies"] = st.text_area("Alergi")
+        with medical_right:
             d["Hospitalization_History"] = st.text_area("Riwayat Rawat Inap")
             d["Responsible_Doctor"] = st.text_input("Dokter Penanggung Jawab")
-            d["Allergies"] = st.text_area("Alergi")
+
+        st.markdown("#### Kontak Darurat")
+        contact_left, contact_right = st.columns(2)
+        with contact_left:
+            d["Emergency_Contact_Name"] = st.text_input("Nama Kontak Darurat")
+        with contact_right:
             d["Emergency_Contact_Phone"] = st.text_input("Kontak Darurat (Telp)")
-        
+
         if st.form_submit_button("Simpan & Generate QR"):
             # Use the auto-generated ID directly as the field is disabled in form
             d["User_ID"] = auto_id
@@ -1142,6 +1161,113 @@ with t_admin:
         st.subheader("📊 Data Master Pasien")
         df_master = pd.read_csv(DATA_FILE)
         st.dataframe(df_master, use_container_width=True)
+
+        st.subheader("✏️ Kelola Data Pasien")
+        if df_master.empty:
+            st.info("Belum ada data pasien untuk dikelola.")
+        else:
+            patient_ids = df_master["User_ID"].fillna("").astype(str).tolist()
+            selected_admin_id = st.selectbox("Pilih User ID Pasien", patient_ids)
+            selected_index = df_master.index[df_master["User_ID"].astype(str) == selected_admin_id][0]
+            selected_admin_patient = df_master.loc[selected_index]
+
+            def admin_value(field):
+                value = selected_admin_patient.get(field, "")
+                return "" if pd.isna(value) else str(value)
+
+            with st.form("admin_patient_edit_form"):
+                edit_left, edit_right = st.columns(2)
+                with edit_left:
+                    edit_name = st.text_input("Nama Lengkap", value=admin_value("Name"))
+                    edit_bpjs = st.text_input("BPJS_ID", value=admin_value("BPJS_ID"))
+                    edit_birth_date = st.text_input("Tanggal Lahir (YYYY-MM-DD)", value=admin_value("Birth_Date"))
+                    edit_gender = st.selectbox(
+                        "Jenis Kelamin",
+                        ["Male", "Female"],
+                        index=0 if admin_value("Gender") != "Female" else 1,
+                    )
+                    edit_blood_type = st.selectbox(
+                        "Gol. Darah",
+                        ["A", "B", "AB", "O"],
+                        index=["A", "B", "AB", "O"].index(admin_value("Blood_Type")) if admin_value("Blood_Type") in ["A", "B", "AB", "O"] else 0,
+                    )
+                    edit_weight = st.text_input("Berat (kg)", value=admin_value("Weight_kg"))
+                    edit_height = st.text_input("Tinggi (cm)", value=admin_value("Height_cm"))
+                    edit_chronic = st.text_area("Penyakit Kronis", value=admin_value("Chronic_Diseases"))
+                    edit_medication = st.text_area("Obat yang Sedang Dikonsumsi", value=admin_value("Current_Medication"))
+                with edit_right:
+                    edit_allergies = st.text_area("Alergi", value=admin_value("Allergies"))
+                    edit_contact_name = st.text_input("Nama Kontak Darurat", value=admin_value("Emergency_Contact_Name"))
+                    edit_contact_phone = st.text_input("Kontak Darurat (Telp)", value=admin_value("Emergency_Contact_Phone"))
+                    edit_blood_pressure = st.text_input("Tekanan Darah (mmHg)", value=admin_value("Blood_Pressure"))
+                    edit_oxygen = st.text_input("Kadar Oksigen (%)", value=admin_value("Oxygen_Saturation"))
+                    edit_hospitalization = st.text_area("Riwayat Rawat Inap", value=admin_value("Hospitalization_History"))
+                    edit_doctor = st.text_input("Dokter Penanggung Jawab", value=admin_value("Responsible_Doctor"))
+                    edit_medical_history = st.text_area("Riwayat Medis", value=admin_value("Medical_History"))
+
+                if st.form_submit_button("💾 Simpan Perubahan", type="primary"):
+                    updated_values = {
+                        "Name": edit_name,
+                        "BPJS_ID": edit_bpjs,
+                        "Birth_Date": edit_birth_date,
+                        "Gender": edit_gender,
+                        "Blood_Type": edit_blood_type,
+                        "Weight_kg": edit_weight,
+                        "Height_cm": edit_height,
+                        "Chronic_Diseases": edit_chronic,
+                        "Current_Medication": edit_medication,
+                        "Allergies": edit_allergies,
+                        "Emergency_Contact_Name": edit_contact_name,
+                        "Emergency_Contact_Phone": edit_contact_phone,
+                        "Blood_Pressure": edit_blood_pressure,
+                        "Oxygen_Saturation": edit_oxygen,
+                        "Hospitalization_History": edit_hospitalization,
+                        "Responsible_Doctor": edit_doctor,
+                        "Medical_History": edit_medical_history,
+                        "Last_Update": datetime.now().strftime("%Y-%m-%d"),
+                    }
+                    numeric_fields = {
+                        "Weight_kg": edit_weight,
+                        "Height_cm": edit_height,
+                        "Oxygen_Saturation": edit_oxygen,
+                    }
+                    numeric_errors = []
+                    for field, raw_value in numeric_fields.items():
+                        value = raw_value.strip()
+                        if not value:
+                            updated_values[field] = pd.NA
+                            continue
+                        try:
+                            parsed_value = float(value)
+                            if not parsed_value.is_integer():
+                                raise ValueError
+                            updated_values[field] = int(parsed_value)
+                        except ValueError:
+                            numeric_errors.append(field)
+
+                    if not edit_name.strip():
+                        st.error("Nama lengkap wajib diisi.")
+                    elif numeric_errors:
+                        st.error(f"Nilai harus berupa angka bulat: {', '.join(numeric_errors)}.")
+                    else:
+                        for field in numeric_fields:
+                            df_master[field] = pd.to_numeric(df_master[field], errors="coerce").astype("Int64")
+                        text_fields = [field for field in updated_values if field not in numeric_fields]
+                        for field in text_fields:
+                            df_master[field] = df_master[field].astype("object")
+                        for field, value in updated_values.items():
+                            df_master.at[selected_index, field] = value
+                        df_master.to_csv(DATA_FILE, index=False)
+                        st.success(f"Data pasien {selected_admin_id} berhasil diperbarui.")
+                        st.rerun()
+
+            st.divider()
+            confirm_delete = st.checkbox(f"Saya yakin ingin menghapus pasien {selected_admin_id}")
+            if st.button("🗑️ Hapus Pasien", type="secondary", disabled=not confirm_delete):
+                df_master = df_master[df_master["User_ID"].astype(str) != selected_admin_id]
+                df_master.to_csv(DATA_FILE, index=False)
+                st.success(f"Data pasien {selected_admin_id} berhasil dihapus.")
+                st.rerun()
         
         st.subheader("📑 Data Transaksi SOAP")
         df_soap = pd.read_csv(ENCOUNTER_FILE)
