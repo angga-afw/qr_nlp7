@@ -753,6 +753,7 @@ with t_reg:
             d["Allergies"] = st.text_area("Alergi")
         with medical_right:
             d["Hospitalization_History"] = st.text_area("Riwayat Rawat Inap")
+            d["Medical_History"] = st.text_area("Riwayat Medis")
             d["Responsible_Doctor"] = st.text_input("Dokter Penanggung Jawab")
 
         st.markdown("#### Kontak Darurat")
@@ -799,13 +800,14 @@ with t_reg:
                 components.html(
                     f"""
                     <style>
-                        body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; }}
-                        img {{ display: block; width: 260px; height: 260px; margin: 0 auto 8px; border-radius: 50%; }}
+                        body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; font-size: 10px; }}
+                        .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 8px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
+                        img {{ display: block; width: 60px; height: 60px; }}
                         p {{ margin: 0 0 12px; font-weight: bold; }}
                         button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 6px; background: white; cursor: pointer; }}
                         @media print {{ button {{ display: none; }} }}
                     </style>
-                    <img src="data:image/png;base64,{qr_base64}" alt="QR Code {d['User_ID']}">
+                    <div class="qr-frame"><img src="data:image/png;base64,{qr_base64}" alt="QR Code {d['User_ID']}"></div>
                     <p>UID: {d['User_ID']}</p>
                     <button type="button" onclick="window.print()">🖨️ Print QR</button>
                     """,
@@ -1080,17 +1082,18 @@ with t_emergency:
         components.html(
             f"""
             <style>
-                body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; }}
-                img {{ display: block; width: 220px; height: 220px; margin: 0 auto 8px; border-radius: 50%; }}
-                p {{ margin: 0 0 12px; font-weight: bold; }}
-                button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 6px; background: white; cursor: pointer; }}
+                body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; font-size: 10px; }}
+                .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 2px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
+                img {{ display: block; width: 60px; height: 60px; margin: 1px; }}
+                p {{ margin: 0 0 2px; font-weight: bold; }}
+                button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 2px; background: white; cursor: pointer; }}
                 @media print {{ button {{ display: none; }} }}
             </style>
-            <img src="data:image/png;base64,{emergency_qr_base64}" alt="QR Code {active_patient['User_ID']}">
+            <div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="QR Code {active_patient['User_ID']}"></div>
             <p>UID: {active_patient['User_ID']}</p>
             <button type="button" onclick="window.print()">🖨️ Cetak Ulang QR</button>
             """,
-            height=300,
+            height=340,
         )
         
         st.divider()
