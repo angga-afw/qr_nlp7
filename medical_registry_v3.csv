@@ -1,3 +1,7 @@
 User_ID,BPJS_ID,Name,Birth_Date,Gender,Blood_Type,Weight_kg,Height_cm,Chronic_Diseases,Current_Medication,Allergies,Emergency_Contact_Name,Emergency_Contact_Phone,Blood_Pressure,Oxygen_Saturation,Hospitalization_History,Responsible_Doctor,Medical_History,Last_Update
 MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,"Hipertensi (Suspected), Hipertensi (Terdiagnosis)",,Udang,,8752662222,140/89,88,"RSA UGM, RSA UGM (Riwayat Demam Tifoid)",dr. Alvin,"Pusing tiba-tiba (Episode terbaru), Hipertensi terukur 170/100 mmHg, Riwayat Demam Tifoid, Riwayat cedera kaki, Hipertensi",2026-08-12
 MAI-2026-0002,bpjs02,Agus Aja,1990-01-25,Male,A,65,167,Hipertensi,,Udang,,867655666,180/100,80,RSA UGM,dr. Ardi,Riwayat Hipertensi,2026-08-12
+MAI-2026-0003,bpjstes,Tes Saja,1990-01-03,Male,A,70,180,,,tidak ada,,8666565653,110/90,98,DBD,dr. Anda,,2026-08-18
+MAI-2026-0004,bpjs tes,Tes juga,1990-01-18,Male,A,67,156,,,ada,,66557567,110/78,98,ada,ada,,2026-08-18
+MAI-2026-0005,bpjstes1,Ada aja,1990-01-09,Male,A,67,167,,,ada,,7668678678768,110/78,98,ada,ada,,2026-08-18
+MAI-2026-0006,bpjs22,asdasd,1990-01-01,Male,A,67,178,,,asd,,07678678678,110/45,98,adas,asda,,2026-08-18

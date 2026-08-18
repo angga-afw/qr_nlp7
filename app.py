@@ -1,8 +1,10 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import google.generativeai as genai
 import qrcode
 import os
+import base64
 import csv
 import json
 import re
@@ -774,7 +776,22 @@ with t_reg:
                 
                 img = qrcode.make(qr_url)
                 buf = BytesIO(); img.save(buf, format="PNG")
-                st.image(buf.getvalue(), caption=f"UID: {d['User_ID']}")
+                qr_base64 = base64.b64encode(buf.getvalue()).decode("ascii")
+                components.html(
+                    f"""
+                    <style>
+                        body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; }}
+                        img {{ display: block; width: 260px; height: 260px; margin: 0 auto 8px; border-radius: 50%; }}
+                        p {{ margin: 0 0 12px; font-weight: bold; }}
+                        button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 6px; background: white; cursor: pointer; }}
+                        @media print {{ button {{ display: none; }} }}
+                    </style>
+                    <img src="data:image/png;base64,{qr_base64}" alt="QR Code {d['User_ID']}">
+                    <p>UID: {d['User_ID']}</p>
+                    <button type="button" onclick="window.print()">🖨️ Print QR</button>
+                    """,
+                    height=350,
+                )
             else: st.error("ID dan Nama wajib diisi!")
 
 # --- TAB 2: AI CHAT SOAP ---
@@ -992,18 +1009,71 @@ with t_hist:
 with t_emergency:
     if active_patient is not None and not isinstance(active_patient, pd.Series) or (isinstance(active_patient, pd.Series) and not active_patient.empty):
         st.error(f"⚠️ MODE DARURAT: {active_patient['Name']} ({active_patient['User_ID']})")
-        
-        # Critical Info Top Bar
-        c1, c2, c3, c4 = st.columns(4)
-        with c1:
-            st.markdown(f"<div class='metric-card' style='border-top: 5px solid #d32f2f;'><div class='profile-label'>Gol. Darah</div><h2 style='margin:0;'>{active_patient['Blood_Type']}</h2></div>", unsafe_allow_html=True)
-        with c2:
-            st.markdown(f"<div class='metric-card' style='border-top: 5px solid #d32f2f;'><div class='profile-label'>Alergi</div><div style='font-size:0.9em;'>{active_patient['Allergies'] if active_patient['Allergies'] else '-'}</div></div>", unsafe_allow_html=True)
-        with c3:
-            st.markdown(f"<div class='metric-card' style='border-top: 5px solid #d32f2f;'><div class='profile-label'>Penyakit Kronis</div><div style='font-size:0.9em;'>{active_patient['Chronic_Diseases'] if active_patient['Chronic_Diseases'] else '-'}</div></div>", unsafe_allow_html=True)
-        with c4:
-            st.markdown(f"<div class='metric-card' style='border-top: 5px solid #ffc107;'><div class='profile-label'>Kontak Darurat</div><h3 style='margin:0;'>{active_patient['Emergency_Contact_Phone']}</h3></div>", unsafe_allow_html=True)
 
+        birth_date = pd.to_datetime(active_patient.get("Birth_Date"), errors="coerce")
+        if pd.notna(birth_date):
+            today = datetime.now().date()
+            age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+            age_display = f"{age} tahun"
+        else:
+            age_display = "-"
+
+        def emergency_value(field):
+            value = active_patient.get(field, "-")
+            return str(value).strip() if pd.notna(value) and str(value).strip() else "-"
+
+        st.subheader("Informasi Pasien")
+        info_left, info_right = st.columns(2)
+        info_fields = {
+            "Nama Lengkap": emergency_value("Name"),
+            "Usia": age_display,
+            "Jenis Kelamin": emergency_value("Gender"),
+            "Gol. Darah": emergency_value("Blood_Type"),
+            "Alergi": emergency_value("Allergies"),
+            "Penyakit": emergency_value("Chronic_Diseases"),
+            "Obat": emergency_value("Current_Medication"),
+            "Riwayat Medis": emergency_value("Medical_History"),
+            "Kontak Darurat": emergency_value("Emergency_Contact_Name"),
+            "Nomor Telepon": emergency_value("Emergency_Contact_Phone"),
+            "Nomor BPJS": emergency_value("BPJS_ID"),
+        }
+
+        with info_left:
+            for label in ["Nama Lengkap", "Usia", "Jenis Kelamin", "Gol. Darah", "Alergi", "Penyakit"]:
+                st.markdown(
+                    f"<div style='background:#fff; border:1px solid #e1e4e8; border-radius:8px; padding:9px 14px; margin-bottom:9px;'><div class='profile-label'>{label}</div><div style='font-size:1.05em; color:#212529;'>{info_fields[label]}</div></div>",
+                    unsafe_allow_html=True,
+                )
+        with info_right:
+            for label in ["Obat", "Riwayat Medis", "Kontak Darurat", "Nomor Telepon", "Nomor BPJS"]:
+                st.markdown(
+                    f"<div style='background:#fff; border:1px solid #e1e4e8; border-radius:8px; padding:9px 14px; margin-bottom:9px;'><div class='profile-label'>{label}</div><div style='font-size:1.05em; color:#212529;'>{info_fields[label]}</div></div>",
+                    unsafe_allow_html=True,
+                )
+
+        st.subheader("QR Code Pasien")
+        base_url = os.getenv("BASE_URL")
+        emergency_qr_url = f"{base_url}/?uid={active_patient['User_ID']}" if base_url else f"http://localhost:8501/?uid={active_patient['User_ID']}"
+        emergency_qr = qrcode.make(emergency_qr_url)
+        emergency_qr_buf = BytesIO()
+        emergency_qr.save(emergency_qr_buf, format="PNG")
+        emergency_qr_base64 = base64.b64encode(emergency_qr_buf.getvalue()).decode("ascii")
+        components.html(
+            f"""
+            <style>
+                body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; }}
+                img {{ display: block; width: 220px; height: 220px; margin: 0 auto 8px; border-radius: 50%; }}
+                p {{ margin: 0 0 12px; font-weight: bold; }}
+                button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 6px; background: white; cursor: pointer; }}
+                @media print {{ button {{ display: none; }} }}
+            </style>
+            <img src="data:image/png;base64,{emergency_qr_base64}" alt="QR Code {active_patient['User_ID']}">
+            <p>UID: {active_patient['User_ID']}</p>
+            <button type="button" onclick="window.print()">🖨️ Cetak Ulang QR</button>
+            """,
+            height=300,
+        )
+        
         st.divider()
 
         col_triage, col_action = st.columns([2, 1])
