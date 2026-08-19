@@ -813,8 +813,8 @@ with t_reg:
                         .print-button {{ margin: 4px; }}
                     </style>
                     <div class="qr-versions">
-                        <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{qr_base64}" alt="Round QR Code {d['User_ID']}"></div><div>Round</div></div>
-                        <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{qr_base64}" alt="Square QR Code {d['User_ID']}"></div><div>Square</div></div>
+                        <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{qr_base64}" alt="Round QR Code {d['User_ID']}"></div><div></div></div>
+                        <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{qr_base64}" alt="Square QR Code {d['User_ID']}"></div><div></div></div>
                     </div>
                     <p>UID: {d['User_ID']}</p>
                     <button class="print-button" type="button" onclick="document.body.classList.add('printing-round'); window.print();">🖨️ Print Round QR</button>
@@ -1105,8 +1105,8 @@ with t_emergency:
                 .print-button {{ margin: 2px; }}
             </style>
             <div class="qr-versions">
-                <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Round QR Code {active_patient['User_ID']}"></div><div>Round</div></div>
-                <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Square QR Code {active_patient['User_ID']}"></div><div>Square</div></div>
+                <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Round QR Code {active_patient['User_ID']}"></div><div></div></div>
+                <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Square QR Code {active_patient['User_ID']}"></div><div></div></div>
             </div>
             <p>UID: {active_patient['User_ID']}</p>
             <button class="print-button" type="button" onclick="document.body.classList.add('printing-round'); window.print();">🖨️ Print Round QR</button>
