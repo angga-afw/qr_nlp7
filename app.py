@@ -627,9 +627,9 @@ with st.sidebar:
     api_key_env = os.getenv("GOOGLE_API_KEY", "")
     model_name_env = os.getenv("GOOGLE_MODEL_NAME", "gemini-1.5-flash")
     
-    st.markdown("### 🤖 Konfigurasi AI")
+    st.markdown("### 🤖 AI Configuration")
     selected_model = st.selectbox(
-        "Pilih Model (untuk Paper/Test)",
+        "Select Model (for Paper/Test)",
         ["gemini-1.5-flash", "gemini-3.1-flash-lite", "gemini-1.0-pro"],
         index=0 if model_name_env == "gemini-1.5-flash" else 1
     )
@@ -655,21 +655,21 @@ with st.sidebar:
             matches = df_p[df_p["User_ID"].astype(str) == str(scanned_uid)]
             if not matches.empty:
                 active_patient = matches.iloc[0]
-                st.success(f"🔓 Sesi Aktif: {active_patient['Name']}")
+                st.success(f"🔓 Active Session: {active_patient['Name']}")
                 st.info(f"ID: {active_patient['User_ID']}")
             else:
-                st.error(f"❌ Pasien dengan ID {scanned_uid} tidak ditemukan.")
+                st.error(f"❌ Patient with ID {scanned_uid} was not found.")
         except Exception as e:
             st.error(f"Error accessing QR data: {e}")
     
     if active_patient is None or (isinstance(active_patient, pd.Series) and active_patient.empty):
-        st.warning("📥 Menunggu Scan QR Code...")
-        st.info("Sistem ini didesain untuk akses cepat via QR Code. Silakan scan QR pasien untuk memulai.")
+        st.warning("📥 Waiting for QR Code scan...")
+        st.info("This system is designed for fast access via QR Code. Scan the patient's QR Code to begin.")
     
     st.divider()
     
     # Hide manual selector and show current status
-    st.markdown("### 🛠️ Status Perangkat")
+    st.markdown("### 🛠️ Device Status")
     st.caption("Manual Selection: **DISABLED** (QR-Only Mode)")
 
 # ==========================================
@@ -681,7 +681,7 @@ with st.sidebar:
 tab_list = [
     "📝 Registrasi", 
     "💬 AI Chat SOAP", 
-    "🕒 Riwayat Medis", 
+    "🕒 Medical History",
     "🚑 Emergency (CDSS)", 
     "🔐 Admin"
 ]
@@ -700,7 +700,7 @@ else:
 
 # --- TAB 1: REGISTRATION ---
 with t_reg:
-    st.subheader("Pendaftaran Pasien Baru")
+    st.subheader("New Patient Registration")
     
     # Auto-generate User ID
     next_id = 1
@@ -720,57 +720,57 @@ with t_reg:
 
     with st.form("reg_form", clear_on_submit=True):
         d = {}
-        st.markdown("#### Identitas Pasien")
+        st.markdown("#### Patient Identity")
         identity_left, identity_right = st.columns(2)
         with identity_left:
-            d["User_ID"] = st.text_input("User ID", value=auto_id, help="ID ini dibuat otomatis oleh sistem", disabled=True)
+            d["User_ID"] = st.text_input("User ID", value=auto_id, help="This ID is generated automatically", disabled=True)
             d["BPJS_ID"] = st.text_input("BPJS_ID")
-            d["Name"] = st.text_input("Nama Lengkap")
+            d["Name"] = st.text_input("Full Name")
         with identity_right:
             d["Birth_Date"] = st.date_input(
-                "Tanggal Lahir",
+                "Date of Birth",
                 value=datetime(1990, 1, 1).date(),
                 min_value=datetime(1900, 1, 1).date(),
                 max_value=datetime.now().date()
             )
-            d["Gender"] = st.selectbox("Jenis Kelamin", ["Male", "Female"])
+            d["Gender"] = st.selectbox("Gender", ["Male", "Female"])
 
-        st.markdown("#### Kondisi Fisik")
+        st.markdown("#### Physical Condition")
         physical_left, physical_right = st.columns(2)
         with physical_left:
-            d["Blood_Type"] = st.selectbox("Gol. Darah", ["A", "B", "AB", "O"])
-            d["Weight_kg"] = st.number_input("Berat (kg)", 0, 200)
-            d["Height_cm"] = st.number_input("Tinggi (cm)", 0, 250)
+            d["Blood_Type"] = st.selectbox("Blood Type", ["A", "B", "AB", "O"])
+            d["Weight_kg"] = st.number_input("Weight (kg)", 0, 200)
+            d["Height_cm"] = st.number_input("Height (cm)", 0, 250)
         with physical_right:
-            d["Blood_Pressure"] = st.text_input("Tekanan Darah (mmHg)", placeholder="120/80")
-            d["Oxygen_Saturation"] = st.number_input("Kadar Oksigen (%)", 0, 100, 98)
+            d["Blood_Pressure"] = st.text_input("Blood Pressure (mmHg)", placeholder="120/80")
+            d["Oxygen_Saturation"] = st.number_input("Oxygen Saturation (%)", 0, 100, 98)
 
-        st.markdown("#### Informasi Medis")
+        st.markdown("#### Medical Information")
         medical_left, medical_right = st.columns(2)
         with medical_left:
-            d["Chronic_Diseases"] = st.text_area("Penyakit Kronis")
-            d["Current_Medication"] = st.text_area("Obat yang Sedang Dikonsumsi")
-            d["Allergies"] = st.text_area("Alergi")
+            d["Chronic_Diseases"] = st.text_area("Chronic Diseases")
+            d["Current_Medication"] = st.text_area("Current Medication")
+            d["Allergies"] = st.text_area("Allergies")
         with medical_right:
-            d["Hospitalization_History"] = st.text_area("Riwayat Rawat Inap")
-            d["Medical_History"] = st.text_area("Riwayat Medis")
-            d["Responsible_Doctor"] = st.text_input("Dokter Penanggung Jawab")
+            d["Hospitalization_History"] = st.text_area("Hospitalization History")
+            d["Medical_History"] = st.text_area("Medical History")
+            d["Responsible_Doctor"] = st.text_input("Attending Doctor")
 
-        st.markdown("#### Kontak Darurat")
+        st.markdown("#### Emergency Contact")
         contact_left, contact_right = st.columns(2)
         with contact_left:
-            d["Emergency_Contact_Name"] = st.text_input("Nama Kontak Darurat")
+            d["Emergency_Contact_Name"] = st.text_input("Emergency Contact Name")
         with contact_right:
-            d["Emergency_Contact_Phone"] = st.text_input("Kontak Darurat (Telp)")
+            d["Emergency_Contact_Phone"] = st.text_input("Emergency Contact Phone")
 
-        if st.form_submit_button("Simpan & Generate QR"):
+        if st.form_submit_button("Save & Generate QR"):
             # Use the auto-generated ID directly as the field is disabled in form
             d["User_ID"] = auto_id
             if d["User_ID"] and d["Name"]:
                 d["Last_Update"] = datetime.now().strftime("%Y-%m-%d")
                 df_p = pd.concat([df_p, pd.DataFrame([d])], ignore_index=True)
                 df_p.to_csv(DATA_FILE, index=False)
-                st.success("Pasien terdaftar!")
+                st.success("Patient registered successfully!")
                 
                 # Mendeteksi domain secara otomatis untuk QR Code
                 # Jika di Streamlit Cloud, gunakan query parameter 'host' atau default ke apps domain
@@ -801,40 +801,50 @@ with t_reg:
                     f"""
                     <style>
                         body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; font-size: 10px; }}
-                        .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 8px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
+                        .qr-versions {{ display: flex; justify-content: center; gap: 18px; align-items: flex-start; }}
+                        .qr-version {{ text-align: center; font-size: 9px; }}
+                        .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 4px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
+                        .square-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 4px; border: 1px solid #555; background: white; box-sizing: border-box; }}
                         img {{ display: block; width: 60px; height: 60px; }}
+                        .square-frame img {{ width: 60px; height: 60px; }}
                         p {{ margin: 0 0 12px; font-weight: bold; }}
                         button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 6px; background: white; cursor: pointer; }}
-                        @media print {{ button {{ display: none; }} }}
+                        @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.3cm; height: 1.3cm; }} }}
+                        .print-button {{ margin: 4px; }}
                     </style>
-                    <div class="qr-frame"><img src="data:image/png;base64,{qr_base64}" alt="QR Code {d['User_ID']}"></div>
+                    <div class="qr-versions">
+                        <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{qr_base64}" alt="Round QR Code {d['User_ID']}"></div><div>Round</div></div>
+                        <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{qr_base64}" alt="Square QR Code {d['User_ID']}"></div><div>Square</div></div>
+                    </div>
                     <p>UID: {d['User_ID']}</p>
-                    <button type="button" onclick="window.print()">🖨️ Print QR</button>
+                    <button class="print-button" type="button" onclick="document.body.classList.add('printing-round'); window.print();">🖨️ Print Round QR</button>
+                    <button class="print-button" type="button" onclick="document.body.classList.add('printing-square'); window.print();">🖨️ Print Square QR</button>
+                    <script>window.addEventListener('afterprint', function() {{ document.body.classList.remove('printing-round', 'printing-square'); }});</script>
                     """,
                     height=350,
                 )
-            else: st.error("ID dan Nama wajib diisi!")
+            else: st.error("ID and name are required!")
 
 # --- TAB 2: AI CHAT SOAP ---
 with t_chat:
     if active_patient is None or (isinstance(active_patient, pd.Series) and active_patient.empty):
-        st.warning("Silakan scan QR Code pasien untuk mengakses fitur AI Chat.")
+        st.warning("Scan the patient's QR Code to access AI Chat.")
     else:
-        st.info("💡 **Untuk Pasien:** Sampaikan keluhan Anda secara naratif (misal: 'Saya pusing sejak kemarin dan rasa mual'). AI akan membantu merangkumnya untuk dokter.")
+        st.info("💡 **For the patient:** Describe your symptoms naturally (for example: 'I have had a headache and nausea since yesterday'). AI will summarize them for the doctor.")
         c_l, c_r = st.columns([1, 1])
         with c_l:
-            st.subheader(f"💬 Pasien: {active_patient['Name']}")
+            st.subheader(f"💬 Patient: {active_patient['Name']}")
             # Clear button
-            if st.button("Hapus Chat"): st.session_state.messages = []; st.rerun()
+            if st.button("Clear Chat"): st.session_state.messages = []; st.rerun()
             
             for msg in st.session_state.messages:
                 with st.chat_message(msg["role"]): st.markdown(msg["content"])
             
-            if prompt := st.chat_input("Halo, ceritakan keluhan Anda di sini..."):
+            if prompt := st.chat_input("Hello, describe your symptoms here..."):
                 st.session_state.messages.append({"role": "user", "content": prompt})
                 with st.chat_message("user"): st.markdown(prompt)
                 
-                with st.spinner("AI sedang menganalisis keluhan Anda..."):
+                with st.spinner("AI is analyzing your symptoms..."):
                     ai_response = process_narrative(prompt, api_key_env, active_patient)
                     if ai_response:
                         st.session_state.soap_record = ai_response.get("soap", {})
@@ -856,11 +866,11 @@ with t_chat:
                                 if v is not None:
                                     st.session_state.extracted_vitals[k] = v
                         
-                        st.session_state.messages.append({"role": "assistant", "content": "Terima kasih. Saya telah merangkum keluhan Anda dalam format medis. Silakan cek preview SOAP dan bagian Triage."})
+                        st.session_state.messages.append({"role": "assistant", "content": "Thank you. Your symptoms have been summarized in medical format. Review the SOAP preview and Triage section."})
                         st.rerun()
         
         with c_r:
-            st.subheader("📋 Preview SOAP")
+            st.subheader("📋 SOAP Preview")
             st.markdown(f"""
             <div class="soap-container">
                 <div class="soap-header">FORMAT SOAP <br><small>{datetime.now().strftime('%d/%m/%Y')}</small></div>
@@ -875,19 +885,19 @@ with t_chat:
             if st.session_state.get("retrieved_history") or st.session_state.get("retrieved_guidelines"):
                 with st.expander("🔍 Referensi RAG Terkait (Context)", expanded=True):
                     if st.session_state.get("retrieved_history"):
-                        st.markdown("**Riwayat Medis Pasien Terkait (CSV RAG):**")
+                        st.markdown("**Related Patient Medical History (CSV RAG):**")
                         for idx, hist in enumerate(st.session_state.retrieved_history):
-                            st.caption(f"**{idx+1}. Tanggal: {hist['timestamp']}** (Diagnosis: *{hist['A']}*)")
+                            st.caption(f"**{idx+1}. Date: {hist['timestamp']}** (Assessment: *{hist['A']}*)")
                             st.write(f"- **S**: {hist['S']}")
                             st.write(f"- **P**: {hist['P']}")
                     
                     if st.session_state.get("retrieved_guidelines"):
-                        st.markdown("**Panduan Klinis Medis Terkait (External Doc RAG):**")
+                        st.markdown("**Related Clinical Guidelines (External Doc RAG):**")
                         for idx, guide in enumerate(st.session_state.retrieved_guidelines):
                             st.markdown(f"📖 **{guide['title']}**")
                             st.text(guide['content'])
             
-            if st.button("💾 Simpan Rekam Medis (SOAP)", use_container_width=True, type="primary"):
+            if st.button("💾 Save Medical Record (SOAP)", use_container_width=True, type="primary"):
                 new_enc = {
                     "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M"),
                     "User_ID": str(active_patient["User_ID"]),
@@ -896,10 +906,10 @@ with t_chat:
                 df_e = pd.read_csv(ENCOUNTER_FILE)
                 df_e = pd.concat([df_e, pd.DataFrame([new_enc])], ignore_index=True)
                 df_e.to_csv(ENCOUNTER_FILE, index=False)
-                st.success("Rekam medis tersimpan!")
+                st.success("Medical record saved!")
 
             st.divider()
-            st.subheader("🧬 Preview Data Medis (Profile)")
+            st.subheader("🧬 Medical Profile Preview")
             
             # Show current vs updated data
             updates = st.session_state.get("profile_updates", {})
@@ -913,15 +923,15 @@ with t_chat:
             st.markdown(f"""
             <div class="profile-card">
                 <div class="profile-row">
-                    <div class="profile-label">Riwayat Penyakit</div>
+                    <div class="profile-label">Chronic Diseases</div>
                     <div class="profile-value">{get_display_val('Chronic_Diseases', active_patient['Chronic_Diseases'])}</div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label">Obat Rutin</div>
+                    <div class="profile-label">Current Medication</div>
                     <div class="profile-value">{get_display_val('Current_Medication', active_patient['Current_Medication'])}</div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label">Alergi</div>
+                    <div class="profile-label">Allergies</div>
                     <div class="profile-value">{get_display_val('Allergies', active_patient['Allergies'])}</div>
                 </div>
                 <div class="profile-row">
@@ -933,11 +943,11 @@ with t_chat:
                     <div class="profile-value">{get_display_val('Oxygen_Saturation', active_patient['Oxygen_Saturation'])}%</div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label">Riwayat Rawat Inap</div>
+                    <div class="profile-label">Hospitalization History</div>
                     <div class="profile-value">{get_display_val('Hospitalization_History', active_patient['Hospitalization_History'])}</div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label">Dokter PJ</div>
+                    <div class="profile-label">Attending Doctor</div>
                     <div class="profile-value">{get_display_val('Responsible_Doctor', active_patient['Responsible_Doctor'])}</div>
                 </div>
                 <div class="profile-row">
@@ -952,7 +962,7 @@ with t_chat:
             """, unsafe_allow_html=True)
 
             if updates:
-                if st.button("🆙 Perbarui Profil Pasien (Smart Merge)", use_container_width=True):
+                if st.button("🆙 Update Patient Profile (Smart Merge)", use_container_width=True):
                     try:
                         df_all = pd.read_csv(DATA_FILE)
                         # Cast text columns to object dtype to prevent dtype float64 errors when columns are empty
@@ -1001,21 +1011,21 @@ with t_chat:
                         
                         df_all.at[idx, "Last_Update"] = datetime.now().strftime("%Y-%m-%d")
                         df_all.to_csv(DATA_FILE, index=False)
-                        st.success("Profil pasien berhasil diperbarui dengan Smart Merge!")
+                        st.success("Patient profile updated with Smart Merge!")
                         st.session_state.profile_updates = {}
                         st.rerun()
                     except Exception as e:
-                        st.error(f"Gagal memperbarui profil: {e}")
+                        st.error(f"Failed to update profile: {e}")
 
 # --- TAB 3: MEDICAL HISTORY ---
 with t_hist:
     if active_patient is not None and not isinstance(active_patient, pd.Series) or (isinstance(active_patient, pd.Series) and not active_patient.empty):
-        st.subheader(f"🕒 Riwayat Medis: {active_patient['Name']}")
+        st.subheader(f"🕒 Medical History: {active_patient['Name']}")
         df_e = pd.read_csv(ENCOUNTER_FILE)
         p_hist = df_e[df_e["User_ID"].astype(str) == str(active_patient["User_ID"])]
         
         if p_hist.empty:
-            st.info("Belum ada riwayat pemeriksaan.")
+            st.info("No examination history yet.")
         else:
             for _, row in p_hist.sort_values("Timestamp", ascending=False).iterrows():
                 with st.expander(f"📅 {row['Timestamp']} - {row['A'][:30]}..."):
@@ -1024,18 +1034,18 @@ with t_hist:
                     st.write(f"**A:** {row['A']}")
                     st.write(f"**P:** {row['P']}")
     else:
-        st.info("Silakan scan QR Code pasien untuk mengakses fitur riwayat medis.")
+        st.info("Scan the patient's QR Code to access medical history.")
 
 # --- TAB 4: EMERGENCY MODE ---
 with t_emergency:
     if active_patient is not None and not isinstance(active_patient, pd.Series) or (isinstance(active_patient, pd.Series) and not active_patient.empty):
-        st.error(f"⚠️ MODE DARURAT: {active_patient['Name']} ({active_patient['User_ID']})")
+        st.error(f"⚠️ EMERGENCY MODE: {active_patient['Name']} ({active_patient['User_ID']})")
 
         birth_date = pd.to_datetime(active_patient.get("Birth_Date"), errors="coerce")
         if pd.notna(birth_date):
             today = datetime.now().date()
             age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
-            age_display = f"{age} tahun"
+            age_display = f"{age} years"
         else:
             age_display = "-"
 
@@ -1043,36 +1053,36 @@ with t_emergency:
             value = active_patient.get(field, "-")
             return str(value).strip() if pd.notna(value) and str(value).strip() else "-"
 
-        st.subheader("Informasi Pasien")
+        st.subheader("Patient Information")
         info_left, info_right = st.columns(2)
         info_fields = {
-            "Nama Lengkap": emergency_value("Name"),
-            "Usia": age_display,
-            "Jenis Kelamin": emergency_value("Gender"),
-            "Gol. Darah": emergency_value("Blood_Type"),
-            "Alergi": emergency_value("Allergies"),
-            "Penyakit": emergency_value("Chronic_Diseases"),
-            "Obat": emergency_value("Current_Medication"),
-            "Riwayat Medis": emergency_value("Medical_History"),
-            "Kontak Darurat": emergency_value("Emergency_Contact_Name"),
-            "Nomor Telepon": emergency_value("Emergency_Contact_Phone"),
-            "Nomor BPJS": emergency_value("BPJS_ID"),
+            "Full Name": emergency_value("Name"),
+            "Age": age_display,
+            "Gender": emergency_value("Gender"),
+            "Blood Type": emergency_value("Blood_Type"),
+            "Allergy": emergency_value("Allergies"),
+            "Diseases": emergency_value("Chronic_Diseases"),
+            "Medication": emergency_value("Current_Medication"),
+            "Medical History": emergency_value("Medical_History"),
+            "Emergency Contact": emergency_value("Emergency_Contact_Name"),
+            "Phone Number": emergency_value("Emergency_Contact_Phone"),
+            "BPJS Number": emergency_value("BPJS_ID"),
         }
 
         with info_left:
-            for label in ["Nama Lengkap", "Usia", "Jenis Kelamin", "Gol. Darah", "Alergi", "Penyakit"]:
+            for label in ["Full Name", "Age", "Gender", "Blood Type", "Allergy", "Diseases"]:
                 st.markdown(
                     f"<div style='background:#fff; border:1px solid #e1e4e8; border-radius:8px; padding:9px 14px; margin-bottom:9px;'><div class='profile-label'>{label}</div><div style='font-size:1.05em; color:#212529;'>{info_fields[label]}</div></div>",
                     unsafe_allow_html=True,
                 )
         with info_right:
-            for label in ["Obat", "Riwayat Medis", "Kontak Darurat", "Nomor Telepon", "Nomor BPJS"]:
+            for label in ["Medication", "Medical History", "Emergency Contact", "Phone Number", "BPJS Number"]:
                 st.markdown(
                     f"<div style='background:#fff; border:1px solid #e1e4e8; border-radius:8px; padding:9px 14px; margin-bottom:9px;'><div class='profile-label'>{label}</div><div style='font-size:1.05em; color:#212529;'>{info_fields[label]}</div></div>",
                     unsafe_allow_html=True,
                 )
 
-        st.subheader("QR Code Pasien")
+        st.subheader("Patient QR Code")
         base_url = os.getenv("BASE_URL")
         emergency_qr_url = f"{base_url}/?uid={active_patient['User_ID']}" if base_url else f"http://localhost:8501/?uid={active_patient['User_ID']}"
         emergency_qr = qrcode.make(emergency_qr_url)
@@ -1083,15 +1093,25 @@ with t_emergency:
             f"""
             <style>
                 body {{ font-family: Arial, sans-serif; text-align: center; margin: 0; font-size: 10px; }}
+                .qr-versions {{ display: flex; justify-content: center; gap: 18px; align-items: flex-start; }}
+                .qr-version {{ text-align: center; font-size: 9px; }}
                 .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 2px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
+                .square-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 2px; border: 1px solid #555; background: white; box-sizing: border-box; }}
                 img {{ display: block; width: 60px; height: 60px; margin: 1px; }}
+                .square-frame img {{ width: 60px; height: 60px; }}
                 p {{ margin: 0 0 2px; font-weight: bold; }}
                 button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 2px; background: white; cursor: pointer; }}
-                @media print {{ button {{ display: none; }} }}
+                @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.3cm; height: 1.3cm; }} }}
+                .print-button {{ margin: 2px; }}
             </style>
-            <div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="QR Code {active_patient['User_ID']}"></div>
+            <div class="qr-versions">
+                <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Round QR Code {active_patient['User_ID']}"></div><div>Round</div></div>
+                <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Square QR Code {active_patient['User_ID']}"></div><div>Square</div></div>
+            </div>
             <p>UID: {active_patient['User_ID']}</p>
-            <button type="button" onclick="window.print()">🖨️ Cetak Ulang QR</button>
+            <button class="print-button" type="button" onclick="document.body.classList.add('printing-round'); window.print();">🖨️ Print Round QR</button>
+            <button class="print-button" type="button" onclick="document.body.classList.add('printing-square'); window.print();">🖨️ Print Square QR</button>
+            <script>window.addEventListener('afterprint', function() {{ document.body.classList.remove('printing-round', 'printing-square'); }});</script>
             """,
             height=340,
         )
@@ -1101,30 +1121,30 @@ with t_emergency:
         col_triage, col_action = st.columns([2, 1])
         
         with col_triage:
-            st.subheader("🩺 Penilaian Cepat (NEWS2 Triage)")
+            st.subheader("🩺 Quick Assessment (NEWS2 Triage)")
             
             # Show detected vitals badge
             if st.session_state.extracted_vitals:
-                st.info(f"✨ AI mendeteksi tanda vital dari chat: {', '.join([f'{k.upper()}: {v}' for k,v in st.session_state.extracted_vitals.items()])}")
+                st.info(f"✨ AI detected vital signs from chat: {', '.join([f'{k.upper()}: {v}' for k,v in st.session_state.extracted_vitals.items()])}")
 
-            with st.expander("Input Tanda-Tanda Viral", expanded=True):
+            with st.expander("Vital Signs Input", expanded=True):
                 v_c1, v_c2 = st.columns(2)
 
                 triage_defaults = get_triage_default_vitals(active_patient, st.session_state.extracted_vitals)
 
                 with v_c1:
-                    v_rr = st.number_input("Respirasi (bpm)", 5, 50, int(triage_defaults.get('rr', 20)))
+                    v_rr = st.number_input("Respiratory Rate (bpm)", 5, 50, int(triage_defaults.get('rr', 20)))
                     v_spo2 = st.number_input("SpO2 (%)", 50, 100, int(triage_defaults.get('spo2', 95)))
-                    v_bps = st.number_input("Tekanan Darah Sistolik", 50, 250, int(triage_defaults.get('bps', 120)))
+                    v_bps = st.number_input("Systolic Blood Pressure", 50, 250, int(triage_defaults.get('bps', 120)))
                 with v_c2:
-                    v_hr = st.number_input("Denyut Jantung (bpm)", 20, 200, int(triage_defaults.get('hr', 80)))
+                    v_hr = st.number_input("Heart Rate (bpm)", 20, 200, int(triage_defaults.get('hr', 80)))
 
                     avpu_options = ["Alert", "Voice", "Pain", "Unresponsive"]
                     default_avpu = triage_defaults.get('avpu', "Alert")
                     if default_avpu not in avpu_options: default_avpu = "Alert"
-                    v_avpu = st.selectbox("Kesadaran (AVPU)", avpu_options, index=avpu_options.index(default_avpu))
+                    v_avpu = st.selectbox("Consciousness (AVPU)", avpu_options, index=avpu_options.index(default_avpu))
                 
-                if st.button("PROSES TRIAGE", use_container_width=True, type="primary"):
+                if st.button("PROCESS TRIAGE", use_container_width=True, type="primary"):
                     score, level, color = calculate_news2(v_rr, v_spo2, v_bps, v_hr, v_avpu)
                     st.session_state.last_triage = {"score": score, "level": level, "color": color}
 
@@ -1138,39 +1158,39 @@ with t_emergency:
                 """, unsafe_allow_html=True)
 
         with col_action:
-            st.subheader("🚨 Tindakan Cepat")
-            st.info(f"**Dokter PJ:** {active_patient['Responsible_Doctor'] if active_patient['Responsible_Doctor'] else 'Belum ditentukan'}")
+            st.subheader("🚨 Quick Actions")
+            st.info(f"**Attending Doctor:** {active_patient['Responsible_Doctor'] if active_patient['Responsible_Doctor'] else 'Not assigned'}")
             
             # Action Buttons
-            st.link_button("☎️ Hubungi Kontak Darurat", f"tel:{active_patient['Emergency_Contact_Phone']}", use_container_width=True)
+            st.link_button("☎️ Call Emergency Contact", f"tel:{active_patient['Emergency_Contact_Phone']}", use_container_width=True)
             
             # Nearest Hospital Geofencing
             u_lat, u_lon = -7.7700, 110.3700 # Mock location
             distances = [{"name": h["name"], "dist": geodesic((u_lat, u_lon), (h["lat"], h["lon"])).km} for h in HOSPITALS]
             nearest = sorted(distances, key=lambda x: x["dist"])[0]
-            st.success(f"🏥 **RS Terdekat:** {nearest['name']} ({nearest['dist']:.2f} KM)")
+            st.success(f"🏥 **Nearest Hospital:** {nearest['name']} ({nearest['dist']:.2f} KM)")
             
-            with st.expander("Lihat Riwayat Inap"):
-                st.write(active_patient["Hospitalization_History"] if active_patient["Hospitalization_History"] else "Tidak ada riwayat")
+            with st.expander("View Hospitalization History"):
+                st.write(active_patient["Hospitalization_History"] if active_patient["Hospitalization_History"] else "No history")
 
     else:
-        st.warning("⚠️ Silakan scan QR Code pasien untuk mengakses fitur darurat.")
-        st.info("Fitur ini akan menampilkan informasi kritis seperti Golongan Darah, Alergi, dan riwayat medis penting dalam hitungan detik.")
+        st.warning("⚠️ Scan the patient's QR Code to access emergency features.")
+        st.info("This feature displays critical information such as blood type, allergies, and important medical history within seconds.")
 
 # --- TAB 5: ADMIN ---
 with t_admin:
-    pwd = st.text_input("Password Admin", type="password")
+    pwd = st.text_input("Admin Password", type="password")
     if pwd == MASTER_PASSWORD:
-        st.subheader("📊 Data Master Pasien")
+        st.subheader("📊 Patient Master Data")
         df_master = pd.read_csv(DATA_FILE)
         st.dataframe(df_master, use_container_width=True)
 
-        st.subheader("✏️ Kelola Data Pasien")
+        st.subheader("✏️ Manage Patient Data")
         if df_master.empty:
-            st.info("Belum ada data pasien untuk dikelola.")
+            st.info("There is no patient data to manage.")
         else:
             patient_ids = df_master["User_ID"].fillna("").astype(str).tolist()
-            selected_admin_id = st.selectbox("Pilih User ID Pasien", patient_ids)
+            selected_admin_id = st.selectbox("Select Patient User ID", patient_ids)
             selected_index = df_master.index[df_master["User_ID"].astype(str) == selected_admin_id][0]
             selected_admin_patient = df_master.loc[selected_index]
 
@@ -1181,9 +1201,9 @@ with t_admin:
             with st.form("admin_patient_edit_form"):
                 edit_left, edit_right = st.columns(2)
                 with edit_left:
-                    edit_name = st.text_input("Nama Lengkap", value=admin_value("Name"))
+                    edit_name = st.text_input("Full Name", value=admin_value("Name"))
                     edit_bpjs = st.text_input("BPJS_ID", value=admin_value("BPJS_ID"))
-                    edit_birth_date = st.text_input("Tanggal Lahir (YYYY-MM-DD)", value=admin_value("Birth_Date"))
+                    edit_birth_date = st.text_input("Date of Birth (YYYY-MM-DD)", value=admin_value("Birth_Date"))
                     edit_gender = st.selectbox(
                         "Jenis Kelamin",
                         ["Male", "Female"],
@@ -1194,21 +1214,21 @@ with t_admin:
                         ["A", "B", "AB", "O"],
                         index=["A", "B", "AB", "O"].index(admin_value("Blood_Type")) if admin_value("Blood_Type") in ["A", "B", "AB", "O"] else 0,
                     )
-                    edit_weight = st.text_input("Berat (kg)", value=admin_value("Weight_kg"))
-                    edit_height = st.text_input("Tinggi (cm)", value=admin_value("Height_cm"))
-                    edit_chronic = st.text_area("Penyakit Kronis", value=admin_value("Chronic_Diseases"))
-                    edit_medication = st.text_area("Obat yang Sedang Dikonsumsi", value=admin_value("Current_Medication"))
+                    edit_weight = st.text_input("Weight (kg)", value=admin_value("Weight_kg"))
+                    edit_height = st.text_input("Height (cm)", value=admin_value("Height_cm"))
+                    edit_chronic = st.text_area("Chronic Diseases", value=admin_value("Chronic_Diseases"))
+                    edit_medication = st.text_area("Current Medication", value=admin_value("Current_Medication"))
                 with edit_right:
-                    edit_allergies = st.text_area("Alergi", value=admin_value("Allergies"))
-                    edit_contact_name = st.text_input("Nama Kontak Darurat", value=admin_value("Emergency_Contact_Name"))
-                    edit_contact_phone = st.text_input("Kontak Darurat (Telp)", value=admin_value("Emergency_Contact_Phone"))
-                    edit_blood_pressure = st.text_input("Tekanan Darah (mmHg)", value=admin_value("Blood_Pressure"))
-                    edit_oxygen = st.text_input("Kadar Oksigen (%)", value=admin_value("Oxygen_Saturation"))
-                    edit_hospitalization = st.text_area("Riwayat Rawat Inap", value=admin_value("Hospitalization_History"))
-                    edit_doctor = st.text_input("Dokter Penanggung Jawab", value=admin_value("Responsible_Doctor"))
-                    edit_medical_history = st.text_area("Riwayat Medis", value=admin_value("Medical_History"))
+                    edit_allergies = st.text_area("Allergies", value=admin_value("Allergies"))
+                    edit_contact_name = st.text_input("Emergency Contact Name", value=admin_value("Emergency_Contact_Name"))
+                    edit_contact_phone = st.text_input("Emergency Contact Phone", value=admin_value("Emergency_Contact_Phone"))
+                    edit_blood_pressure = st.text_input("Blood Pressure (mmHg)", value=admin_value("Blood_Pressure"))
+                    edit_oxygen = st.text_input("Oxygen Saturation (%)", value=admin_value("Oxygen_Saturation"))
+                    edit_hospitalization = st.text_area("Hospitalization History", value=admin_value("Hospitalization_History"))
+                    edit_doctor = st.text_input("Attending Doctor", value=admin_value("Responsible_Doctor"))
+                    edit_medical_history = st.text_area("Medical History", value=admin_value("Medical_History"))
 
-                if st.form_submit_button("💾 Simpan Perubahan", type="primary"):
+                if st.form_submit_button("💾 Save Changes", type="primary"):
                     updated_values = {
                         "Name": edit_name,
                         "BPJS_ID": edit_bpjs,
@@ -1249,9 +1269,9 @@ with t_admin:
                             numeric_errors.append(field)
 
                     if not edit_name.strip():
-                        st.error("Nama lengkap wajib diisi.")
+                        st.error("Full name is required.")
                     elif numeric_errors:
-                        st.error(f"Nilai harus berupa angka bulat: {', '.join(numeric_errors)}.")
+                        st.error(f"Values must be whole numbers: {', '.join(numeric_errors)}.")
                     else:
                         for field in numeric_fields:
                             df_master[field] = pd.to_numeric(df_master[field], errors="coerce").astype("Int64")
@@ -1261,23 +1281,23 @@ with t_admin:
                         for field, value in updated_values.items():
                             df_master.at[selected_index, field] = value
                         df_master.to_csv(DATA_FILE, index=False)
-                        st.success(f"Data pasien {selected_admin_id} berhasil diperbarui.")
+                        st.success(f"Patient data {selected_admin_id} was updated successfully.")
                         st.rerun()
 
             st.divider()
-            confirm_delete = st.checkbox(f"Saya yakin ingin menghapus pasien {selected_admin_id}")
-            if st.button("🗑️ Hapus Pasien", type="secondary", disabled=not confirm_delete):
+            confirm_delete = st.checkbox(f"I confirm that I want to delete patient {selected_admin_id}")
+            if st.button("🗑️ Delete Patient", type="secondary", disabled=not confirm_delete):
                 df_master = df_master[df_master["User_ID"].astype(str) != selected_admin_id]
                 df_master.to_csv(DATA_FILE, index=False)
-                st.success(f"Data pasien {selected_admin_id} berhasil dihapus.")
+                st.success(f"Patient data {selected_admin_id} was deleted successfully.")
                 st.rerun()
         
-        st.subheader("📑 Data Transaksi SOAP")
+        st.subheader("📑 SOAP Transaction Data")
         df_soap = pd.read_csv(ENCOUNTER_FILE)
         st.dataframe(df_soap, use_container_width=True)
 
         st.divider()
-        st.subheader("� RAG Debug: Mengapa RAG Tidak Aktif?")
+        st.subheader("🔍 RAG Debug: Why Is RAG Inactive?")
         debug_history = st.session_state.get("rag_debug_history", [])
         if debug_history:
             debug_df = pd.DataFrame(debug_history)
@@ -1292,7 +1312,7 @@ with t_admin:
                     st.write(f"- {reason}")
                 st.divider()
         else:
-            st.info("Belum ada request chat yang diproses. Setelah ada chat baru, debug RAG akan muncul di sini.")
+            st.info("No chat request has been processed. RAG debug information will appear here after a new chat.")
 
         st.divider()
         st.subheader("�🔬 Model Comparison Results (for Paper)")
@@ -1303,24 +1323,24 @@ with t_admin:
             st.markdown("#### Filter Analisis")
             analysis_scope = st.radio(
                 "Mode Analisis",
-                ["Keseluruhan", "Per Pasien"],
+                ["Overall", "Per Patient"],
                 horizontal=True
             )
 
             df_comp_view = df_comp.copy()
-            if analysis_scope == "Per Pasien":
+            if analysis_scope == "Per Patient":
                 if "User_ID" not in df_comp.columns:
-                    st.warning("Kolom User_ID belum tersedia pada log lama. Jalankan chat baru agar metrik per pasien bisa dipakai.")
+                    st.warning("The User_ID column is not available in the legacy log. Run a new chat to enable per-patient metrics.")
                     df_comp_view = df_comp.iloc[0:0]
                 else:
                     patient_ids = sorted([
                         uid for uid in df_comp["User_ID"].fillna("").astype(str).str.strip().unique().tolist() if uid
                     ])
                     if not patient_ids:
-                        st.info("Belum ada User_ID di log comparison. Jalankan chat pasien baru untuk mengisi data ini.")
+                        st.info("No User_ID is available in the comparison log. Run a new patient chat to populate it.")
                         df_comp_view = df_comp.iloc[0:0]
                     else:
-                        selected_patient_id = st.selectbox("Pilih ID Pasien", patient_ids)
+                        selected_patient_id = st.selectbox("Select Patient ID", patient_ids)
                         df_comp_view = df_comp[
                             df_comp["User_ID"].fillna("").astype(str).str.strip() == selected_patient_id
                         ]
@@ -1338,7 +1358,7 @@ with t_admin:
                 model_counts = df_comp_view["Model_Name"].value_counts().to_dict() if not df_comp_view.empty else {}
                 st.write("Model Usage:", model_counts)
 
-            st.markdown("#### Persentase Penggunaan Informasi")
+            st.markdown("#### Information Usage Percentage")
             if "Knowledge_Source" in df_comp_view.columns and not df_comp_view.empty:
                 source_counts = df_comp_view["Knowledge_Source"].value_counts(normalize=True).mul(100)
                 general_pct = float(source_counts.get("General", 0.0))
@@ -1346,9 +1366,9 @@ with t_admin:
 
                 col_g1, col_g2, col_g3 = st.columns(3)
                 with col_g1:
-                    st.metric("Informasi Umum (General)", f"{general_pct:.1f}%")
+                    st.metric("General Information", f"{general_pct:.1f}%")
                 with col_g2:
-                    st.metric("Informasi dari RAG", f"{rag_pct:.1f}%")
+                    st.metric("RAG Information", f"{rag_pct:.1f}%")
                 with col_g3:
                     st.metric("Total RAG Events", int((df_comp_view["RAG_Used"] == 1).sum())) if "RAG_Used" in df_comp_view.columns else st.metric("Total RAG Events", 0)
 
@@ -1363,17 +1383,17 @@ with t_admin:
                     both_pct = float(((df_comp_view["RAG_History_Used"].fillna(0) == 1) & (df_comp_view["RAG_Guidelines_Used"].fillna(0) == 1)).mean() * 100) if "RAG_History_Used" in df_comp_view.columns and "RAG_Guidelines_Used" in df_comp_view.columns else 0
                     st.metric("RAG Both", f"{both_pct:.1f}%")
             else:
-                st.info("Belum ada data yang cocok untuk filter ini atau metadata sumber pengetahuan belum tersedia.")
+                st.info("No matching data is available for this filter, or knowledge-source metadata is missing.")
 
             st.download_button(
-                label="📥 Download Dataset (Sesuai Filter)",
+                label="📥 Download Dataset (Filtered)",
                 data=df_comp_view.to_csv(index=False).encode('utf-8'),
                 file_name="model_comparison_dataset_filtered.csv",
                 mime="text/csv",
                 use_container_width=True
             )
         else:
-            st.info("Belum ada data perbandingan yang tersimpan.")
+            st.info("No model comparison data has been saved yet.")
 
         st.divider()
         st.subheader("📚 Knowledge Base (RAG)")
@@ -1390,23 +1410,23 @@ with t_admin:
             
             c_kb1, c_kb2 = st.columns(2)
             with c_kb1:
-                if st.button("💾 Simpan Perubahan Knowledge Base", use_container_width=True):
+                if st.button("💾 Save Knowledge Base Changes", use_container_width=True):
                     with open(GUIDELINES_FILE, "w", encoding="utf-8") as f:
                         f.write(new_guidelines)
                     # Clear cache so RAG re-embeds the new content
                     if "guidelines_cache" in st.session_state:
                         del st.session_state.guidelines_cache
-                    st.success("Knowledge base berhasil diperbarui dan cache RAG telah dibersihkan!")
+                    st.success("Knowledge base updated successfully and RAG cache cleared!")
             with c_kb2:
                 # Add refresh button to force re-indexing
                 if st.button("🔄 Refresh RAG Cache", use_container_width=True):
                     if "guidelines_cache" in st.session_state:
                         del st.session_state.guidelines_cache
-                        st.info("Cache RAG dikosongkan. AI akan memproses ulang file pada chat berikutnya.")
+                        st.info("RAG cache cleared. AI will reprocess the file during the next chat.")
         else:
-            st.error(f"File {GUIDELINES_FILE} tidak ditemukan!")
+            st.error(f"File {GUIDELINES_FILE} was not found!")
 
-    elif pwd: st.error("Salah password")
+    elif pwd: st.error("Incorrect password")
 
     st.divider()
     st.subheader("🛠️ System Debug Logs")
@@ -1417,4 +1437,4 @@ with t_admin:
                 # Show last 50 lines
                 st.code("".join(logs[-50:]))
         else:
-            st.info("Belum ada file log.")
+            st.info("No log file is available yet.")

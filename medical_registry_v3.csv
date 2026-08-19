@@ -1,2 +1,100 @@
 User_ID,BPJS_ID,Name,Birth_Date,Gender,Blood_Type,Weight_kg,Height_cm,Chronic_Diseases,Current_Medication,Allergies,Emergency_Contact_Name,Emergency_Contact_Phone,Blood_Pressure,Oxygen_Saturation,Hospitalization_History,Responsible_Doctor,Medical_History,Last_Update
-MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,"Hipertensi (Suspected), Hipertensi (Terdiagnosis)",,Udang,,8752662222,140/89,88,"RSA UGM, RSA UGM (Riwayat Demam Tifoid)",dr. Alvin,"Pusing tiba-tiba (Episode terbaru), Hipertensi terukur 170/100 mmHg, Riwayat Demam Tifoid, Riwayat cedera kaki, Hipertensi",2026-08-12
+MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,"Hipertensi (Suspected), Hipertensi (Terdiagnosis)",,Udang,,8752662222.0,140/89,88,"RSA UGM, RSA UGM (Riwayat Demam Tifoid)",dr. Alvin,"Pusing tiba-tiba (Episode terbaru), Hipertensi terukur 170/100 mmHg, Riwayat Demam Tifoid, Riwayat cedera kaki, Hipertensi",2026-08-12
+MAI-2026-0002,1234567890,Dhepa Gava,1981-03-17,Male,O,60,167,"Diabetes Mellitus
+","Metformin; Insulin; Glimepiride
+",Seafood,Anya,81234567890.0,120/80,98,,,Head Injury,2026-08-18
+MAI-2026-0003,8876543210,Shaniya Putri,1974-01-23,Female,A,60,167,"GERD
+","Omeprazole; Lansoprazole
+","Debu
+",Budi S,81298765432.0,,98,,,"Dengue Fever
+",2026-08-18
+MAI-2026-0004,3234567891,Miatin Cahyaning,1971-04-20,Female,B,60,167,"Arthritis/Reumatoid
+","Diclofenac; Meloxicam
+","Seafood
+",Agus Budi,81234567890.0,120/80,98,,,"Pneumonia
+",2026-08-18
+MAI-2026-0005,7876543210,Pendar Bintang,1978-03-07,Male,O,60,167,"Heart Disease
+","Bisoprolol; Nitroglycerin
+","Wheat
+",Heru Cahya,81298765432.0,120/80,98,,,"Tuberculosis History
+",2026-08-18
+MAI-2026-0006,1224567892,Ibal Santosa,1978-01-18,Male,B,60,167,"Epilepsy
+","Valproic Acid; Carbamazepine
+","Seafood
+",Aloy,81234567890.0,120/80,98,,,"Asthma
+",2026-08-18
+MAI-2026-0007,9976543210,Fajar Ibra,1970-02-10,Male,A,60,160,"Hypercholesterolemia
+","Simvastatin; Atorvastatin
+","Wheat
+",Kiki,81298765432.0,120/90,98,,,"Asthma History
+",2026-08-18
+MAI-2026-0008,1434567893,Karim Tanduki,1986-05-14,Male,O,67,167,"TBC
+","Rifampicin; Isoniazid
+","Sulfonamida
+",Ningrum,81234567890.0,120/90,98,,,"Appendectomy
+",2026-08-18
+MAI-2026-0009,9776543210,Amir Rasyid,1999-01-13,Male,A,67,167,"Heart Disease
+","Bisoprolol; Nitroglycerin
+","Nuts
+",Sari,81298765432.0,120/90,98,,,"Hospitalization due to Accident
+",2026-08-18
+MAI-2026-0010,5634567894,Fatah Aryana,1973-01-10,Male,AB,67,167,"Diabetes Mellitus
+","Metformin; Insulin; Glimepiride
+","Wheat;Nuts
+",Febri,81234567890.0,120/90,98,,,"Dengue Fever
+",2026-08-18
+MAI-2026-0011,5876543210,Utomo Putro,1985-06-11,Male,B,67,160,"Hypertension
+","Amlodipine; Captopril; Valsartan
+","Dust;Cold
+",Ali,81298765432.0,110/90,98,,,"Chronic Kidney Disease
+",2026-08-19
+MAI-2026-0012,5334567895,Julio Elkano,1991-01-23,Male,A,67,167,"Chronic Kidney Disease
+","Furosemide; Erythropoietin
+","Dust
+",Aviv,81234567890.0,,98,,,"Hipotiroid
+",2026-08-19
+MAI-2026-0013,4476543210,Aiko Fernando,1988-04-29,Male,A,67,167,"GERD
+","Omeprazole; Lansoprazole
+","Pinaple
+",Riski ,81298765432.0,110/90,98,,,"Asthma History
+",2026-08-19
+MAI-2026-0014,8734567896,Wahyu Bagaskara ,1985-04-16,Male,O,67,167,"Osteoporosis
+","Calcium Supplement; Alendronate
+","Cigarette Smoke
+",Fauzi Hara,81234567890.0,110/90,98,,,"Hospitalization due to Accident
+",2026-08-19
+MAI-2026-0015,9876543210,Aji Prasetyo ,1979-04-17,Male,AB,67,170,"Stroke
+","Aspirin; Clopidogrel
+","Ibuprofen
+",Niken ,81298765432.0,110/90,98,,,"Pneumonia
+",2026-08-19
+MAI-2026-0016,9004567897,Tangguh Putra Jodi,2002-06-11,Male,AB,66,178,"Hypertension
+","Amlodipine; Captopril; Valsartan
+","Sulfonamida
+",Siti,81234567890.0,120/90,98,,,"Dengue Fever
+",2026-08-19
+MAI-2026-0017,9876553210,Juna Febriansyah,1991-08-01,Male,O,56,150,"Hipotiroid
+","None
+","Cold
+",Evi,81298765432.0,110/90,98,,,"Tuberculosis History
+",2026-08-19
+MAI-2026-0018,1894567898,Rohman Sanjaya,1998-02-19,Male,AB,67,167,"Arthritis/Reumatoid
+","Diclofenac; Meloxicam
+","Nuts
+",joshua,81234567890.0,120/90,98,,,"Typhoid Fever
+",2026-08-19
+MAI-2026-0019,9853543210,Refli Aruma,2003-02-11,Male,A,66,166,"Hypertension
+","Amlodipine; Captopril; Valsartan
+","Dust;Cold
+",Jefri,81298765432.0,120/80,98,,,"GERD
+",2026-08-19
+MAI-2026-0020,1200567899,Rahmad Dwijaya,1996-04-27,Male,O,67,165,"Stroke
+","Aspirin; Clopidogrel
+","Wheat;Nuts
+",Teguh,81234567890.0,120/80,98,,,"Dengue Fever
+",2026-08-19
+MAI-2026-0021,9876500210,Ilham Digdaya,1994-05-18,Male,B,66,170,"Asthma
+","Salbutamol; Budesonide
+","Nuts
+",Feka,81298765432,120/80,98,,,"Asthma History
+",2026-08-19
