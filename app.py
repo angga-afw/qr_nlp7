@@ -1053,7 +1053,11 @@ with t_emergency:
             value = active_patient.get(field, "-")
             return str(value).strip() if pd.notna(value) and str(value).strip() else "-"
 
-        st.subheader("Patient Information")
+        st.subheader("Personal Information")
+        st.markdown(
+            "<div style='font-size: 16px; font-weight: 600; color: #333; margin: 0.25rem 0 0.75rem 0;'>GelangRMQ</div>",
+            unsafe_allow_html=True,
+        )
         info_left, info_right = st.columns(2)
         info_fields = {
             "Full Name": emergency_value("Name"),
@@ -1082,7 +1086,7 @@ with t_emergency:
                     unsafe_allow_html=True,
                 )
 
-        st.subheader("Patient QR Code")
+        st.subheader("QR Code")
         base_url = os.getenv("BASE_URL")
         emergency_qr_url = f"{base_url}/?uid={active_patient['User_ID']}" if base_url else f"http://localhost:8501/?uid={active_patient['User_ID']}"
         emergency_qr = qrcode.make(emergency_qr_url)
