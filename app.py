@@ -1112,7 +1112,7 @@ with t_emergency:
                 <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Round QR Code {active_patient['User_ID']}"></div><div></div></div>
                 <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Square QR Code {active_patient['User_ID']}"></div><div></div></div>
             </div>
-            <p>UID: {active_patient['User_ID']}</p>
+            <!-- <p>UID: {active_patient['User_ID']}</p> -->
             <button class="print-button" type="button" onclick="document.body.classList.add('printing-round'); window.print();">🖨️ Print Round QR</button>
             <button class="print-button" type="button" onclick="document.body.classList.add('printing-square'); window.print();">🖨️ Print Square QR</button>
             <script>window.addEventListener('afterprint', function() {{ document.body.classList.remove('printing-round', 'printing-square'); }});</script>
