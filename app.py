@@ -1105,7 +1105,7 @@ with t_emergency:
                 .square-frame img {{ width: 70px; height: 70px; }}
                 p {{ margin: 0 0 2px; font-weight: bold; }}
                 button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 2px; background: white; cursor: pointer; }}
-                @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.4cm; height: 1.4cm; }} }}
+                @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.7cm; height: 2.3cm; }} .square-frame img {{ width: 1.6cm; height: 1.6cm; }} }}
                 .print-button {{ margin: 2px; }}
             </style>
             <div class="qr-versions">
