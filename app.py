@@ -806,10 +806,10 @@ with t_reg:
                         .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 4px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
                         .square-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 4px; border: 1px solid #555; background: white; box-sizing: border-box; }}
                         img {{ display: block; width: 60px; height: 60px; }}
-                        .square-frame img {{ width: 60px; height: 60px; }}
+                        .square-frame img {{ width: 70px; height: 70px; }}
                         p {{ margin: 0 0 12px; font-weight: bold; }}
                         button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 6px; background: white; cursor: pointer; }}
-                        @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.3cm; height: 1.3cm; }} }}
+                        @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.4cm; height: 1.4cm; }} }}
                         .print-button {{ margin: 4px; }}
                     </style>
                     <div class="qr-versions">
@@ -1102,17 +1102,17 @@ with t_emergency:
                 .qr-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 2px; border: 1px solid #d32f2f; border-radius: 50%; background: white; box-sizing: border-box; }}
                 .square-frame {{ display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; margin: 0 auto 2px; border: 1px solid #555; background: white; box-sizing: border-box; }}
                 img {{ display: block; width: 60px; height: 60px; margin: 1px; }}
-                .square-frame img {{ width: 60px; height: 60px; }}
+                .square-frame img {{ width: 70px; height: 70px; }}
                 p {{ margin: 0 0 2px; font-weight: bold; }}
                 button {{ padding: 8px 14px; border: 1px solid #888; border-radius: 2px; background: white; cursor: pointer; }}
-                @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.3cm; height: 1.3cm; }} }}
+                @media print {{ button {{ display: none; }} body.printing-round .square-print {{ display: none; }} body.printing-square .round-print {{ display: none; }} .square-frame {{ width: 1.5cm; height: 1.5cm; }} .square-frame img {{ width: 1.4cm; height: 1.4cm; }} }}
                 .print-button {{ margin: 2px; }}
             </style>
             <div class="qr-versions">
                 <div class="qr-version round-print"><div class="qr-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Round QR Code {active_patient['User_ID']}"></div><div></div></div>
                 <div class="qr-version square-print"><div class="square-frame"><img src="data:image/png;base64,{emergency_qr_base64}" alt="Square QR Code {active_patient['User_ID']}"></div><div></div></div>
             </div>
-            <!-- <p>UID: {active_patient['User_ID']}</p> -->
+            <p style="font-size: 6px;">UID: {active_patient['User_ID']}</p>
             <button class="print-button" type="button" onclick="document.body.classList.add('printing-round'); window.print();">🖨️ Print Round QR</button>
             <button class="print-button" type="button" onclick="document.body.classList.add('printing-square'); window.print();">🖨️ Print Square QR</button>
             <script>window.addEventListener('afterprint', function() {{ document.body.classList.remove('printing-round', 'printing-square'); }});</script>
