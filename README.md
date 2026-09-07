@@ -184,3 +184,56 @@ RAG di aplikasi ini bukan sekadar penyimpanan dokumen. Ia bekerja sebagai sistem
 ---
 
 Dokumentasi ini dibuat agar alur kerja RAG pada sistem ini mudah dipahami dan dapat dikembangkan lebih lanjut di masa depan.
+
+Untuk aplikasi Anda, evaluasi sebaiknya mencakup 6 kelompok utama:
+
+Ekstraksi informasi klinis
+
+Apakah model benar membaca RR, SpO2, tekanan darah, HR, dan AVPU.
+Ukur: accuracy, precision, recall, F1-score.
+Untuk angka vital, gunakan MAE atau persentase nilai yang diekstraksi tepat.
+SOAP note
+
+Kesesuaian bagian S, O, A, dan P dengan jawaban dokter.
+Nilai: ketepatan, kelengkapan, relevansi, dan konsistensi.
+Sebaiknya dinilai oleh minimal satu atau beberapa dokter menggunakan skala 1 sampai 5.
+Klasifikasi triage/NEWS2
+
+Apakah status seperti Alert, Urgent, atau Emergency benar.
+Fokus utama: recall/sensitivity kondisi gawat dan jumlah false negative.
+Buat confusion matrix.
+Evaluasi RAG
+
+Apakah riwayat pasien dan panduan klinis yang diambil relevan.
+Apakah jawaban model benar-benar didukung oleh sumber tersebut.
+Ukur: precision@k, recall@k, atau penilaian relevansi oleh ahli.
+Perbandingan model
+Bandingkan model dengan input dan kasus yang sama berdasarkan:
+
+F1-score ekstraksi
+sensitivitas deteksi kondisi gawat
+skor penilaian dokter
+hallucination/error rate
+latency
+biaya per permintaan
+Keandalan dan keamanan
+
+Respons ketika data vital tidak lengkap.
+Respons terhadap typo dan bahasa informal.
+Error API atau output JSON tidak valid.
+Perlindungan data pasien.
+Apakah model memberikan rujukan yang tepat saat kondisi darurat.
+Prioritas minimum untuk penelitian Anda:
+
+Komponen	Metrik utama
+Ekstraksi tanda vital	Precision, recall, F1
+NEWS2/triage	Sensitivity, specificity, false negative
+SOAP note	Skor validasi dokter
+RAG	Relevansi retrieval dan groundedness
+Model	Perbandingan F1, safety, latency
+Sistem	Error rate dan waktu respons
+Anda perlu membuat dataset evaluasi dengan kolom seperti:
+
+Input_Narrative, Ground_Truth_S, Ground_Truth_O, Ground_Truth_A, Ground_Truth_P, Ground_Truth_SpO2, Ground_Truth_BP, Ground_Truth_Triage, dan Doctor_Validation.
+
+Catatan penting: jangan membagi data evaluasi berdasarkan output model. Tetapkan jawaban benar terlebih dahulu oleh dokter, lalu bandingkan output setiap model terhadap jawaban tersebut.

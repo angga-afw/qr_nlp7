@@ -1319,7 +1319,7 @@ with t_admin:
             st.info("No chat request has been processed. RAG debug information will appear here after a new chat.")
 
         st.divider()
-        st.subheader("�🔬 Model Comparison Results (for Paper)")
+        st.subheader("�🔬 Model Comparison Results")
         if os.path.exists(COMPARISON_LOG_FILE):
             normalize_comparison_log_file(COMPARISON_LOG_FILE)
             df_comp = pd.read_csv(COMPARISON_LOG_FILE)
