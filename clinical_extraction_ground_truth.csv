@@ -1,0 +1,5 @@
+Input_Narrative,Ground_Truth_RR,Ground_Truth_SpO2,Ground_Truth_BPS,Ground_Truth_HR,Ground_Truth_AVPU
+"Pasien napas 28 kali/menit, SpO2 88%, tekanan darah 90/60, nadi 130, sadar",28,88,90,130,Alert
+"RR 18, saturasi 97%, TD 120/80, HR 76, merespons saat dipanggil",18,97,120,76,Verbal
+"Pasien mengeluh pusing tanpa data tanda vital",,,,, 
+"TD 120/80",,,120,,

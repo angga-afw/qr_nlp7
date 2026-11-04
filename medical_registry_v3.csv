@@ -1,5 +1,5 @@
 User_ID,BPJS_ID,Name,Birth_Date,Gender,Blood_Type,Weight_kg,Height_cm,Chronic_Diseases,Current_Medication,Allergies,Emergency_Contact_Name,Emergency_Contact_Phone,Blood_Pressure,Oxygen_Saturation,Hospitalization_History,Responsible_Doctor,Medical_History,Last_Update
-MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,"Hipertensi (Suspected), Hipertensi (Terdiagnosis)",,Udang,,8752662222.0,140/89,88,"RSA UGM, RSA UGM (Riwayat Demam Tifoid)",dr. Alvin,"Pusing tiba-tiba (Episode terbaru), Hipertensi terukur 170/100 mmHg, Riwayat Demam Tifoid, Riwayat cedera kaki, Hipertensi",2026-08-12
+MAI-2026-0001,BPJS01,Joni Iskandar,2016-06-12,Male,A,67,160,"Hipertensi (Suspected), Hipertensi (Terdiagnosis)",,Udang,,8752662222.0,120/80,88,"RSA UGM, RSA UGM (Riwayat Demam Tifoid)",dr. Alvin,"Pusing tiba-tiba (Episode terbaru), Hipertensi terukur 170/100 mmHg, Riwayat Demam Tifoid, Riwayat cedera kaki, Hipertensi",2026-09-10
 MAI-2026-0002,1234567890,Dhepa Gava,1981-03-17,Male,O,60,167,"Diabetes Mellitus
 ","Metformin; Insulin; Glimepiride
 ",Seafood,Anya,81234567890.0,120/80,98,,,Head Injury,2026-08-18
@@ -96,5 +96,5 @@ MAI-2026-0020,1200567899,Rahmad Dwijaya,1996-04-27,Male,O,67,165,"Stroke
 MAI-2026-0021,9876500210,Ilham Digdaya,1994-05-18,Male,B,66,170,"Asthma
 ","Salbutamol; Budesonide
 ","Nuts
-",Feka,81298765432,120/80,98,,,"Asthma History
+",Feka,81298765432.0,120/80,98,,,"Asthma History
 ",2026-08-19

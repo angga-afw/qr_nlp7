@@ -1,49 +1,1381 @@
-=== PANDUAN KLINIS: HIPERTENSI ===
-Definisi & Klasifikasi:
-- Hipertensi didefinisikan sebagai tekanan darah sistolik >= 140 mmHg atau tekanan darah diastolik >= 90 mmHg pada pengukuran berulang.
-- Hipertensi Stage 1: Sistolik 140-159 mmHg atau Diastolik 90-99 mmHg.
-- Hipertensi Stage 2: Sistolik >= 160 mmHg atau Diastolik >= 100 mmHg.
-Tatalaksana & Terapi:
-- Modifikasi gaya hidup: Diet rendah garam (<2 gram natrium per hari atau 1 sendok teh garam), kurangi berat badan, olahraga teratur (aerobik 30 menit/hari), hindari rokok dan alkohol.
-- Terapi Farmakologi: Golongan obat utama meliputi ACE inhibitor (misal Captopril, Ramipril), ARB (misal Valsartan, Candesartan), Calcium Channel Blocker / CCB (misal Amlodipine), atau Diuretik Thiazide.
-Edukasi Pasien:
-- Minum obat teratur setiap hari walaupun tidak ada keluhan.
-- Lakukan pemantauan tekanan darah mandiri (Home Blood Pressure Monitoring) secara rutin dan catat hasilnya.
-- Waspadai tanda bahaya (red flags): Nyeri dada hebat, sesak napas berat, sakit kepala hebat, pandangan kabur, atau kelemahan anggota gerak mendadak (segera ke IGD).
+=== PANDUAN KLINIS: Demam Berdarah Dengue / DBD (ICD-10: A91) ===
+	S (Subjektif): Demam tinggi mendadak 2–7 hari, mual, muntah, nyeri ulu hati, nyeri otot/otak/sendi, perdarahan spontan (mimisan, gusi berdarah, petekie).
+	O (Objektif): Suhu >37,5^∘ "C" , uji tourniquet positif (>10 petekie dalam 1 inci persegi), hepatomegali. Lab: Trombositopenia (<100.000/μ"L" ), Hemokonsentrasi (peningkatan Hematokrit ≥20%), NS1 Ag (+) pada hari 1–3, atau IgM/IgG Dengue (+).
+	A (Asesmen): Demam Berdarah Dengue Derajat I / II / III / IV.
+	P (Plan):
+	Farmakologi: Parasetamol 3 x 500 mg (bila demam, hindari NSAID/Aspirin). Terapi cairan intravena Kristaloid (Ringer Laktat/NaCl 0,9%) sesuai rumus derajat DBD.
+	Non-Farmakologi: Tirah baring, rehidrasi oral 1,5–2 Liter/hari (jus, oralit, susu).
+	Monitoring: Cek Tanda Vital, Hb, Ht, Trombosit tiap 6–12 jam selama fase kritis (hari ke 3–5).
+	Red Flags: Ekstremitas dingin/lembap, gelisah, oliguria/anuria → Tatalaksana Syok (DSS).
+=== PANDUAN KLINIS: Demam Tifoid / Tifus (ICD-10: A01.0) ===
+	S (Subjektif): Demam naik bertahap (step-ladder) >7 hari (terutama sore-malam hari), gangguan pencernaan (konstipasi pada dewasa, diare pada anak), mual, lidah terasa kotor/pahit, pusing.
+	O (Objektif): Febris, bradikardi relatif, typhoid tongue (lidah kotor di tengah, tepi merah dan tremor), nyeri tekan epigastrium/kuadran kanan atas. Lab: Tes Tubex TF ≥4 atau Widal Titer O/H ≥1/320, Leukopenia/Nomal, Trombositopenia ringan.
+	A (Asesmen): Demam Tifoid Tanpa Komplikasi / Dengan Komplikasi.
+	P (Plan):
+	Farmakologi: Lini 1: Ciprofloxacin 2 x 500 mg (7 hari) atau Cefixime 2 x 100-200 mg (10 hari) atau Azithromycin 1 x 500 mg (5 hari). Dewasa/Anak disesuaikan. Parasetamol 3 x 500 mg bila demam.
+	Non-Farmakologi: Diet lunak rendah serat (soft diet), istirahat tirah baring hingga bebas demam 3 hari.
+	Edukasi: Menjaga higiene makanan, cuci tangan sebelum makan.
+=== PANDUAN KLINIS: Tuberkulosis Paru / TB Paru (ICD-10: A15) ===
+	S (Subjektif): Batuk berdahak ≥2 minggu (bisa disertai darah), demam sumeng malam hari, keringat malam tanpa aktivitas, penurunan berat badan signifikan, nafsu makan turun.
+	O (Objektif): BB turun, ronki basah halus di apeks paru. Penunjang: Tes Cepat Molekuler (TCM) Mycobacterium tuberculosis Detected / Rifampicin Resistance, atau BTA dahak SPS (+). Rontgen Toraks: Infiltrat/kavitas di apeks paru.
+	A (Asesmen): TB Paru Kasus Baru / Pengobatan Ulang (SO / RO).
+	P (Plan):
+	Farmakologi: OAT (Obat Anti Tuberkulosis) Kategori 1 Dosis Terpadu (FDC):
+	Fase Intensif (2 bulan): 2(HRZE)
+	Fase Lanjutan (4 bulan): 4(HR)
+	Non-Farmakologi: Edukasi PMO (Pengawas Menelan Obat), etika batuk, pencahayaan dan ventilasi rumah.
+	Monitoring: Cek dahak ulang pada akhir bulan ke-2, ke-5, dan akhir pengobatan (bulan ke-6).
+=== PANDUAN KLINIS: Malaria (ICD-10: B50 - B54) ===
+	S (Subjektif):
+	Keluhan Utama: Trias malaria (demam menggigil, puncak demam, dan berkeringat), sakit kepala hebat, mual, muntah, nyeri otot/persendian.
+	Anamnesis Spesifik: Riwayat bepergian atau tinggal di daerah endemis malaria (seperti Papua, Nusa Tenggara, atau Maluku) dalam 1–4 minggu terakhir.
+	Red Flags: Penurunan kesadaran, kejang berulang, sesak napas berat, air kencing berwarna gelap (seperti teh/kehitaman).
+	O (Objektif):
+	Pemeriksaan Fisik: Febris, konjungtiva anemis (pucat), ikterus pada sklera, splenomegali (pembesaran limpa), hepatomegali.
+	Pemeriksaan Penunjang:
+	Mikroskopis (Gold Standard): Ditemukan bentuk trofozoit/skizon/gametosit Plasmodium (P. falciparum, P. vivax, P. ovale, P. malariae, atau P. knowlesi) pada sediaan darah tebal/tipis.
+	RDT (Rapid Diagnostic Test): Positif antigen Plasmodium.
+	Lab Rutin: Anemia, trombositopenia.
+	A (Asesmen):
+	Malaria Tanpa Komplikasi (P. falciparum / P. vivax) (ICD-10: B50.9 / B51.9) atau Malaria Berat (ICD-10: B50.8).
+	P (Plan):
+	Farmakologi:
+	DHP (Dihydroartemisinin-Piperaquine): Diberikan selama 3 hari sesuai berat badan.
+	Primaquin:
+	P. falciparum: Dosis 0,25" mg/kgBB"  (hari ke-1 saja).
+	P. vivax: Dosis 0,25" mg/kgBB/hari"  selama 14 hari.
+	Simptomatik: Parasetamol 3 x 500 mg jika demam.
+	Non-Farmakologi: Tirah baring dan hidrasi oral adekuat.
+	Edukasi: Kepatuhan minum obat Primaquin sampai tuntas untuk mencegah kekambuhan (relaps). Pencegahan dengan kelambu berinsektisida dan repelan nyamuk.
+	Rujukan: Kasus Malaria Berat (penurunan kesadaran, anemia berat "Hb"<7" g/dL" , ikterik) wajib dirawat inap di RS.
+=== PANDUAN KLINIS: Leptospirosis (ICD-10: A27) ===
+	S (Subjektif):
+	Keluhan Utama: Demam tinggi mendadak, nyeri otot hebat terutama pada betis (m. gastrocnemius) dan punggung, sakit kepala, mual, muntah.
+	Anamnesis Spesifik: Riwayat kontak dengan air banjir, lumpur, atau urine hewan (tikus, sapi) tanpa alat lindung diri.
+	Red Flags: Mata dan kulit kuning (ikterik), kencing berkurang/tidak keluar, batuk darah.
+	O (Objektif):
+	Pemeriksaan Fisik: Febris, conjunctival suffusion (mata merah tanpa sekret), nyeri tekan otot betis yang khas, hepatomegali, ikterus (pada kasus berat/Weil's Disease).
+	Pemeriksaan Penunjang:
+	Serologi: Rapid Test Leptospira IgM (+), atau MAT (Microscopic Agglutination Test) (+).
+	Lab Rutin: Leukositosis, peningkatan Ureum/Kreatinin, peningkatan Bilirubin dan SGOT/SGPT.
+	A (Asesmen):
+	Leptospirosis Ringan (ICD-10: A27.9) / Leptospirosis Berat (Weil's Disease) (ICD-10: A27.0).
+	P (Plan):
+	Farmakologi:
+	Ringan (Rawat Jalan): Doxycycline 2 x 100 mg PO (selama 7 hari) ATAU Ampicillin 4 x 500 mg PO.
+	Berat (Rawat Inap): Penicillin G IV 1,5" juta unit / 6 jam"  ATAU Ceftriaxone 1"--" 2" gram IV / 24 jam"  selama 7 hari.
+	Simptomatik: Parasetamol 3 x 500 mg.
+	Non-Farmakologi: Restorasi cairan dan elektrolit.
+	Edukasi: Penggunaan sepatu boot karet saat banjir/membersihkan selokan, penanganan hama tikus di lingkungan rumah.
+=== PANDUAN KLINIS: Filariasis / Kaki Gajah (ICD-10: B74) ===
+	S (Subjektif):
+	Keluhan Utama: Pembengkakan pada tungkai, lengan, atau alat kelamin (skrotum), demam berulang, nyeri dan peradangan di lipat paha atau ketiak.
+	Anamnesis Spesifik: Riwayat tinggal di daerah endemis filariasis, riwayat pembengkakan kronis bertahap.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Fase Akut: Limfadenitis, limfangitis lokal, demam.
+	Fase Kronis: Limfedema (pembengkakan asimetris), hidrokel, penebalan kulit dan lipatan kulit (elefantiasis).
+	Pemeriksaan Penunjang:
+	Sediaan Darah Tebal (Malam Hari, pk. 22.00–02.00): Ditemukan mikrofilaria (Wuchereria bancrofti, Brugia malayi, atau Brugia timori).
+	Rapid Test Filariasis (FTS/ICT): Positif antigen filaria.
+	A (Asesmen):
+	Filariasis Akut / Filariasis Kronis (ICD-10: B74.0 / B74.1 / B74.2).
+	P (Plan):
+	Farmakologi:
+	DEC (Diethylcarbamazine): Dosis 6" mg/kgBB/hari"  selama 12 hari.
+	Albendazol: 400 mg dosis tunggal.
+	Catatan: Pengobatan kombinasi ini diberikan bersamaan pada fase akut.
+	Perawatan Lokal (Fase Kronis): Mencuci area limfedema secara rutin dengan air dan sabun, elevasi tungkai saat berbaring, latihan pergerakan sendi.
+	Edukasi: Mengikuti Pengobatan Pencegahan Massal (POPM) Filariasis di daerah endemis, pemakaian kelambu, dan pemberantasan sarang nyamuk vektor (Mansonia, Anopheles, Culex).
+=== PANDUAN KLINIS: Chikungunya (ICD-10: A92.0) ===
+	S (Subjektif):
+	Keluhan Utama: Demam tinggi mendadak, nyeri sendi hebat (arthralgia) multipel hingga pasien sulit berjalan, nyeri otot, sakit kepala, bercak kemerahan di kulit.
+	Anamnesis Spesifik: Onset demam dan nyeri sendi serentak di lingkungan pemukiman (sering terjadi sebagai kluster/wabah).
+	O (Objektif):
+	Pemeriksaan Fisik: Febris, pembengkakan dan nyeri tekan pada sendi-sendi kecil (pergelangan tangan, kaki, interfalang), ruam makulopapular.
+	Pemeriksaan Penunjang:
+	Serologi: IgM Anti-Chikungunya (+).
+	Lab Rutin: Leukopenia ringan; jumlah trombosit umumnya normal (jarang terjadi perdarahan spontan).
+	A (Asesmen):
+	Chikungunya (ICD-10: A92.0).
+	P (Plan):
+	Farmakologi:
+	Terapi Simptomatik (Tidak ada antivirus spesifik).
+	Analgetik/Antipiretik: Parasetamol 3–4 x 500 mg.
+	NSAID: Ibuprofen 3 x 400 mg (diberikan setelah dipastikan tidak ada risiko perdarahan/bukan DBD).
+	Non-Farmakologi: Tirah baring (bed rest), kompres hangat/dingin pada sendi yang nyeri.
+	Edukasi: Penyakit bersifat self-limiting (dapat sembuh sendiri), namun nyeri sendi dapat berlangsung beberapa minggu hingga bulan. Lakukan kegiatan PSN 3M Plus.
+=== PANDUAN KLINIS: Rabies (ICD-10: A82) ===
+	S (Subjektif):
+	Riwayat Paparan: Riwayat digigit, dicakar, atau dijilat pada kulit terbuka/mukosa oleh hewan penular rabies (anjing, kucing, kera) dalam kurun waktu beberapa minggu hingga bulan.
+	Keluhan Gejala Prodromal: Nyeri/gatal/kesemutan di bekas luka gigitan, demam, cemas.
+	Gejala Neurologis (Bila Sudah Lanjut): Takut air (hydrophobia), takut angin (aerophobia), takut cahaya (photophobia), gelisah hebat, liur berlebihan.
+	O (Objektif):
+	Pemeriksaan Fisik: Adanya luka gigitan/paparan, spasme otot laring/faring saat diberi minum, hipersalivasi, gelisah/agresif atau kelumpuhan (paralytic rabies).
+	A (Asesmen):
+	Gigitan Hewan Penular Rabies / GHPR (Potensi Paparan)
+	Ensefalitis Rabies (ICD-10: A82.1 / A82.9)
+	P (Plan):
+	Tatalaksana Pertolongan Pertama Luka GHPR (Wajib):
+	Cuci luka segera dengan air mengalir dan sabun/deterjen selama 10–15 menit.
+	Beri antiseptik (Povidone Iodine atau Alkohol 70%).
+	Pemberian Vaksin & Serum (Post-Exposure Prophylaxis / PEP):
+	VAR (Vaksin Anti Rabies): Jadwal hari ke-0 (2 dosis), hari ke-7 (1 dosis), hari ke-21/28 (1 dosis).
+	SAR (Serum Anti Rabies): Diberikan pada luka risiko tinggi (kategori III), diinfiltrasikan di sekitar luka.
+	Edukasi & Penanganan Hewan:
+	Hewan penular diisolasi dan diobservasi selama 10–14 hari.
+	Jika gejala neurologis rabies sudah muncul pada manusia, penanganan bersifat suportif dan paliatif di ruang isolasi.
+=== PANDUAN KLINIS: Helminthiasis / Cacingan (ICD-10: B76 / B77 / B80) ===
+	S (Subjektif):
+	Keluhan Utama: Perut kembung/mulas, nafsu makan turun, berat badan sulit naik, lemas/pucat, gatal di sekitar anus terutama pada malam hari (spesifik cacing kremi).
+	Anamnesis Spesifik: Kebiasaan tidak memakai alas kaki, jarang cuci tangan sebelum makan, anak sering bermain tanah.
+	O (Objektif):
+	Pemeriksaan Fisik: Konjungtiva anemis, perut membuncit (distensi), tanda gizi kurang/stunting.
+	Pemeriksaan Penunjang:
+	Pemeriksaan Feses Rutin: Ditemukan telur/cacing (Ascaris lumbricoides, Ancylostoma duodenale / Necator americanus, Trichuris trichiura).
+	Anal Swab (Plester Test): Ditemukan telur Enterobius vermicularis (cacing kremi).
+	Lab Darah: Anemia mikrositik hipokromik, eosinofilia.
+	A (Asesmen):
+	Askariasis (ICD-10: B77) / Ankilostomiasis (Cacing Tambang) (ICD-10: B76.0) / Enterobiasis (Cacing Kremi) (ICD-10: B80).
+	P (Plan):
+	Farmakologi:
+	Albendazol: 400 mg dosis tunggal PO (dewasa & anak >2 tahun; anak 1–2 tahun diberikan 200 mg).
+	Mebendazol: 500 mg dosis tunggal PO.
+	Pirantel Pamoat: Dosis 10" mg/kgBB"  dosis tunggal.
+	Jika Anemia: berikan Suplementasi Tablet Tambah Darah (Sulfas Ferosus).
+	Edukasi: Rutin memotong kuku, membiasakan cuci tangan dengan sabun sebelum makan dan setelah BAB, selalu memakai alas kaki (sandal/sepatu) saat keluar rumah.
+=== PANDUAN KLINIS: Kusta / Lepra (ICD-10: A30) ===
+	S (Subjektif):
+	Keluhan Utama: Bercak kemerahan atau putih pada kulit yang kurang rasa / mati rasa (tidak gatal dan tidak sakit), kesemutan atau mati rasa di tangan/kaki, kelemahan otot tangan atau kaki.
+	Anamnesis Spesifik: Riwayat kontak erat dan lama dengan penderita kusta di lingkungan keluarga/sekitar.
+	O (Objektif):
+	Pemeriksaan Fisik (3 Tanda Utama / Kardinal):
+	Lesi kulit yang mati rasa (kehilangan sensasi rasa raba, nyeri, dan suhu).
+	Penebalan saraf tepi (N. ulnaris, N. peroneus communis) disertai gangguan fungsi.
+	BTA positif pada pemeriksaan laboratorium.
+	Pemeriksaan Penunjang: BTA Kulit (Slit Skin Smear) dari cuping telinga dan lesi kulit.
+	A (Asesmen):
+	Kusta Pausibasiler / PB (ICD-10: A30.1): Lesi kulit 1–5, penebalan saraf 1 lokasi, BTA (-).
+	Kusta Multibasiler / MB (ICD-10: A30.4): Lesi kulit >5, penebalan saraf >1 lokasi, BTA (+).
+	P (Plan):
+	Farmakologi (Regimen MDT - Multi Drug Therapy):
+	Tipe PB (Lama pengobatan 6 bulan):
+	Hari ke-1: Rifampisin 600 mg (diawasi) + Dapsone 100 mg.
+	Hari ke 2–28: Dapsone 100 mg/hari (mandiri).
+	Tipe MB (Lama pengobatan 12 bulan):
+	Hari ke-1: Rifampisin 600 mg (diawasi) + Clofazimine 300 mg (diawasi) + Dapsone 100 mg.
+	Hari ke 2–28: Clofazimine 50 mg/hari + Dapsone 100 mg/hari (mandiri).
+	Penanganan Reaksi Kusta: Bila terjadi Reaksi Tipe 1 atau Tipe 2 (ENL), berikan kortikosteroid sistemik (Prednison) sesuai skema dosis terturun (tapering off).
+	Edukasi: Pengobatan harus diminum secara teratur sampai tuntas tanpa terputus. Lakukan perawatan diri harian pada tangan dan kaki yang mati rasa untuk mencegah luka dan kecacatan.
+=== PANDUAN KLINIS: Infeksi Saluran Pernapasan Akut / ISPA (ICD-10: J06.9) ===
+	S (Subjektif):
+	Keluhan Utama: Batuk, pilek, hidung tersumbat, nyeri/gatal tenggorokan, suara serak, demam ringan, lemas.
+	Red Flags: Sesak napas, napas cepat, stridor, retraksi dinding dada, bibir kebiruan.
+	O (Objektif):
+	Pemeriksaan Fisik: Suhu tubuh subfebris/febris (>37,5^∘ "C" ), mukosa hidung kongesti/edema, faring hiperemis, tonsil T1-T1 atau T2-T2 tanpa eksudat purulen masif.
+	Auskultasi Paru: Suara napas vesikuler normal, tidak ditemukan ronki basah halus atau wheezing.
+	A (Asesmen):
+	ISPA / Nasofaringitis Akut (Common Cold) (ICD-10: J00 / J06.9).
+	P (Plan):
+	Farmakologi (Simptomatik):
+	Antipiretik/Analgetik: Parasetamol 3 x 500 mg PO (bila demam atau nyeri kepala/tenggorokan).
+	Antihistamin/Dekongestan: Cetirizine 1 x 10 mg atau CTM 3 x 4 mg (bila rhinorrhea/bersin menonjol).
+	Ekspektoran: Guaifenesin 3 x 100–200 mg PO (bila batuk berdahak).
+	Catatan: Antibiotik tidak diindikasikan untuk infeksi virus tanpa komplikasi bakteri.
+	Non-Farmakologi: Istirahat cukup, minum air hangat adekuat, konsumsi nutrisi bergizi.
+	Edukasi: Etika batuk/bersin, penggunaan masker untuk mencegah penularan. Kembali kontrol jika timbul sesak napas atau demam >3 hari.
+=== PANDUAN KLINIS: Pneumonia Komunitas / CAP (ICD-10: J18.9) ===
+	S (Subjektif):
+	Keluhan Utama: Batuk produktif dengan dahak purulen (kuning/hijau) atau kecokelatan, demam tinggi disertai menggigil, sesak napas, nyeri dada pleuritik (nyeri menusuk saat menarik napas dalam).
+	Red Flags: Penurunan kesadaran, kebingungan (terutama lansia), tekanan darah sistolik <90 mmHg, frekuensi napas >30" x/menit" .
+	O (Objektif):
+	Pemeriksaan Fisik: Takipnea (>24" x/menit" ), takikardia, febris (>38^∘ "C" ).
+	Pemeriksaan Paru: Fremitus taktil meningkat, redup pada perkusi di area konsolidasi, auskultasi ditemukan suara napas bronkial dan ronki basah halus.
+	Pemeriksaan Penunjang:
+	Rontgen Toraks: Ditemukan infiltrat baru atau konsolidasi parenkim paru.
+	Lab Darah: Leukositosis (>10.000/μ"L" ) dengan dominasi neutrofil.
+	Pemeriksaan SpO2: Ditemukan penurunan saturasi (<95%).
+	A (Asesmen):
+	Pneumonia Komunitas / Community-Acquired Pneumonia (ICD-10: J18.9).
+	P (Plan):
+	Farmakologi (Rawat Jalan - Skor CRB-65 = 0):
+	Antibiotik Lini 1: Amoksisislin 3×500"--" 1000" mg"  PO selama 5–7 hari ATAU Azithromycin 1×500" mg"  PO (hari ke-1) dilanjutkan 1×250" mg"  (hari 2–5).
+	Mukolitik: N-acetylcysteine 3 x 200 mg PO.
+	Antipiretik: Parasetamol 3 x 500 mg PO.
+	Non-Farmakologi: Pemberian oksigenasi titrasi jika SpO2 <95%, hidrasi adekuat.
+	Rujukan: Segera rujuk ke Rawat Inap/RS jika skor CRB-65 ≥1, ada penyakit penyerta berat, atau saturasi oksigen <92%.
+=== PANDUAN KLINIS: Asma Bronkial (ICD-10: J45) ===
+	S (Subjektif):
+	Keluhan Utama: Sesak napas episodik, mengi (wheezing), batuk terutama malam/dini hari, dan rasa berat di dada.
+	Anamnesis Spesifik: Gejala bersifat reversibel (membaik sendiri atau dengan obat) dan memiliki pemicu spesifik (debu, udara dingin, stres, aktivitas fisik, atau asap rokok). Riwayat atopi/alergi pada pasien atau keluarga.
+	O (Objektif):
+	Pemeriksaan Fisik: Takipnea, penggunaan otot bantu napas, gelisah.
+	Auskultasi Paru: Suara napas ekspirasi memanjang disertai wheezing ekspiratorik bilateral.
+	Pemeriksaan Penunjang:
+	Arus Puncak Ekspirasi (APE): Penurunan nilai APE.
+	Spirometri: Peningkatan VEP1 >12% dan >200" mL"  setelah pemberian bronkodilator (reversibilitas).
+	A (Asesmen):
+	Asma Bronkial dalam Eksaserbasi Ringan-Sedang / Berat (ICD-10: J45.9).
+	P (Plan):
+	Farmakologi (Tatalaksana Eksaserbasi Ringan-Sedang):
+	Reliever (Pelega): Nebulisasi Salbutamol 2,5 mg (dapat diulang tiap 20 menit hingga 3 kali dalam jam pertama) ATAU Inhaler Salbutamol MDI 2–4 semprot via spacer.
+	Kortikosteroid Sistemik: Prednison PO 1"--" 2" mg/kgBB/hari"  (maksimal 40–50 mg) selama 3–5 hari.
+	Controller (Pencegah Kronis): ICS (Inhaled Corticosteroid) dosis rendah (misal Fluticasone atau Budesonide).
+	Non-Farmakologi: Posisikan pasien setengah duduk (semi-Fowler), berikan oksigen nasal kanul 2–4 L/menit (target SpO2 93–95%).
+	Edukasi: Identifikasi dan hindari pemicu alergi/asma. Ajarkan teknik penggunaan MDI/inhaler yang tepat.
+=== PANDUAN KLINIS: Penyakit Paru Obstruktif Kronis / PPOK (ICD-10: J44) ===
+	S (Subjektif):
+	Keluhan Utama: Sesak napas kronis yang progresif (makin berat dari waktu ke waktu dan memburuk saat aktivitas), batuk kronis berdahak saban hari.
+	Anamnesis Spesifik: Riwayat paparan faktor risiko jangka panjang: perokok berat, paparan debu/zat kimia tempat kerja, atau asap kayu bakar (biomassa).
+	O (Objektif):
+	Pemeriksaan Fisik: Bentuk dada cembung (barrel chest), pola napas dengan bibir dirapatkan (pursed-lip breathing), retraksi otot interkostal.
+	Auskultasi Paru: Ekspirasi memanjang, suara napas vesikuler melemah, dapat disertai wheezing atau ronki basah kasar.
+	Pemeriksaan Penunjang:
+	Spirometri (Gold Standard): VEP1/KVP pasca-bronkodilator <0,70.
+	Rontgen Toraks: Hiperinflasi paru, sela iga melebar, diafragma mendatar.
+	A (Asesmen):
+	PPOK Eksaserbasi Akut / PPOK Stabil (ICD-10: J44.1 / J44.9).
+	P (Plan):
+	Farmakologi (Eksaserbasi Akut):
+	Bronkodilator: Nebulisasi kombinasi SABA (Salbutamol 2,5 mg) + SAMA (Ipratropium bromide 0,5 mg).
+	Kortikosteroid Sistemik: Metilprednisolon 30–40 mg PO/IV per hari selama 5 hari.
+	Antibiotik: Diberikan jika ada 3 gejala utama (sesak bertambah, volume dahak meningkat, dan dahak purulen): Amoksisislin-Klavulanat 2 x 625 mg PO atau Azithromycin 1 x 500 mg PO.
+	Non-Farmakologi: Oksigenasi titrasi konsentrasi rendah (1–2 L/menit via nasal kanul, target SpO2 88–92% untuk mencegah retensi 〖"CO" 〗_2).
+	Edukasi: Berhenti merokok total, latihan pernapasan, dan vaksinasi flu/pneumokokus harian.
+=== PANDUAN KLINIS: Bronkitis Akut (ICD-10: J20) ===
+	S (Subjektif):
+	Keluhan Utama: Batuk mendadak yang diawali batuk kering lalu berdahak (jernih, putih, atau kekuningan) berlangsung selama 1–3 minggu.
+	Keluhan Tambahan: Rasa tidak nyaman/nyeri di dada tengah (substernal) saat batuk, demam subfebris, lemas, tanpa riwayat penyakit paru kronis sebelumnya.
+	O (Objektif):
+	Pemeriksaan Fisik: Tanda vital umumnya stabil. Faring dapat sedikit hiperemis.
+	Auskultasi Paru: Ditemukan ronki basah kasar atau wheezing ringan yang dapat berubah atau hilang setelah pasien batuk.
+	Pemeriksaan Penunjang: Rontgen toraks tampak normal (dilakukan hanya untuk menyingkirkan kemungkinan pneumonia pada pasien risiko tinggi).
+	A (Asesmen):
+	Bronkitis Akut (ICD-10: J20.9).
+	P (Plan):
+	Farmakologi:
+	Batuk Kering Mengganggu: Antitusif seperti Dextromethorphan 3 x 15 mg PO.
+	Batuk Berdahak: Mukolitik/Ekspektoran seperti Ambroxol 3 x 30 mg PO atau Guaifenesin 3 x 200 mg PO.
+	Bronkospasme: Salbutamol 3 x 2 mg PO (jika ada wheezing).
+	Catatan: Antibiotik tidak direkomendasikan secara rutin karena mayoritas (>90%) disebabkan oleh virus.
+	Non-Farmakologi: Asupan cairan hangat yang banyak, hindari paparan asap rokok dan iritan udara.
+	Edukasi: Jelaskan bahwa batuk akibat bronkitis akut dapat bertahan hingga 2–3 minggu meskipun proses infeksi utamanya telah membaik.
+=== PANDUAN KLINIS: Rhinitis Alergi (ICD-10: J30.4) ===
+	S (Subjektif):
+	Keluhan Utama: Bersin berulang (>5 kali berturut-turut), ingus encer dan jernih (rhinorrhea), hidung tersumbat, serta gatal pada hidung, mata, dan langit-langit mulut.
+	Anamnesis Spesifik: Gejala timbul jika terpapar alergen pemicu (debu rumah, tungau, udara dingin, bulu hewan).
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Allergic Shiners: Lingkaran hitam di bawah kedua mata.
+	Allergic Crease: Lipatan garis melintang pada batang hidung akibat sering menggosok hidung ke atas (allergic salute).
+	Rinoskopi Anterior: Konka nasalis inferior tampak edema, pucat (livid), dan terdapat sekret mukoid encer jernih.
+	A (Asesmen):
+	Rhinitis Alergi Intermiten / Persisten (Ringan / Sedang-Berat) (ICD-10: J30.4).
+	P (Plan):
+	Farmakologi:
+	Antihistamin Oral Generasi 2 (Pilihan Utama): Cetirizine 1 x 10 mg PO ATAU Loratadine 1 x 10 mg PO (non-sedatif).
+	Kortikosteroid Nasal Spray (Gejala Sedang-Berat/Persisten): Fluticasone furoate atau Mometasone furoate 1–2 semprot/lubang hidung/hari.
+	Dekongestan Oral: Pseudoefedrin 2 x 60 mg PO (jangka pendek 3–5 hari jika hidung sangat tersumbat).
+	Non-Farmakologi: Cuci hidung rutin menggunakan cairan NaCl 0,9% (nasal saline irrigation).
+	Edukasi: Edukasi utama adalah penghindaran alergen pemicu (allergen avoidance), cuci sprei/sarung bantal dengan air hangat secara berkala, dan gunakan masker saat membersihkan rumah.
+=== PANDUAN KLINIS: Hipertensi Essential / Primer (ICD-10: I10) ===
+	S (Subjektif):
+	Keluhan Utama: Sering kali tanpa gejala (silent killer). Beberapa pasien mengeluh sakit kepala belakang/tengkuk kaku, pusing, rasa berat di pundak, mudah lelah, atau jantung berdebar.
+	Red Flags: Nyeri dada hebat, sesak napas, pandangan kabur mendadak, kelemahan anggota gerak/defisit neurologis, atau penurunan kesadaran.
+	O (Objektif):
+	Pemeriksaan Fisik: Pengukuran Tekanan Darah (TD) berulang setelah istirahat 5 menit:
+	Hipertensi Stage 1: Sistolik 140–159 mmHg atau Diastolik 90–99 mmHg.
+	Hipertensi Stage 2: Sistolik ≥160 mmHg atau Diastolik ≥100 mmHg.
+	Pemeriksaan Penunjang: EKG (evaluasi hipertrofi ventrikel kiri/LVH), Ureum/Kreatinin (fungsi ginjal), Urinalisis (proteinuria), Profil Lipid, dan Gula Darah.
+	A (Asesmen):
+	Hipertensi Stage 1 / Stage 2 (ICD-10: I10).
+	P (Plan):
+	Farmakologi (Pilihan Lini Pertama):
+	CCB: Amlodipine 1 x 5–10 mg PO.
+	ACE Inhibitor: Captopril 2–3 x 12,5–25 mg PO atau Ramipril 1 x 2,5–10 mg PO.
+	ARB: Valsartan 1 x 80–160 mg PO atau Candesartan 1 x 8–16 mg PO.
+	Diuretik Thiazide: Hydrochlorothiazide (HCT) 1 x 12,5–25 mg PO.
+	Target TD: <140/90 mmHg (atau <130/80 mmHg pada pasien dengan diabetes/penyakit ginjal kronis).
+	Non-Farmakologi: Restriksi asupan natrium (<2 gram natrium/hari atau setara <1 sendok teh garam), olahraga aerobik 150 menit/minggu, penurunan berat badan, stop merokok.
+	Edukasi: Kontrol rutin, pemantauan tekanan darah mandiri (Home Blood Pressure Monitoring), dan kepatuhan minum obat seumur hidup.
+=== PANDUAN KLINIS: Diabetes Melitus Tipe 2 (ICD-10: E11) ===
+	S (Subjektif):
+	Keluhan Utama (Trias Klasik): Polidipsia (sering haus), Polifagia (sering lapar), dan Poliuria (sering kencing, terutama malam hari).
+	Keluhan Lain: Penurunan berat badan drastis tanpa sebab jelas, cepat lelah, kesemutan/rasa tebal pada kaki, luka yang sulit sembuh, penglihatan kabur, atau gatal di daerah genital.
+	O (Objektif):
+	Pemeriksaan Fisik: Pengukuran IMT, tekanan darah, dan pemeriksaan fisik kaki (pulsasi arteri, sensativitas filamen).
+	Pemeriksaan Penunjang (Kriteria Diagnosis):
+	Gula Darah Puasa (GDP): ≥126" mg/dL"  (puasa min. 8 jam).
+	Gula Darah Sewaktu (GDS): ≥200" mg/dL"  disertai gejala klasik.
+	TTGO (2 Jam Pasca Pembebanan 75g Glukosa): ≥200" mg/dL" .
+	HbA1c: ≥6,5%.
+	A (Asesmen):
+	Diabetes Melitus Tipe 2 (ICD-10: E11.9).
+	P (Plan):
+	Farmakologi:
+	Lini Pertama: Metformin 2×500" mg"  PO (diminum saat/setelah makan). Dosis dapat ditingkatkan hingga 3×500" mg"  atau 2×850" mg" .
+	Kombinasi (Bila HbA1c Belum Terkontrol): Tambahkan golongan Sulfonilurea (Glimepirid 1 x 1–4 mg atau Glibenklamid 1 x 2,5–5 mg) sebelum makan pagi, ATAU DPP-4 Inhibitor / SGLT-2 Inhibitor / Insulin sesuai indikasi.
+	Non-Farmakologi: Perencanaan makan dengan prinsip 3J (Jadwal, Jumlah, dan Jenis makanan), latihan jasmani teratur 3–5 kali seminggu.
+	Edukasi: Perawatan kaki DM (pemilihan alas kaki, tidak boleh bertelanjang kaki), pemantauan glukosa darah mandiri (PGDM), dan pengenalan gejala hipoglikemia (keringat dingin, gemetar, pusing) beserta penanganannya.
+=== PANDUAN KLINIS: Penyakit Jantung Koroner / Angina Pektoris Stabil (ICD-10: I20.9) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri dada khas (angina pectoris): rasa ditindih beban berat, diremas, atau terbakar di area substernal/dada kiri. Nyeri dapat menjalar ke bahu kiri, leher, atau rahang bawah.
+	Karakteristik: Dipicu oleh aktivitas fisik atau stres emosional, membaik dengan istirahat atau pemberian nitrat sublingual dalam waktu <15 menit.
+	Red Flags: Nyeri dada menetap >20 menit saat istirahat, disertai keringat dingin, mual, atau sesak berat → Curiga Sindrom Koroner Akut (SKA / Infark Miokard).
+	O (Objektif):
+	Pemeriksaan Fisik: Tanda vital bisa normal atau menunjukkan takikardia dan peningkatan tekanan darah saat serangan.
+	Pemeriksaan Penunjang:
+	EKG 12-Lead: Depresi segmen ST, inversi gelombang T, atau EKG normal saat tidak serangan.
+	Enzim Jantung (Troponin I/T, CK-MB): Hasil normal / negatif (membedakan dari Sindrom Koroner Akut).
+	Profil Lipid & Gula Darah: Untuk evaluasi faktor risiko kardiovaskular.
+	A (Asesmen):
+	Angina Pektoris Stabil (ICD-10: I20.9).
+	P (Plan):
+	Farmakologi:
+	Serangan Akut: Isosorbide Dinitrate (ISDN) 5 mg sublingual (dapat diulang tiap 5 menit, maks. 3 kali).
+	Antiplatelet: Aspirin 1 x 80–100 mg PO ATAU Clopidogrel 1 x 75 mg PO.
+	Antiangina / Pemeliharaan: Bisoprolol 1 x 2,5–5 mg PO (Beta Blocker) ATAU ISDN 3 x 5–10 mg PO.
+	Statin (Stabilitas Plak): Atorvastatin 1 x 20–40 mg PO atau Simvastatin 1 x 20 mg PO malam hari.
+	Non-Farmakologi: Pembatasan aktivitas fisik berat mendadak, kontrol faktor risiko (stop merokok, kurangi lemak jenuh).
+	Rujukan: Rujuk ke Dokter Spesialis Jantung dan Pembuluh Darah untuk evaluasi uji latih beban (treadmill test) atau ekokardiografi.
+=== PANDUAN KLINIS: Gagal Jantung Kronis / CHF (ICD-10: I50.9) ===
+	S (Subjektif):
+	Keluhan Utama: Sesak napas saat beraktivitas (exertional dyspnea), sesak napas saat berbaring lurus (orthopnea), sering terbangun malam hari karena sesak (paroxysmal nocturnal dyspnea / PND).
+	Keluhan Tambahan: Pembengkakan pada kedua kaki, cepat lelah saat aktivitas ringan, perut terasa begah/membuncit.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Distensi Vena Jugularis (JVP meningkat).
+	Batas jantung melebar (kardiomegali).
+	Auskultasi: Ronki basah halus di basal kedua paru, dapat terdengar bunyi jantung 3 (S_3 gallop).
+	Edema pretibial / ankle edema bilateral, hepatomegali.
+	Pemeriksaan Penunjang:
+	Rontgen Toraks: Kardiomegali (CTR >50%), gambaran kongesti paru / edema interstitial / garis Kerley B.
+	EKG: Sinus takikardia, iskemia, atau aritmia.
+	Ekokardiografi: Evaluasi penurunan Fraksi Ejeksi / Ejection Fraction (EF).
+	A (Asesmen):
+	Gagal Jantung Kronis Klasifikasi NYHA I / II / III / IV (ICD-10: I50.9).
+	P (Plan):
+	Farmakologi:
+	Diuretik (Atasi Retensi Cairan): Furosemide 1 x 20–40 mg PO (dosis disesuaikan dengan status volume cairan).
+	Inhibitor RAAS: Captopril 3 x 6,25–25 mg PO atau Ramipril 1 x 2,5–5 mg PO atau Valsartan 1 x 40–80 mg PO.
+	Beta Blocker (Kondisi Stabil): Bisoprolol 1 x 1,25–5 mg PO (dimulai dosis rendah).
+	Antagonis Aldosteron: Spironolakton 1 x 12,5–25 mg PO.
+	Non-Farmakologi: Restriksi cairan (maksimal 1,5–2 Liter/hari) dan restriksi garam (<2 gram/hari). Penimbangan berat badan harian.
+	Edukasi: Bila berat badan naik >2" kg"  dalam 3 hari, menandakan penumpukan cairan dan segera kontrol ke dokter.
+=== PANDUAN KLINIS: Dislipidemia (ICD-10: E78.5) ===
+	S (Subjektif):
+	Keluhan Utama: Umumnya asimtomatik (tanpa gejala) dan ditemukan saat pemeriksaan kesehatan rutin (medical check-up).
+	Keluhan Lain: Kadang ditemukan pegal-pegal di daerah tengkuk atau pundak, meskipun tidak spesifik.
+	O (Objektif):
+	Pemeriksaan Fisik: Sebagian besar normal. Pada kasus kelainan lipid familial berat, dapat ditemukan xanthelasma (penumpukan lemak di kelopak mata) atau xanthoma (pada tendon).
+	Pemeriksaan Penunjang (Profil Lipid Darah Puasa 10–12 jam):
+	Kolesterol Total: ≥200" mg/dL" 
+	Kolesterol LDL: ≥130" mg/dL"  (target menyesuaikan kategori risiko kardiovaskular pasien)
+	Trigliserida: ≥150" mg/dL" 
+	Kolesterol HDL: <40" mg/dL"  (pria) atau <50" mg/dL"  (wanita)
+	A (Asesmen):
+	Dislipidemia / Hiperkolesterolemia / Hipertrigliseridemia (ICD-10: E78.5).
+	P (Plan):
+	Farmakologi:
+	Hiperkolesterolemia / Dominan LDL Tinggi:
+	Simvastatin 1 x 10–20 mg PO (malam hari) ATAU
+	Atorvastatin 1 x 10–20 mg PO (malam hari).
+	Hipertrigliseridemia Berat (Trigliserida >500" mg/dL"  - Risiko Pankreatitis):
+	Golongan Fibrat: Fenofibrat 1 x 145–300 mg PO atau Gemfibrozil 1 x 600 mg PO.
+	Non-Farmakologi: Diet rendah asam lemak jenuh dan kolesterol, hindari lemak trans, kurangi konsumsi gula olahan, tingkatkan asupan serat makanan.
+	Edukasi: Olahraga aerobik teratur 30 menit/hari. Evaluasi ulang profil lipid darah setelah 6–8 minggu pemberian terapi.
+=== PANDUAN KLINIS: Gout Arthritis / Asam Urat (ICD-10: M10.9) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri sendi hebat yang terjadi secara mendadak (sering terbangun tengah malam/dini hari), disertai pembengkakan, rasa panas, dan kemerahan pada sendi.
+	Predileksi: Paling sering pada sendi MTP-1 (ibu jari kaki / podagra), pergelangan kaki, atau lutut.
+	Anamnesis Spesifik: Riwayat konsumsi makanan tinggi purin (jeroan, daging merah, seafood, emping, alkohol) sebelum serangan.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Fase Akut: Sendi lokal tampak eritema (merah), edematous (bengkak), teraba hangat, dan sangat nyeri saat disentuh/digerakkan.
+	Fase Kronis: Ditemukan tofus (benjolan endapan kristal asam urat di bawah kulit di sekitar sendi atau cuping telinga).
+	Pemeriksaan Penunjang:
+	Asam Urat Darah: >7,0" mg/dL"  (pria) atau >6,0" mg/dL"  (wanita). Catatan: Kadar asam urat dapat terukur normal pada saat serangan akut.
+	A (Asesmen):
+	Gout Arthritis Akut / Kronis Ber-tofus (ICD-10: M10.9).
+	P (Plan):
+	Farmakologi:
+	Tatalaksana Serangan Akut (Pilih Salah Satu):
+	NSAID: Natrium Diklofenak 2 x 50 mg PO ATAU Meloxicam 1 x 15 mg PO ATAU Ibuprofen 3 x 400 mg PO.
+	Kolkisin: Dosis awal 1 mg, dilanjutkan 0,5 mg 1 jam kemudian (maksimal 1,5 mg/hari).
+	Catatan: Jangan memulai atau mengubah dosis Allopurinol pada saat serangan akut sedang berlangsung.
+	Terapi Penurun Asam Urat (Fase Kronis / Dilakukan 2 Minggu Pasca Serangan Reda):
+	Allopurinol 1 x 100 mg PO (dapat dititrasi naik bertahap hingga target kadar asam urat darah <6" mg/dL" ).
+	Non-Farmakologi: Istirahatkan sendi yang sakit (joint rest), kompres dingin pada area bengkak.
+	Edukasi: Batasi makanan tinggi purin dan hindari konsumsi alkohol. Minum air putih cukup (2–3 Liter/hari) untuk membantu ekskresi asam urat via ginjal.
+=== PANDUAN KLINIS: Obesitas (ICD-10: E66.9) ===
+	S (Subjektif):
+	Keluhan Utama: Berat badan berlebih yang mengganggu penampilan atau aktivitas, cepat lelah, sesak napas saat beraktivitas sedang, nyeri pada sendi penopang beban tubuh (lutut/pinggang).
+	Keluhan Tambahan: Ngorok/mendengkur saat tidur (snoring/suspek obstructive sleep apnea).
+	O (Objektif):
+	Pemeriksaan Antropometri:
+	Indeks Massa Tubuh (IMT) [BB(kg) / TB("m" ^2)] Kriteria Asia-Pasifik:
+	Overweight / Pra-obesitas: 23,0–24,9 〖"kg/m" 〗^2
+	Obesitas I: 25,0–29,9 〖"kg/m" 〗^2
+	Obesitas II: ≥30,0〖" kg/m" 〗^2
+	Lingkar Pinggang (Obesitas Sentral): >90" cm"  pada pria atau >80" cm"  pada wanita.
+	Pemeriksaan Penunjang: Gula Darah Puasa, Profil Lipid, Fungsi Hati (SGOT/SGPT untuk screening fatty liver).
+	A (Asesmen):
+	Obesitas Tingkat I / Tingkat II (ICD-10: E66.9).
+	P (Plan):
+	Tatalaksana Komprehensif:
+	Intervensi Nutrisi (Defisit Kalori): Pengurangan asupan kalori sebesar 500–1000 kcal/hari dari kebutuhan kalori harian total (target penurunan BB 0,5–1 kg/minggu). Diet gizi seimbang tinggi serat dan rendah gula sederhana.
+	Aktivitas Fisik: Latihan fisik aerobik intensitas sedang (jalan cepat, bersepeda, berenang) minimal 150–300 menit per minggu, dibagi menjadi 3–5 kali seminggu.
+	Farmakologi (Indikasi: IMT ≥25〖" kg/m" 〗^2 dengan komorbid atau IMT ≥30〖" kg/m" 〗^2 setelah intervensi gaya hidup tidak efektif):
+	Orlistat 3 x 120 mg PO (diminum bersamaan dengan makanan yang mengandung lemak).
+	Edukasi: Pemantauan berat badan secara teratur sepekan sekali dan komitmen perubahan perilaku jangka panjang.
+=== PANDUAN KLINIS: Gastroenteritis Akut / Diare Akut (ICD-10: A09) ===
+	S (Subjektif):
+	Keluhan Utama: Buang air besar (BAB) cair >3 kali dalam 24 jam, mual, muntah, mulas/kram perut, demam.
+	Anamnesis Spesifik: Konsumsi makanan/minuman yang tidak higienis, riwayat konsumsi obat/antibiotik, konsistensi tinja (ada/tidaknya lendir atau darah).
+	Red Flags: Tanda dehidrasi berat, muntah profus menetap, tinja berdarah segar masif, tidak kencing >6 jam (oliguria/anuria).
+	O (Objektif):
+	Pemeriksaan Fisik (Penilaian Derajat Dehidrasi):
+	Tanpa Dehidrasi: Kesadaran baik, mata tidak cekung, turgor kulit kembali cepat, minum biasa.
+	Dehidrasi Ringan-Sedang: Gelisah/rewel, mata cekung, turgor kulit kembali lambat, haus/ingin minum banyak.
+	Dehidrasi Berat: Letargi/penurunan kesadaran, mata sangat cekung, turgor kulit kembali sangat lambat (>2 detik), tidak bisa minum.
+	Pemeriksaan Penunjang: Feses rutin (mencari eritrosit, leukosit, amuba, telur cacing). Elektrolit darah jika dehidrasi berat.
+	A (Asesmen):
+	Gastroenteritis Akut Tanpa Dehidrasi / Dehidrasi Ringan-Sedang / Dehidrasi Berat (ICD-10: A09).
+	P (Plan):
+	Farmakologi:
+	Rehidrasi Oral: Oralit 200 mL tiap kali BAB cair.
+	Suplementasi Zinc: 1×20" mg"  PO (selama 10 hari berturut-turut, wajib tuntas).
+	Antiemetik (Bila Muntah Membandel): Ondansetron 3×4" mg"  PO/IV.
+	Antibiotik (Hanya Atas Indikasi Diare Berdarah / Disentri / Kolera): Ciprofloxacin 2×500" mg"  PO (5 hari) ATAU Cotrimoxazole 2×960" mg"  PO.
+	Non-Farmakologi: Teruskan pemberian ASI/makanan berkuah, hindari makanan manis/berlemak tinggi dan susu formula laktosa tinggi saat diare aktif.
+	Rujukan: Dehidrasi berat wajib diberikan terapi cairan IV (Ringer Laktat 100 mL/kgBB sesuai rumus) dan dirawat inap.
+=== PANDUAN KLINIS: Gastritis (ICD-10: K29.7) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri atau rasa terbakar di ulu hati (epigastrium), mual, muntah, perut kembung, terasa cepat kenyang.
+	Anamnesis Spesifik: Dipicu oleh stres, keterlambatan makan, konsumsi makanan pedas/asam, kopi, alkohol, atau riwayat penggunaan obat antiinflamasi non-steroid (OAINS/NSAID) dan aspirin jangka panjang.
+	Red Flags: Muntah darah (hematemesis), BAB berwarna hitam ter (melena), anemia berat, penurunan berat badan drastis.
+	O (Objektif):
+	Pemeriksaan Fisik: Nyeri tekan epigastrium (+). Tanda vital umumnya stabil. Sklera dan konjungtiva diperiksa untuk menyingkirkan anemia akibat perdarahan saluran cerna.
+	Pemeriksaan Penunjang: Darah rutin (cek Hb/Hematokrit), Endoskopi (dilakukan oleh Dokter Spesialis Penyakit Dalam jika keluhan menetap atau terdapat red flags).
+	A (Asesmen):
+	Gastritis Akut / Gastritis Kronis (ICD-10: K29.7).
+	P (Plan):
+	Farmakologi:
+	Antasida Doen (Netralisasi Asam): 3×1"--" 2 tablet / sendok takar PO (30 menit sebelum makan/saat nyeri).
+	H2 Receptor Antagonist (H2RA): Ranitidin 2×150" mg"  PO.
+	Proton Pump Inhibitor / PPI (Pilihan Utama Kasus Sedang-Berat): Omeprazole 2×20" mg"  PO ATAU Lansoprazole 1×30" mg"  PO (diminum 30 menit sebelum makan).
+	Antispasmodik (Bila Kram Hebat): Hyoscine N-butylbromide 3×10" mg"  PO.
+	Non-Farmakologi: Pola makan teratur dengan porsi kecil tetapi sering (small frequent meals).
+	Edukasi: Hindari pemicu asam lambung (pedas, asam, kopi, teh pekat, soda) dan hentikan penggunaan NSAID tanpa petunjuk dokter.
+=== PANDUAN KLINIS: Gastroesophageal Reflux Disease / GERD (ICD-10: K21.9) ===
+	S (Subjektif):
+	Keluhan Utama: Rasa terbakar di dada yang menjalar ke leher (heartburn), asam/pahit di mulut (regurgitasi).
+	Keluhan Tambahan: Rasa ganjal di tenggorokan (globus sensation), batuk kering kronis terutama malam hari, suara serak pagi hari, erosi gigi. Gejala memburuk setelah makan kenyang atau saat berbaring.
+	O (Objektif):
+	Pemeriksaan Fisik: Umumnya dalam batas normal, kadang ditemukan nyeri tekan ringan di epigastrium.
+	Pemeriksaan Penunjang: Kuesioner GERD-Q (Skor ≥8 mendukung diagnosis GERD). Endoskopi Saluran Cerna Atas (dilakukan jika gejala tidak membaik dalam 4–8 minggu atau terdapat dysphagia).
+	A (Asesmen):
+	Gastroesophageal Reflux Disease / GERD (ICD-10: K21.9).
+	P (Plan):
+	Farmakologi:
+	Terapi Inisiasi (PPI Dosis Tinggi selama 4–8 minggu): Omeprazole 2×20" mg"  PO ATAU Lansoprazole 2×30" mg"  PO (30–60 menit sebelum makan pagi dan makan malam).
+	Prokinetik (Mengontrol Refluks & Motilitas): Domperidone 3×10" mg"  PO (sebelum makan).
+	Non-Farmakologi Modifikasi Gaya Hidup:
+	Memberi jeda minimal 3 jam antara waktu makan malam dan tidur.
+	Meninggikan posisi kepala saat tidur (15"--" 20" cm" ).
+	Menurunkan berat badan pada pasien overweight/obesitas.
+	Edukasi: Hindari pakaian ketat di area perut, batasi makanan tinggi lemak, cokelat, kafein, dan rokok.
+=== PANDUAN KLINIS: Apendisitis Akut / Usus Buntu (ICD-10: K35.8) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri perut diawali di area sekitar pusat (periumbilikal) yang kemudian berpindah dan menetap di perut kanan bawah (fosa iliaka kanan).
+	Keluhan Tambahan: Mual, muntah, anoreksia (kehilangan nafsu makan total), demam subfebris.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Nyeri tekan di titik McBurney (+).
+	Rebound Tenderness / Nyeri Lepas (+): Nyeri saat tekanan pada perut kanan bawah dilepas mendadak.
+	Rovsing Sign (+): Tekanan pada perut kiri bawah menimbulkan nyeri di perut kanan bawah.
+	Psoas Sign (+) & Obturator Sign (+).
+	Pemeriksaan Penunjang:
+	Lab Darah: Leukositosis (10.000"--" 18.000/μ"L" ) dengan pergeseran ke kiri (shift to the left).
+	USG Abdomen: Penebalan dinding apendiks (>6" mm" ), non-compressible.
+	A (Asesmen):
+	Apendisitis Akut (ICD-10: K35.8).
+	P (Plan):
+	Tatalaksana Darurat & Rujukan Bedah:
+	Puasakan pasien (Nil Per Os / NPO).
+	Pasang jalur IV dan berikan IVFD Kristaloid (Ringer Laktat / NaCl 0,9%) untuk pemeliharaan cairan.
+	Antibiotik Profilaksis Pre-Operatif: Ceftriaxone 1×2" gram"  IV drip + Metronidazole 3×500" mg"  IV drip.
+	Anti nyeri: Parasetamol IV 1000" mg"  atau Ketorolac 30" mg"  IV (setelah diagnosis ditegakkan).
+	Tindakan Definitif: Rujuk Cito ke Dokter Spesialis Bedah untuk tindakan Apendektomi (laparoskopi atau laparotomi).
+=== PANDUAN KLINIS: Hepatitis A Akut (ICD-10: B15.9) ===
+	S (Subjektif):
+	Keluhan Utama: Demam subfebris, mual, muntah, lemas hebat, tidak nafsu makan, nyeri/begah di perut kanan atas.
+	Fase Ikterik (Setelah beberapa hari): Urine berwarna gelap seperti teh pekat, mata dan kulit tampak kuning (ikterus), tinja dapat berwarna pucat/dempul.
+	Anamnesis Spesifik: Riwayat konsumsi makanan/air yang kurang terjamin kebersihannya (fecal-oral transmission).
+	O (Objektif):
+	Pemeriksaan Fisik: Sklera ikterik, ikterus pada kulit, hepatomegali halus dengan nyeri tekan kuadran kanan atas.
+	Pemeriksaan Penunjang:
+	Fungsi Hati: Peningkatan SGOT/SGPT tajam (bisa >5"--" 10× batas atas normal), peningkatan Bilirubin Total dan Direk.
+	Serologi Spesifik: Anti-HAV IgM (+).
+	A (Asesmen):
+	Hepatitis A Akut (ICD-10: B15.9).
+	P (Plan):
+	Farmakologi (Terapi Suportif):
+	Tidak ada terapi antivirus spesifik.
+	Antiemetik: Ondansetron 3×4" mg"  PO atau Metoklopramid 3×10" mg"  PO (sebelum makan).
+	Hepatoprotektor: Curcuma 3×1"--" 2 tablet PO.
+	Non-Farmakologi: Tirah baring (bed rest) selama fase akut. Diet tinggi karbohidrat, rendah lemak, dan porsi kecil teratur.
+	Edukasi: Jaga kebersihan cuci tangan dengan sabun, pisahkan alat makan/minum pasien untuk mencegah penularan ke anggota keluarga lain. Penyakit ini umumnya sembuh sempurna tanpa menjadi kronis.
+=== PANDUAN KLINIS: Hepatitis B (ICD-10: B16 / B18.1) ===
+	S (Subjektif):
+	Fase Akut: Gejala menyerupai flu, lemas, mual, nyeri perut kanan atas, ikterus.
+	Fase Kronis: Sering kali asimtomatik hingga terjadi komplikasi lanjut (sirosis atau karsinoma hati). Keluhan berupa cepat lelah, perut membesar, atau mudah memar.
+	Anamnesis Spesifik: Riwayat paparan darah/cairan tubuh, hubungan seksual berisiko, penggunaan jarum suntik bergantian, atau transmisi vertikal dari ibu ke janin saat persalinan.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Fase Akut: Sklera ikterik, hepatomegali.
+	Fase Kronis Lanjut (Sirosis): Spider naevi, eritema palmaris, asites, edema tungkai, splenomegali.
+	Pemeriksaan Penunjang:
+	Serologi & Virologi: HBsAg (+) (persisten >6 bulan menandakan kusta/infeksi kronis), Anti-HBs, HBeAg, Anti-HBe, dan kuantifikasi HBV-DNA.
+	Fungsi Hati & USG Abdomen: Evaluasi SGOT/SGPT dan parenkim hati.
+	A (Asesmen):
+	Hepatitis B Akut (ICD-10: B16.9) / Hepatitis B Kronis (ICD-10: B18.1).
+	P (Plan):
+	Farmakologi:
+	Akut: Terapi suportif (mayoritas pasien dewasa mengalami pembersihan virus secara alami/sembuh mandiri).
+	Kronis Aktif (Rujuk Spesialis Penyakit Dalam): Terapi antivirus oral lini utama untuk menekan replikasi virus jangka panjang: Tenofovir Disoproxil Fumarate 1×300" mg"  PO ATAU Entecavir 1×0,5" mg"  PO.
+	Edukasi: Dilarang mengonsumsi alkohol dan obat-obatan hepatotoksik. Lakukan skrining HBsAg dan berikan vaksinasi Hepatitis B pada pasangan dan kontak erat keluarga.
+=== PANDUAN KLINIS: Hemoroid / Ambeien (ICD-10: K64) ===
+	S (Subjektif):
+	Keluhan Utama: Keluar darah segar menetes dari anus saat/setelah BAB (tanpa rasa nyeri), atau adanya benjolan yang keluar dari anus.
+	Keluhan Tambahan: Rasa gatal, basah, atau tidak nyaman di area perianal.
+	Anamnesis Spesifik: Riwayat konstipasi kronis, sering mengejan saat BAB, diet rendah serat, atau kondisi kehamilan.
+	O (Objektif):
+	Pemeriksaan Fisik (Inspeksi Perianal & Colok Dubur / DRE):
+	Derajat 1: Perdarahan (+), tidak ada benjolan yang keluar dari anus.
+	Derajat 2: Benjolan keluar saat mengejan, namun masuk kembali secara spontan.
+	Derajat 3: Benjolan keluar saat mengejan, harus didorong manual dengan jari.
+	Derajat 4: Benjolan keluar menetap, tidak dapat didorong masuk kembali (inkarserata/terjadi trombosis).
+	A (Asesmen):
+	Hemoroid Interna Derajat I / II / III / IV (ICD-10: K64.0 - K64.3).
+	P (Plan):
+	Farmakologi:
+	Vena Tonik / Flebotonik: Kombinasi Diosmin 450 mg + Hesperidin 50 mg (2–3 x 1 tablet PO untuk meredakan pembengkakan).
+	Suppositoria / Salep Perianal: Antiinflamasi lokal + Anestetik lokal (diberikan 1–2 x/hari pasca BAB).
+	Laksatif / Pelembut Tinja (Bila Konstipasi): Laktulosa 1×15" mL"  PO.
+	Non-Farmakologi: Rendam duduk air hangat (sitz bath) selama 10–15 menit 2–3 kali sehari. Tingkatkan asupan serat (25"--" 30" gram/hari" ) dan cairan (2"--" 2,5" Liter/hari" ).
+	Rujukan: Hemoroid Derajat III–IV atau Hemoroid dengan Trombosis Nyeri Akut dirujuk ke Dokter Spesialis Bedah untuk penanganan invasif (Hemoroidektomi / Ligation / Stapler).
+=== PANDUAN KLINIS: Kolelitiasis / Batu Empedu (ICD-10: K80.2) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri perut kanan atas atau epigastrium hilang timbul (kolik bilier) yang dapat menjalar hingga ke punggung kanan atau belikat/bahu kanan.
+	Anamnesis Spesifik: Dipicu atau memburuk setelah mengonsumsi makanan tinggi lemak/santan. Disertai mual, muntah, perut kembung, dan rasa tidak nyaman di perut atas.
+	Red Flags: Demam tinggi menggigil, kuning pada mata (jaundice), tinja dempul → Curiga Kolesistitis Akut atau Kolangitis.
+	O (Objektif):
+	Pemeriksaan Fisik: Nyeri tekan kuadran kanan atas. Murphy's Sign (-) pada kolelitiasis tanpa komplikasi (jika Murphy's Sign (+), suspect kolesistitis).
+	Pemeriksaan Penunjang:
+	USG Abdomen (Gold Standard): Tampak gambaran hiperekoik dengan bayangan akustik (acoustic shadowing) di dalam kandung empedu.
+	Lab Darah: Bilirubin, SGOT/SGPT, dan Alfa-Amilase/Lipase (biasanya normal pada kolelitiasis murni).
+	A (Asesmen):
+	Kolelitiasis Simptomatik / Asimtomatik (ICD-10: K80.2).
+	P (Plan):
+	Farmakologi (Saat Serangan Kolik):
+	Analgetik / Antispasmodik: Hyoscine N-butylbromide 3×10" mg"  PO/IV ATAU Ketorolac 30" mg"  IV / Metamizole 1×1000" mg"  IV.
+	Non-Farmakologi: Diet rendah lemak dan tingkatkan konsumsi serat.
+	Rujukan:
+	Asimtomatik: Edukasi gaya hidup, pemantauan berkala.
+	Simptomatik Berulang: Rujuk ke Dokter Spesialis Bedah untuk pertimbangan Kolesistektomi (Laparoskopi Kolesistektomi).
+=== PANDUAN KLINIS: Stroke / Gangguan Peredaran Darah Otak (ICD-10: I63.9 / I61.9) ===
+	S (Subjektif):
+	Keluhan Utama: Kelemahan atau kelumpuhan separuh anggota gerak (hemiparesis/hemiplegi), wajah perot/mencong ke satu sisi, bicara pelo/cadel (disartria) atau tidak bisa bicara/paham pembicaraan (afasia), kesemutan/kebas separuh tubuh.
+	Anamnesis Spesifik: Onset gejala terjadi secara mendadak. Catat waktu pasti onset (time of onset).
+	Red Flags: Sakit kepala hebat mendadak tanpa sebab jelas, muntah menyembur, kejang, atau penurunan kesadaran (curiga Stroke Hemoragik / Perdarahan).
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Skrining FAST (+): Face (asimetris wajah), Arm (kelemahan lengan), Speech (gangguan bicara), Time (onset).
+	Pemeriksaan Neurologis: Kelumpuhan saraf kranial (N. VII dan N. XII sentral), refleks patologis (Babinski (+)), penurunan kekuatan otot unilateral.
+	Pemeriksaan Penunjang:
+	CT Scan Kepala Tanpa Kontras (Gold Standard): Membedakan Stroke Iskemik (infark/hipodens) vs Stroke Hemoragik (perdarahan/hiperdens).
+	Lab Darah: Gula Darah Sewaktu (wajib menyingkirkan hipoglikemia yang menyerupai stroke), Profil Lipid, Ureum/Kreatinin, Darah Lengkap, EKG.
+	A (Asesmen):
+	Stroke Iskemik (ICD-10: I63.9) / Stroke Hemoragik (ICD-10: I61.9).
+	P (Plan):
+	Tatalaksana Darurat & Rujukan Cito:
+	Stabilisasi ABC (Airway, Breathing, Circulation). Posisikan kepala ditinggikan 30 derajat. Berikan oksigen jika SpO2 <95%.
+	Pasang IVFD NaCl 0,9%. Rujuk Cito ke Rumah Sakit dengan fasilitas CT Scan dan Dokter Spesialis Neurologi.
+	Golden Period Stroke Iskemik: Trombolisis IV (rtPA) dapat diberikan dalam rentang <4,5 jam sejak onset di fasilitas yang memadai.
+	Farmakologi Sekunder (Setelah CT Scan Menyingkirkan Perdarahan):
+	Antiplatelet: Aspirin 1×80"--" 325" mg"  PO ATAU Clopidogrel 1×75" mg"  PO.
+	Neuroprotektan / Statin: Atorvastatin 1×20"--" 40" mg"  PO.
+	Pengendalian tekanan darah secara hati-hati (tidak diturunkan terlalu drastis pada fase akut iskemik kecuali TD >220/120" mmHg" ).
+=== PANDUAN KLINIS: Vertigo Posisional Paroksismal Jinak / BPPV (ICD-10: H81.1) ===
+	S (Subjektif):
+	Keluhan Utama: Sensasi pusing berputar (ruangan terasa berputar) yang timbul mendadak dan berlangsung singkat (<1 menit).
+	Anamnesis Spesifik: Dipicu oleh perubahan posisi kepala (misalnya saat miring kanan/kiri di tempat tidur, menengadah, atau membungkuk). Disertai mual dan muntah. Tidak ada keluhan penurunan pendengaran, tinnitus, atau defisit neurologis fokal (seperti kelumpuhan anggota gerak).
+	O (Objektif):
+	Pemeriksaan Fisik Neurologis:
+	Maneuver Dix-Hallpike (+): Ditemukan nistagmus (horizontal/rotatorik) yang timbul setelah periode latensi (beberapa detik), berlangsung singkat (<1 menit), dan menunjukkan kelelahan (fatigue) jika tes diulang.
+	Pemeriksaan fungsi cerebellar (tes romberg, heel-to-toe) dan saraf kranial dalam batas normal.
+	A (Asesmen):
+	Benign Paroxysmal Positional Vertigo / BPPV (ICD-10: H81.1).
+	P (Plan):
+	Tindakan Reposisi Kanalit (Terapi Utama - Non-Farmakologi):
+	Maneuver Epley (paling efektif untuk BPPV kanal posterior) ATAU Maneuver Semont.
+	Farmakologi (Simptomatik Jangka Pendek 3–5 Hari):
+	Histaminergik / Antivertigo: Betahistin Mesilat 3×6"--" 12" mg"  PO ATAU Betahistin DiHCl 3×8" mg"  PO.
+	Antiemetik (Bila Mual/Muntah Hebat): Dimenhidrinat 3×50" mg"  PO ATAU Metoklopramid 3×10" mg"  PO.
+	Edukasi: Hindari gerakan kepala yang terlalu mendadak. Lakukan latihan kemandirian di rumah (Brandt-Daroff Exercise) jika masih terasa sisa ketidakseimbangan.
+=== PANDUAN KLINIS: Migrain (ICD-10: G43.9) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri kepala sedang hingga berat yang sifatnya berdenyut (throbbing), umumnya terjadi pada satu sisi kepala (unilateral), berlangsung antara 4 hingga 72 jam.
+	Anamnesis Spesifik: Nyeri memberat dengan aktivitas fisik rutin (seperti naik tangga/jalan). Disertai mual, muntah, fotofobia (sangat sensitif/takut cahaya), dan fonofobia (sensitif terhadap suara).
+	Migrain dengan Aura: Diawali gejala visual (melihat kilatan cahaya, garis zig-zag, atau bintik hitam) 5–60 menit sebelum nyeri kepala timbul.
+	O (Objektif):
+	Pemeriksaan Fisik: Pemeriksaan neurologis umum, fungsi kranial, dan tanda vital dalam batas normal. Tidak ada tanda rangsang meningeal (kaku kuduk (-)).
+	A (Asesmen):
+	Migrain Tanpa Aura / Dengan Aura (ICD-10: G43.0 / G43.1 / G43.9).
+	P (Plan):
+	Farmakologi Terapi Abortif (Serangan Akut):
+	Serangan Ringan–Sedang: Parasetamol 1000" mg"  PO ATAU Ibuprofen 400"--" 800" mg"  PO ATAU Natrium Diklofenak 2×50" mg"  PO.
+	Serangan Sedang–Berat: Kombinasi Ergotamin 1 mg + Kafein 100 mg (1–2 tablet saat awal serangan, maks 6 tab/hari atau 10 tab/minggu) ATAU Triptan (Sumatriptan 50–100 mg).
+	Terapi Profilaksis (Indikasi: Serangan >2 kali/bulan atau sangat mengganggu aktivitas):
+	Propranolol 2×40"--" 80" mg"  PO ATAU Amitriptilin 1×10"--" 25" mg"  PO (malam hari).
+	Non-Farmakologi: Istirahat di ruangan yang gelap dan tenang saat serangan. Hindari pemicu (stres, kurang tidur, makanan tertentu seperti cokelat, MSG, keju, atau kafein berlebih).
+=== PANDUAN KLINIS: Epilepsi (ICD-10: G40.9) ===
+	S (Subjektif):
+	Keluhan Utama: Riwayat kejang berulang (minimal 2 kali kejang tanpa provokasi dengan jarak antar kejadian >24 jam).
+	Karakteristik Kejang:
+	Kejang Umum Tonik-Klonik: Hilang kesadaran mendadak, tubuh kaku diikuti gerakan kelojotan seluruh anggota badan, mata mendelik ke atas, mulut berbusa, lidah tergigit, atau ngompol.
+	Fase Pasca Kejang (Post-Ictal): Mengantuk, bingung, lemas, atau tidur lelap setelah kejang reda.
+	O (Objektif):
+	Pemeriksaan Fisik: Pemeriksaan fisik dan neurologis umumnya normal di luar serangan. Periksa tanda trauma sekunder akibat kejang (misal luka tergigit pada lidah).
+	Pemeriksaan Penunjang:
+	EEG (Elektroensefalografi): Ditemukan gelombang epileptiform (gelombang paku/spikewave).
+	CT Scan / MRI Otak: Dilakukan untuk menyingkirkan lesi struktural (seperti tumor otak, stroke lama, atau infeksi).
+	A (Asesmen):
+	Epilepsi Kejang Umum Tonik-Klonik / Kejang Fokal (ICD-10: G40.9).
+	P (Plan):
+	Farmakologi (Obat Anti-Epilepsi / OAE):
+	Kejang Umum Tonik-Klonik: Asam Valproat 2×250"--" 500" mg"  PO ATAU Fenobarbital 1×50"--" 100" mg"  PO.
+	Kejang Fokal: Karbamazepin 2×100"--" 200" mg"  PO ATAU Fenitoin 2×100" mg"  PO.
+	Edukasi Pengobatan: Obat harus diminum teratur tanpa terputus. Evaluasi penghentian obat (tapering off) hanya dipertimbangkan jika pasien telah bebas kejang minimal 2 tahun di bawah pengawasan Dokter Spesialis Neurologi.
+	Edukasi Pertolongan Pertama Kejang: Baringkan pasien di tempat aman, miringkan posisi tubuh/kepala agar jalan napas bebas, jangan menahan gerakan kejang secara paksa, dan dilarang memasukkan benda apa pun ke dalam mulut saat kejang.
+=== PANDUAN KLINIS: Gangguan Cemas Menyeluruh / GAD (ICD-10: F41.1) ===
+	S (Subjektif):
+	Keluhan Utama: Rasa cemas, khawatir, atau tegang yang berlebihan dan tidak realistis mengenai berbagai peristiwa kehidupan sehari-hari (pekerjaan, kesehatan, keuangan).
+	Kriteria Waktu: Gejala berlangsung hampir setiap hari selama minimal 6 bulan.
+	Gejala Somatis / Fisik: Jantung berdebar-debar (palpitasi), keringat dingin, gemetar, ketegangan otot/nyeri leher, sulit tidur (insomnia), mual, dan sulit berkonsentrasi.
+	O (Objektif):
+	Pemeriksaan Status Mentalis: Penampilan tampak tegang, gelisah (restless), afek cemas (anxious), proses pikir koheren tetapi didominasi kekhawatiran berlebih, tidak ditemukan waham atau halusinasi.
+	Pemeriksaan Fisik: Tanda vital menunjukkan takikardia ringan, tremor halus pada ekstremitas.
+	A (Asesmen):
+	Gangguan Cemas Menyeluruh / Generalized Anxiety Disorder (ICD-10: F41.1).
+	P (Plan):
+	Farmakologi:
+	Antidepresan Golongan SSRI (Lini Utama Jangka Panjang): Sertraline 1×25"--" 50" mg"  PO ATAU Fluoxetine 1×20" mg"  PO.
+	Benzodiazepin (Jangka Pendek 2–4 Minggu untuk Cemas Akut): Alprazolam 2×0,25" mg"  PO ATAU Clobazam 1×10" mg"  PO (hentikan bertahap untuk cegah ketergantungan).
+	Non-Farmakologi: Terapi Perilaku Kognitif (Cognitive Behavioral Therapy / CBT), latihan teknik relaksasi napas dalam.
+	Edukasi: Hindari konsumsi kafein, alkohol, rokok, dan obat-obatan terlarang yang dapat memicu atau memperberat kecemasan.
+=== PANDUAN KLINIS: Depresi / Episode Depresif (ICD-10: F32) ===
+	S (Subjektif):
+	Kriteria Waktu: Gejala berlangsung minimal 2 minggu.
+	3 Gejala Utama:
+	Suasana perasaan murung/sedih (depressed mood).
+	Kehilangan minat dan kegembiraan (anhedonia).
+	Berkurangnya energi yang menuju pada rasa mudah lelah dan penurunan aktivitas (anergia).
+	Gejala Tambahan: Konsentrasi dan perhatian berkurang, harga diri/rasa percaya diri berkurang, rasa bersalah, pandangan masa depan suram/pesimistis, gagasan/perbuatan membahayakan diri atau bunuh diri, gangguan tidur, dan nafsu makan menurun.
+	O (Objektif):
+	Pemeriksaan Status Mentalis: Kontak mata kurang, perawatan diri kurang, pembicaraan lambat/pelan, afek hipotimik/depresif, psikomotor lambat. Tidak terdapat gejala psikotik (pada episode depresif tanpa gejala psikotik).
+	A (Asesmen):
+	Episode Depresif Ringan / Sedang / Berat (ICD-10: F32.0 / F32.1 / F32.2).
+	P (Plan):
+	Farmakologi (Antidepresan Lini Pertama):
+	SSRI: Sertraline 1×50" mg"  PO ATAU Fluoxetine 1×20" mg"  PO.
+	Trisiklik (Bila Ada Gangguan Tidur Menonjol): Amitriptilin 1×12,5"--" 25" mg"  PO (diminum malam hari).
+	Evaluasi: Efek klinis antidepresan baru terlihat dalam 2–4 minggu pengobatan.
+	Non-Farmakologi: Psikoterapi suportif, Terapi Perilaku Kognitif (CBT).
+	Rujukan Cito: Segera rujuk ke Dokter Spesialis Kedokteran Jiwa (Psikiater) atau IGD RS jika pasien menunjukkan ide, rencana, atau percobaan bunuh diri aktif.
+=== PANDUAN KLINIS: Infeksi Saluran Kemih / ISK (ICD-10: N39.0) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri atau rasa terbakar saat buang air kecil (disuria), sering kencing dengan porsi sedikit-sedikit (polakisuria), rasa terdesak ingin kencing (urgensi), nyeri perut bawah/suprapubik, urine keruh atau berbau menyengat.
+	Anamnesis Spesifik (Pielonefritis / ISK Atas): Demam tinggi menggigil, nyeri pinggang (flank pain), mual, dan muntah.
+	O (Objektif):
+	Pemeriksaan Fisik: Nyeri tekan suprapubik (+). Pada pielonefritis: Nyeri ketok sudut kostovertebra / CVA (costovertebral angle) (+).
+	Pemeriksaan Penunjang:
+	Urinalisis: Leukosituria (>10/"LPB" ), Nitrit (+), Leukosit Esterase (+), hematuria mikroskopis.
+	Kultur Urine (Gold Standard): Ditemukan bakteriuria bermakna (>10^5 " CFU/mL" ).
+	A (Asesmen):
+	Infeksi Saluran Kemih Bawah / Sistitis Akut (ICD-10: N30.0) / ISK Atas / Pielonefritis Akut (ICD-10: N10).
+	P (Plan):
+	Farmakologi:
+	ISK Bawah Tanpa Komplikasi (Rawat Jalan - 3–5 hari):
+	Cotrimoxazole 2×960" mg"  PO ATAU
+	Ciprofloxacin 2×500" mg"  PO ATAU
+	Cefixime 2×100"--" 200" mg"  PO.
+	ISK Atas / Pielonefritis (Rawat Jalan 7–10 hari): Ciprofloxacin 2×500" mg"  PO ATAU Ceftriaxone 1" gram"  IV/hari.
+	Analgetik: Parasetamol 3×500" mg"  PO.
+	Non-Farmakologi: Asupan cairan adekuat (2–3 Liter/hari), hindari kebiasaan menahan kencing.
+	Edukasi: Menjaga kebersihan area genitalia (membilas dari arah depan ke belakang pada wanita untuk mencegah kontaminasi kuman saluran cerna).
+=== PANDUAN KLINIS: Gagal Ginjal Kronis / GGK (ICD-10: N18.9) ===
+	S (Subjektif):
+	Keluhan Utama: Badan lemas kronis, mual, muntah, nafsu makan turun (anoreksia), gatal pada kulit (pruritus), bengkak pada kedua kaki atau kelopak mata, jumlah urine berkurang (oliguria), sesak napas saat beraktivitas atau berbaring.
+	Anamnesis Spesifik: Riwayat hipertensi lama, diabetes melitus, batu saluran kemih, atau penggunaan obat analgetik (NSAID) jangka panjang.
+	O (Objektif):
+	Pemeriksaan Fisik: Anemia (konjungtiva pucat), edema pretibial / palpebra bilateral, tanda-tanda kelebihan cairan (hipervolemia, ronki basah halus di basal kedua paru, JVP meningkat, hipertensi).
+	Pemeriksaan Penunjang:
+	Lab Darah: Peningkatan Ureum dan Kreatinin serum yang persisten >3 bulan.
+	Penurunan Laju Filtrasi Glomerulus (eGFR):
+	Stage 1: eGFR≥90〖" mL/min/1,73m" 〗^2 (dengan bukti kerusakan ginjal)
+	Stage 2: eGFR" 60--89" 
+	Stage 3: eGFR" 30--59" 
+	Stage 4: eGFR" 15--29" 
+	Stage 5: eGFR<15〖" mL/min/1,73m" 〗^2 (Gagal Ginjal Terminal)
+	Urinalisis: Proteinuria / albuminuria, hematuria.
+	USG Ginjal: Ukuran ginjal mengecil (shrunken kidney), diferensiasi korteks-medula mengabur.
+	A (Asesmen):
+	Gagal Ginjal Kronis Stage 1 / 2 / 3 / 4 / 5 (ICD-10: N18.1 - N18.5 / N18.9).
+	P (Plan):
+	Farmakologi:
+	Pengendalian Tekanan Darah & Proteinuria (Stage Awal): ACE Inhibitor (Ramipril 1×2,5"--" 5" mg"  PO) atau ARB (Candesartan 1×8"--" 16" mg"  PO). Hentikan jika eGFR<15 atau terjadi hiperkalemia.
+	Anemia Renalis: Suplementasi Asam Folat 1×1" mg"  PO, Tablet Tambah Darah (Sulfas Ferosus), Agen Stimulasi Eritropoietin (EPO) jika "Hb"<10" g/dL" .
+	Pengikat Fosfat: Kalsium Karbonat (CaCO3) 3×500" mg"  PO (diminum bersamaan saat makan).
+	Diuretik (Bila Edema): Furosemide 1×40" mg"  PO.
+	Non-Farmakologi: Restriksi asupan protein (0,6"--" 0,8" g/kgBB/hari"  pada pasien non-dialisis), restriksi natrium (<2" g/hari" ), restriksi cairan (jumlah urine 24 jam + 500 mL).
+	Rujukan: Rujuk ke Dokter Spesialis Penyakit Dalam (KGEH / Ginjal Hipertensi) untuk persiapan Terapi Pengganti Ginjal (Hemodialisis, Dialisis Peritoneal, atau Transplantasi Ginjal) pada Stage 4–5.
+=== PANDUAN KLINIS: Urolitiasis / Batu Saluran Kemih (ICD-10: N20.9) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri pinggang hebat yang timbul mendadak dan sifatnya hilang timbul (kolik renal), menjalar ke lipat paha, skrotum, atau labia.
+	Keluhan Tambahan: Buang air kecil berdarah (hematuria), mual, muntah, kencing terasa tersendat atau tidak tuntas.
+	Red Flags: Demam tinggi menggigil (menandakan infeksi sekunder / urosepsis pada obstruksi saluran kemih).
+	O (Objektif):
+	Pemeriksaan Fisik: Nyeri ketok CVA (+), nyeri tekan pada area flank/pinggang. Tanda vital dapat menunjukkan takikardia dan hipertensi akibat respons nyeri akut.
+	Pemeriksaan Penunjang:
+	Urinalisis: Hematuria mikroskopis/makroskopis, kristaluria.
+	USG Ginjal & Kandung Kemih: Ditemukan bayangan hiperekoik dengan acoustic shadowing, hidronefrosis, atau hidroureter.
+	CT Scan Non-Kontras Abdomen-Pelvis (Gold Standard): Menilai lokasi, ukuran, dan densitas batu secara pasti.
+	Foto Polos Abdomen (BNO): Menilai keberadaan batu radioopak.
+	A (Asesmen):
+	Nefrolitiasis (Batu Ginjal) / Ureterolitiasis (Batu Ureter) / Vesikolitiasis (Batu Kandung Kemih) (ICD-10: N20.0 / N20.1 / N21.0).
+	P (Plan):
+	Farmakologi:
+	Tatalaksana Kolik Renal Akut (Lini Utama Analgetik):
+	NSAID IV: Ketorolac 30" mg"  IV ATAU Metamizole 1" gram"  IV.
+	Antispasmodik: Hyoscine N-butylbromide 3×10" mg"  PO/IV.
+	Terapi Ekspulsi Medis / MET (Batu Ureter <10" mm" ):
+	Alpha-Blocker: Tamsulosin 1×0,4" mg"  PO (membantu relaksasi otot polos ureter).
+	Non-Farmakologi: Rehidrasi cairan yang adekuat (2,5"--" 3" Liter/hari" ) selama tidak ada tanda obstruksi total atau gagal ginjal.
+	Rujukan: Rujuk ke Dokter Spesialis Urologi jika ukuran batu >5"--" 7" mm" , nyeri tidak tertangani dengan obat, terdapat komplikasi hidronefrosis berat, atau terjadi infeksi sekunder (untuk intervensi invasif seperti ESWL, URS, atau PCNL).
+=== PANDUAN KLINIS: Anemia Defisiensi Besi (ICD-10: D50.9) ===
+	S (Subjektif):
+	Keluhan Utama: Badan lemas, cepat lelah, pusing, mata berkunang-kunang terutama saat bangkit berdiri, sulit konsentrasi, dan jantung berdebar.
+	Anamnesis Spesifik: Pica (keinginan aneh mengonsumsi bahan non-makanan seperti es batu atau tanah), riwayat perdarahan kronis (haid berlebih/menoragia, riwayat cacingan, atau Wasir/Hemoroid). Pada anak: rewel dan nafsu makan turun.
+	O (Objektif):
+	Pemeriksaan Fisik: Konjungtiva anemis, mukosa bibir dan telapak tangan pucat, atrofi papil lidah (lidah tampak licin dan mengilap), koilonychia (kuku bentuk sendok dan rapuh).
+	Pemeriksaan Penunjang:
+	Darah Rutin: Kadar Hb rendah (< 12 g/dL pada wanita, < 13 g/dL pada pria, < 11 g/dL pada ibu hamil dan anak), indeks eritrosit mikrositik hipokromik (MCV < 80 fL, MCH < 27 pg).
+	Profil Besi: Serum Iron (SI) rendah, Total Iron Binding Capacity (TIBC) meningkat, dan Ferritin Serum rendah (< 15–30 ng/mL - kriteria diagnostik utama).
+	A (Asesmen):
+	Anemia Defisiensi Besi (ICD-10: D50.9).
+	P (Plan):
+	Farmakologi:
+	Suplementasi Besi Oral (Lini Pertama): Sulfas Ferosus 3 x 200 mg (mencakup ~60 mg besi elemental per tablet) PO. Dosis anak: 3–6 mg/kgBB/hari besi elemental.
+	Vitamin C: 1 x 100–250 mg PO (diberikan bersamaan dengan tablet besi untuk meningkatkan penyerapan).
+	Catatan: Minum obat saat perut kosong. Jika ada keluhan mual, diminum bersama makanan.
+	Non-Farmakologi: Konsumsi makanan kaya zat besi (daging merah, hati, ayam, ikan, serta sayuran hijau). Hindari meminum teh atau kopi bersamaan atau dekat dengan waktu minum obat besi/makan.
+	Monitoring: Cek hemoglobin ulang setelah 4 minggu. Pengobatan harus diteruskan selama 2–3 bulan setelah kadar Hb normal untuk mengisi cadangan besi tubuh.
+=== PANDUAN KLINIS: Stunting / Perawakan Pendek (ICD-10: E45) ===
+	S (Subjektif):
+	Keluhan Utama: Pertumbuhan tinggi/panjang badan anak terlambat dibandingkan anak sebayanya, perkembangan motorik atau kognitif cenderung lambat.
+	Anamnesis Spesifik: Riwayat Berat Badan Lahir Rendah (BBLR < 2500 gram) atau Panjang Badan Lahir Rendah (PBLR < 48 cm), riwayat ASI eksklusif tidak adekuat, kualitas MP-ASI kurang protein hewani, dan riwayat infeksi berulang (diare, ISPA, atau cacingan).
+	O (Objektif):
+	Pemeriksaan Antropometri:
+	Panjang Badan menurut Umur (PB/U) atau Tinggi Badan menurut Umur (TB/U) berada pada nilai < -2 Standar Deviasi (SD) berdasarkan Kurva Pertumbuhan WHO.
+	Penilaian status gizi BB/PB atau BB/TB untuk menyingkirkan wasting (gizi buruk/kurang akut).
+	Pemeriksaan Fisik: Tanda-tanda klinis defisiensi mikronutrien, evaluasi perkembangan sesuai usia (KMSP/KPSP).
+	A (Asesmen):
+	Stunting / Perawakan Pendek Akibat Masalah Gizi Kronis (ICD-10: E45).
+	P (Plan):
+	Tatalaksana Nutrisi & Medis:
+	Nutrisi Tepat: Pemberian Makanan Tambahan (PMT) kaya Protein Hewani (telur, ikan, daging, susu).
+	Eradikasi Infeksi: Pemberian obat cacing (Albendazol) dan penanganan cepat pada infeksi kronis (seperti Tuberkulosis anak).
+	Atas Resep Dokter Spesialis Anak: Pemberian Pangan Olahan untuk Kondisi Medis Khusus (PKMK) atau suplementasi seng/mikronutrien bila ada indikasi.
+	Edukasi & Pencegahan: Penerapan aturan makan (feeding rules), menjaga kebersihan sanitasi dan sumber air minum keluarga, serta pemantauan pertumbuhan rutin bulanan di Posyandu/Puskesmas.
+=== PANDUAN KLINIS: Preeklamsia (ICD-10: O14.9) ===
+	S (Subjektif):
+	Anamnesis Dasar: Usia kehamilan > 20 minggu.
+	Keluhan Utama: Pusing/sakit kepala hebat yang tidak hilang dengan analgetik, pandangan kabur/melihat bintik-bintik cahaya, nyeri ulu hati/epigastrium, mual, muntah, serta bengkak mendadak pada wajah dan tangan.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Tekanan Darah Sistolik ≥140 mmHg atau Diastolik ≥90 mmHg (pemeriksaan berulang dengan jeda 4 jam).
+	Edema pretibial, fasial, atau anasarka. Refleks patella hiperaktif.
+	Pemeriksaan Penunjang:
+	Urinalisis: Proteinuria dipstick ≥+1 (atau ≥300" mg"/24" jam" ).
+	Tanda Preeklamsia Berat (PEB): TD ≥160/110 mmHg, Proteinuria ≥+2, Trombositopenia (< 100.000/μL), peningkatan SGOT/SGPT, Kreatinin serum > 1,1 mg/dL, atau edema paru.
+	A (Asesmen):
+	Preeklamsia Ringan (ICD-10: O14.0) / Preeklamsia Berat / PEB (ICD-10: O14.1).
+	P (Plan):
+	Tatalaksana Kegawatdaruratan (Preeklamsia Berat):
+	Pemberian Anti-Kejang (Profilaksis Eklamsia): Magnesium Sulfat (MgSO4) IV. Dosis awal: 4 gram MgSO4 (larutan 20% atau 40%) IV pelan selama 10–15 menit. Dilanjutkan pemeliharaan MgSO4 1 gram/jam IV drip.
+	Syarat Pemberian MgSO4: Refleks patella (+), frekuensi napas ≥16" x/menit" , produksi urine ≥30" mL/jam" , dan tersedia Kalsium Glukonas 10% sebagai antidotum.
+	Antihipertensi: Nifedipin 10 mg PO (dapat diulang tiap 30 menit, maks 120 mg/hari) atau Methyldopa 3 x 250–500 mg PO (target TD <150/100 mmHg).
+	Tindakan Definitif: Rujuk Cito ke Dokter Spesialis Kebidanan dan Kandungan (Sp.OG) untuk terminasi kehamilan.
+=== PANDUAN KLINIS: Varicella / Cacar Air (ICD-10: B01.9) ===
+	S (Subjektif):
+	Keluhan Utama: Demam subfebris, lemas, nyeri kepala, diikuti timbulnya bintik kemerahan yang gatal di kulit.
+	Anamnesis Spesifik: Ruam pertama muncul di area dada/punggung lalu menyebar ke wajah dan anggota gerak (penyebaran sentrifugal). Riwayat kontak dengan penderita cacar air 10–21 hari sebelumnya.
+	O (Objektif):
+	Pemeriksaan Fisik (Erupsi Polimorfik Akut): Ditemukan papul, vesikel jernih dengan dasar eritema (dew drops on a rose petal), pustul, dan krusta secara bersamaan di satu area tubuh.
+	A (Asesmen):
+	Varicella / Cacar Air (ICD-10: B01.9).
+	P (Plan):
+	Farmakologi:
+	Antivirus (Sangat Efektif Bila Diberikan <24"--" 48 Jam Sejak Ruam Pertama):
+	Dewasa: Acyclovir 4 x 800 mg PO (selama 7 hari).
+	Anak (2–12 tahun): Acyclovir 20 mg/kgBB/kali (maks 800 mg) 4 x/hari.
+	Antihistamin (Meredakan Gatal): Cetirizine 1 x 10 mg PO atau CTM 3 x 4 mg PO.
+	Antipiretik: Parasetamol 3 x 500 mg PO (Hindari penggunaan Aspirin pada anak karena risiko Sindrom Reye).
+	Topikal: Bedak salisil 2% atau lotion calamine pada vesikel yang utuh.
+	Edukasi: Jangan memecahkan vesikel agar tidak timbul infeksi bakteri sekunder dan jaringan parut (bopeng). Isolasi mandiri sampai seluruh vesikel mengering menjadi krusta.
+=== PANDUAN KLINIS: Morbili / Campak (ICD-10: B05.9) ===
+	S (Subjektif):
+	Keluhan Utama: Demam tinggi diikuti timbulnya ruam kemerahan di seluruh tubuh.
+	Gejala Khas (Trias 3C): Cough (batuk), Coryza (pilek/hidung mampet), dan Conjunctivitis (mata merah, berair, serta sensitif terhadap cahaya/fotofobia).
+	Anamnesis Spesifik: Ruam muncul bertahap mulai dari belakang telinga, batas rambut, wajah, lalu menyebar ke leher, badan, hingga tangan dan kaki (penyebaran kraniokaudal).
+	O (Objektif):
+	Pemeriksaan Fisik: Febris tinggi (>38,5^∘ "C" ), konjungtiva hiperemis.
+	Tanda Patognomonik (Fase Prodromal): Koplik's Spots (bercak putih-kelabu kecil dengan dasar kemerahan pada mukosa pipi bagian dalam berhadapan dengan gigi molar).
+	Fase Erupsi: Ruam makulopapular eritematosa yang kemudian berubah menjadi kecokelatan/mensusut (deskuamasi).
+	A (Asesmen):
+	Morbili / Campak / Measles (ICD-10: B05.9).
+	P (Plan):
+	Farmakologi:
+	Suplementasi Vitamin A (Wajib Diberikan 2 Hari Berturut-turut):
+	Usia <6 bulan: 50.000 IU (1/2 kapsul biru) pada hari ke-1 dan ke-2.
+	Usia 6–11 bulan: 100.000 IU (1 kapsul biru) pada hari ke-1 dan ke-2.
+	Usia ≥12 bulan: 200.000 IU (1 kapsul merah) pada hari ke-1 dan ke-2.
+	Antipiretik: Parasetamol 10–15 mg/kgBB/kali PO.
+	Non-Farmakologi: Rehidrasi oral yang adekuat, nutrisi kaya protein, dan tirah baring.
+	Edukasi: Waspadai komplikasi berat seperti Pneumonia, Otitis Media, Diare Berat, atau Ensefalitis. Lengkapi status imunisasi MR/MMR setelah anak sembuh.
+=== PANDUAN KLINIS: Dermatitis Atopi (ICD-10: L20.9) ===
+	S (Subjektif):
+	Keluhan Utama: Rasa gatal hebat (pruritus) yang hilang timbul, kulit tampak kering, kemerahan, dan bersisik.
+	Anamnesis Spesifik: Memburuk pada malam hari atau saat terpapar pemicu (stres, keringat, cuaca ekstrem, debu, sabun keras). Riwayat atopi pada diri sendiri atau keluarga (asma bronkial, rinitis alergika, urtikaria).
+	Predileksi Sesuai Usia:
+	Bayi (< 2 tahun): Area pipi, dahi, dan permukaan ekstensor ekstremitas.
+	Anak & Dewasa: Area fleksural (lipatan siku, lipatan lutut, leher, dan pergelangan tangan).
+	O (Objektif):
+	Pemeriksaan Fisik: Xerosis (kulit kering), papul eritematosa, vesikel, ekskoriasi (bekas garukan), likenifikasi (penebalan kulit dengan garis kulit makin jelas pada kasus kronis).
+	Kriteria Diagnostik (Hanifin & Rajka / UK Working Party): Harus ada rasa gatal (pruritus) ditambah minimal 3 kriteria pendukung (riwayat atopi, keterlibatan lipatan kulit, kulit kering umum, onset usia muda).
+	A (Asesmen):
+	Dermatitis Atopi Eksaserbasi Akut / Kronis (ICD-10: L20.9).
+	P (Plan):
+	Farmakologi:
+	Kortikosteroid Topikal (Lini Utama Antiinflamasi):
+	Area wajah/lipatan/bayi: Hidrokortison krim 1% atau 2,5% (potensi lemah) dioleskan 2 x/hari.
+	Area badan/ekstremitas dewasa: Betametason valerat krim 0,1% atau Mometason furoat 0,1% (potensi sedang-kuat) 1–2 x/hari.
+	Antihistamin Oral (Pengontrol Gatal):
+	Cetirizine 1 x 10 mg PO ATAU Loratadine 1 x 10 mg PO.
+	Jika gatal mengganggu tidur: CTM 3 x 4 mg PO atau Hydroxyzine 1 x 25 mg PO (malam hari).
+	Antibiotik Topikal/Systemic: Jika terdapat infeksi sekunder (honey-colored crust / impetiginisasi), berikan Salep Asam Fusidat 2% atau Cephalexin oral.
+	Non-Farmakologi:
+	Penggunaan pelembap / emolien (krim/salep pelembap) secara rutin minimal 2–3 kali sehari, dioleskan segera dalam 3 menit setelah mandi (soak and seal).
+	Mandi dengan air hangat kuku, gunakan sabun lembut non-antiseptik tanpa pewangi (hypoallergenic).
+=== PANDUAN KLINIS: Skabies (ICD-10: B86) ===
+	S (Subjektif):
+	Keluhan Utama: Gatal hebat pada kulit yang memberat terutama pada malam hari (pruritus nokturnal).
+	Anamnesis Spesifik: Penyakit menyerang sekelompok orang secara bersamaan (anggota keluarga rumah tangga, penghuni asrama, pesantren, atau panti asuhan).
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Lesi Khas: Kunikulus (terowongan kecil berwarna putih abu-abu berbentuk garis lurus/berbelok), papul, vesikel, dan ekskoriasi.
+	Tempat Predileksi: Sela-sela jari tangan, pergelangan tangan bagian ventral, ketiak, sekitar pusar, bokong, genitalia eksterna (pria), dan areola mammae (wanita).
+	Pemeriksaan Penunjang (Konfirmasi Diagnostik): Scraping/kerokan kulit pada terowongan atau papul disiram minyak imersi → ditemukan tungau Sarcoptes scabiei, telur, atau kotorannya (skibala) di bawah mikroskop.
+	A (Asesmen):
+	Skabies (ICD-10: B86).
+	P (Plan):
+	Farmakologi (Skabisida Topikal):
+	Permethrin Krim 5% (Lini Pertama / Gold Standard): Dioleskan ke seluruh tubuh dari leher ke bawah (termasuk lipatan kulit dan bawah kuku). Didiamkan selama 8–12 jam (sebaiknya malam hari sebelum tidur), lalu dibersihkan saat mandi pagi. Diulang 1 minggu kemudian (hari ke-7).
+	Alternatif (Bila Permethrin tidak tersedia / anak < 2 bulan): Salep 2-4 (Sulfur praecipitatum 4–10%) dioleskan 3 malam berturut-turut.
+	Antihistamin Oral: CTM 3 x 4 mg PO atau Cetirizine 1 x 10 mg PO untuk meredakan gatal.
+	Non-Farmakologi & Edukasi (Kunci Keberhasilan Terapi):
+	Obati seluruh kontak erat / anggota keluarga serentak pada hari yang sama meskipun tidak bergejala.
+	Cuci semua pakaian, sprei, dan handuk yang digunakan dalam 3 hari terakhir dengan air panas (>60^∘ "C" ) dan disetrika.
+	Barang yang tidak dapat dicuci dimasukkan ke dalam kantong plastik tertutup rapat selama minimal 3–7 hari.
+=== PANDUAN KLINIS: Katarak Senilis (ICD-10: H25.9) ===
+	S (Subjektif):
+	Keluhan Utama: Penglihatan kabur atau buram secara perlahan-lahan tanpa rasa nyeri (painless progressive loss of vision), menyerupai tertutup asap/awan.
+	Keluhan Tambahan: Merasa silau (glare) saat melihat cahaya terang atau lampu di malam hari, perubahan ukuran kacamata yang makin sering, diplopia monokular (melihat ganda pada satu mata), atau penurunan sensitivitas warna/kontras. Usia umumnya >50 tahun.
+	O (Objektif):
+	Pemeriksaan Fisik Mata:
+	Visus: Penurunan tajam penglihatan yang tidak dapat dikoreksi penuh dengan lensa coba (refraksi).
+	Pemeriksaan Pupil & Lensa: Pupil tampak kekeruhan berwarna putih keabu-abuan atau putih kapur (leukokoria).
+	Refleks Fundus: Menurun atau hilang.
+	Shadow Test (Tes Bayangan Lensa): Positif (+) pada katarak imatur; Negatif (-) pada katarak matur.
+	A (Asesmen):
+	Katarak Senilis Imatur / Matur / Hipermatur (ICD-10: H25.0 / H25.1 / H25.2).
+	P (Plan):
+	Farmakologi: Tidak ada obat tetes mata atau obat oral yang terbukti secara medis dapat menghentikan atau menyembuhkan katarak.
+	Non-Farmakologi: Koreksi kacamata sementara jika masih membantu aktivitas harian. Penggunaan kacamata hitam (sun glasses) untuk mengurangi silau saat di luar ruangan.
+	Rujukan Definitive: Rujuk ke Dokter Spesialis Mata untuk tindakan bedah ekstraksi katarak (seperti Phacoemulsification atau SICS) dilanjutkan dengan pemasangan Lensa Tanam Intraokular (Intraocular Lens / IOL).
+=== PANDUAN KLINIS: Konjungtivitis Akut (ICD-10: H10.9) ===
+	S (Subjektif):
+	Keluhan Utama: Mata merah, rasa mengganjal seperti ada pasir, gatal, mata berair, dan keluar kotoran/sekret mata (belekan). Kelopak mata sering lengket saat bangun tidur. Tidak ada penurunan tajam penglihatan (visus normal).
+	Diferensiasi Penyebab:
+	Bakterial: Sekret purulen/mukopurulen kental kekuningan, kelopak mata sangat lengket.
+	Viral: Sekret serosa/cair encer, mata sangat berair, highly contagious (Sering disertai riwayat demam/flu atau kontak mata merah).
+	Alergi: Rasa gatal sangat dominan, sekret mukoid/lengket cair, mata merah bilateral, riwayat atopi.
+	O (Objektif):
+	Pemeriksaan Fisik Mata:
+	Visus: Normal (misal 6/6).
+	Injeksi Konjungtiva (+), edema palpebra (+).
+	Konjungtivitis Viral: Reaksi folikel pada konjungtiva tarsal, pembesaran kelenjar getah bening preaurikel (+).
+	Konjungtivitis Alergi: Reaksi papil (cobblestone appearance) pada konjungtiva tarsal atas.
+	A (Asesmen):
+	Konjungtivitis Bakterial Akut (ICD-10: H10.0) / Konjungtivitis Viral Akut (ICD-10: H10.1) / Konjungtivitis Alergi (ICD-10: H10.4).
+	P (Plan):
+	Farmakologi:
+	Konjungtivitis Bakterial: Tetes mata Kloramfenikol 0,5% ATAU Gentamisin 0,3% (1–2 tetes tiap 4–6 jam) selama 5–7 hari.
+	Konjungtivitis Viral: Self-limiting disease (sembuh mandiri 7–14 hari). Berikan air mata buatan (artificial tears) 4–6 x/hari untuk kenyamanan. Antibakteri topikal hanya diberikan jika ada kecurigaan superinfeksi bakteri.
+	Konjungtivitis Alergi: Tetes mata stabilisator sel mast / antihistamin (misal Sodium Cromoglycate 2% atau Olopatadine 0,1%) + Antihistamin oral (Cetirizine 1 x 10 mg PO).
+	Non-Farmakologi: Kompres dingin pada mata untuk meredakan bengkak/gatal. Bersihkan kotoran mata dengan kapas basah bersih dari arah dalam ke luar.
+	Edukasi: Hindari mengucek mata. Cuci tangan dengan sabun secara berkala dan pisahkan penggunaan handuk/handuk muka untuk mencegah penularan.
+=== PANDUAN KLINIS: Osteoartritis / OA (ICD-10: M19.9) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri sendi penopang berat badan (terutama lutut/panggul) yang memburuk saat beraktivitas (berjalan, naik-turun tangga, jongkok) dan membaik saat istirahat.
+	Keluhan Tambahan: Kaku sendi di pagi hari (morning stiffness) berlangsung singkat (< 30 menit), sensasi gemeretak (krepitasi) saat sendi digerakkan, serta pembesaran/deformitas sendi. Usia pasien umumnya >50 tahun.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Nyeri tekan pada celah sendi, krepitasi (+), keterbatasan lingkup gerak sendi (ROM).
+	Deformitas bentuk sendi (misalnya genu varum/bengkok O atau genu valgum/bengkok X).
+	Nodus Heberden (pada sendi DIP) atau Nodus Bouchard (pada sendi PIP) pada OA tangan.
+	Pemeriksaan Penunjang:
+	Foto Polos X-Ray Sendi (Posisi Weight-Bearing / Berdiri): Ditemukan 4 tanda khas OA (Penyempitan celah sendi asymmetric, pembentukan osteofit/tulang taji, sklerosis subkondral, dan kista subkondral).
+	A (Asesmen):
+	Osteoartritis Genu / Coxae / Manus Grade I–IV (ICD-10: M17.9 / M16.9 / M19.0).
+	P (Plan):
+	Farmakologi:
+	Analgetik Topikal (Lini Pertama Kasus Mild-Moderate): Natrium Diklofenak Gel 2–4 x/hari dioleskan pada sendi.
+	Analgetik Oral Sistemik:
+	Parasetamol 3–4 x 500–1000 mg PO (maks 4 gram/hari).
+	Jika tidak respon: NSAID oral (Ibuprofen 3 x 400 mg PO ATAU Meloxicam 1 x 7,5–15 mg PO ATAU Celecoxib 1 x 100–200 mg PO).
+	Proteksi Lambung: Berikan PPI (Omeprazole 1 x 20 mg PO) jika menggunakan NSAID non-selektif pada pasien berisiko gastritis.
+	Non-Farmakologi:
+	Penurunan berat badan pada pasien dengan gizi lebih/obesitas (sangat efektif mengurangi beban sendi lutut).
+	Fisioterapi dan latihan penguatan otot sekitar sendi (seperti penguatan otot kuadrisep paha dengan berenang atau sepeda statis).
+	Penggunaan alat bantu jalan (cane / tongkat) pada sisi yang sehat.
+	Rujukan: Rujuk ke Dokter Spesialis Orthopedi jika nyeri tidak tertangani dengan obat-obatan, terdapat kelainan bentuk sendi berat, atau indikasi Operasi Penggantian Sendi (Total Knee/Hip Replacement / TKR/THR) pada OA Grade IV.
+=== PANDUAN KLINIS: Demensia Alzheimer / Demensia Vaskular (ICD-10: F00 / F01) ===
+	S (Subjektif):
+	Keluhan Utama: Penurunan daya ingat (mudah lupa) yang progresif dan mengganggu aktivitas harian (Activities of Daily Living / ADL).
+	Anamnesis Spesifik: Sering lupa menaruh barang, lupa nama anggota keluarga, disorientasi waktu, tempat, dan orang, tersesat di lingkungan yang familier, perubahan kepribadian/perilaku (apatis, curiga, atau mudah marah).
+	Diferensiasi: Onset gradual/perlahan (Alzheimer) vs onset bertahap/seperti anak tangga (stepwise) dengan riwayat stroke/hipertensi (Vaskular).
+	O (Objektif):
+	Pemeriksaan Fungsi Kognitif:
+	MMSE (Mini-Mental State Examination): Skor <24 menunjukkan gangguan kognitif.
+	MoCA-Ina: Sensitif untuk deteksi gangguan kognitif ringan hingga sedang.
+	Pemeriksaan Fisik Neurologis: Umumnya normal pada Alzheimer; ditemukan defisit neurologis fokal pada Demensia Vaskular.
+	Pemeriksaan Penunjang: CT Scan / MRI Otak (tampak atrofi serebral, atrofi hipokampus, atau lesi iskemik periventrikular).
+	A (Asesmen):
+	Demensia tipe Alzheimer (ICD-10: F00) / Demensia Vaskular (ICD-10: F01).
+	P (Plan):
+	Farmakologi:
+	Inhibitor Asetilkolinesterase (ChE-I): Donepezil 1×5" mg"  PO (malam hari, dapat ditingkatkan hingga 10" mg"  setelah 4–6 minggu) ATAU Rivastigmine 2×1,5" mg"  PO.
+	Antagonis NMDA (Demensia Sedang-Berat): Memantine 1×5" mg"  PO (titrasi hingga 2×10" mg" ).
+	Pengendalian Vaskular: Aspirin 1×80" mg"  PO dan kontrol tekanan darah/lipid pada Demensia Vaskular.
+	Non-Farmakologi: Latihan stimulasi kognitif, buat kalender/catatan harian, modifikasi keamanan rumah (cegah pasien keluyuran/jatuh).
+	Rujukan: Rujuk ke Dokter Spesialis Neurologi / Psikiater untuk evaluasi komprehensif.
+=== PANDUAN KLINIS: Penyakit Parkinson (ICD-10: G20) ===
+	S (Subjektif):
+	Keluhan Utama: Tangan gemetar saat istirahat, gerakan tubuh makin lambat, kaku pada anggota gerak, dan sering hilang keseimbangan.
+	Anamnesis Spesifik: Tulisan tangan makin kecil (mikrografia), langkah kaki pendek-pendek dan diseret (festinating gait), suara makin pelan (hipofonia), wajah tampak kaku tanpa ekspresi (masked facies), sulit memulai gerakan.
+	O (Objektif):
+	Pemeriksaan Fisik (Kriteria Utama - TRAP):
+	Tremor: Resting tremor (gemetar saat istirahat, pill-rolling tremor).
+	Rigidity: Rigiditas fenomena roda bergigi (cogwheel rigidity).
+	Akinesia / Bradikinesia: Gerakan lambat, diadochokinesia lambat.
+	Postural Instability: Tes dorong (pull test) positif (mudah jatuh).
+	A (Asesmen):
+	Penyakit Parkinson (ICD-10: G20).
+	P (Plan):
+	Farmakologi:
+	Lini Utama (Gold Standard): Levodopa + Carbidopa (100/25 mg) 3×1/2"--" 1 tablet PO (diminum saat perut kosong, 30 menit sebelum makan).
+	Agonis Dopamin (Alternatif / Kombinasi): Pramipexole 3×0,125" mg"  PO.
+	Catatan Pasien Geriatri: Hindari penggunaan Trihexyphenidyl (THP) pada lansia karena risiko efek samping antikolinergik berat (demensia memburuk, retensi urine, deliriim).
+	Non-Farmakologi: Fisioterapi rutin untuk melatih keseimbangan dan gait, latihan pemeliharaan lingkup gerak sendi.
+=== PANDUAN KLINIS: Osteoporosis Senilis (ICD-10: M81.9) ===
+	S (Subjektif):
+	Keluhan Utama: Sering kali tanpa gejala (silent disease) hingga terjadi patah tulang (fraktur patologis).
+	Keluhan Tambahan: Nyeri punggung kronis, tinggi badan berkurang seiring bertambahnya usia, postur tubuh makin membungkuk (kifosis).
+	Anamnesis Spesifik: Riwayat jatuh ringan langsung mengalami fraktur (pergelangan tangan, panggul, atau tulang belakang), kurang aktivitas fisik, menopause usia dini, penggunaan kortikosteroid jangka panjang.
+	O (Objektif):
+	Pemeriksaan Fisik: Kifosis servikothorakal (dowager's hump), nyeri ketok vertebra, penurunan tinggi badan >3" cm" .
+	Pemeriksaan Penunjang:
+	Densitometri Tulang / DEXA Scan (Gold Standard): Nilai T-score ≤-2,5 (Osteoporosis); T-score -1,0 s/d -2,5 (Osteopenia).
+	Foto Polos Radiologi: Gambaran radiolusen/penipisan korteks tulang, fraktur kompresi vertebra.
+	A (Asesmen):
+	Osteoporosis Senilis / Postmenopause (ICD-10: M81.9).
+	P (Plan):
+	Farmakologi:
+	Bisfosfonat (Lini Pertama Antiresorptif): Alendronat 1×70" mg"  PO per minggu (diminum pagi hari saat bangun tidur dengan 1 gelas air putih, harus tetap tegak/tidak boleh berbaring selama 30 menit setelah minum obat).
+	Suplementasi: Kalsium Karbonat 1000"--" 1200" mg/hari"  + Vitamin D3 800"--" 2000" IU/hari"  PO.
+	Non-Farmakologi & Pencegahan Jatuh:
+	Latihan beban ringan (weight-bearing exercise) sesuai kemampuan.
+	Modifikasi lingkungan rumah untuk mencegah jatuh (penerangan cukup, beri pegangan di kamar mandi, singkirkan karpet licin).
+=== PANDUAN KLINIS: Inkontinensia Urine pada Lansia (ICD-10: R32) ===
+	S (Subjektif):
+	Keluhan Utama: Pengeluaran urine yang tidak terkontrol/mengompol.
+	Klasifikasi Tipe Inkontinensia:
+	Urge: Rasa ingin kencing yang sangat mendesak dan tiba-tiba, tidak sempat sampai ke toilet.
+	Stress: Urine bocor saat tekanan abdomen meningkat (batuk, bersin, tertawa, mengangkat barang).
+	Overflow: Urine menetes terus-menerus karena kandung kemih terlalu penuh (sering pada BPH).
+	Fungsional: Kebocoran akibat hambatan fisik/kognitif mencapai toilet (misal demam, stroke, demensia).
+	O (Objektif):
+	Pemeriksaan Fisik: Pemeriksaan abdomen (distensi kandung kemih/globus vesika), pemeriksaan ginekologi/prostat (digital rectal examination), tes batuk (stress test).
+	Pemeriksaan Penunjang:
+	Urinalisis (menyingkirkan ISK sebagai pemicu transient).
+	Pemeriksaan Volume Residu Urine Pasca Miksi / Post-Void Residual (PVR) dengan USG (normal <50" mL" ; abnormal jika >200" mL" ).
+	A (Asesmen):
+	Inkontinensia Urine Tipe Urge / Stress / Overflow / Fungsional (ICD-10: R32).
+	P (Plan):
+	Non-Farmakologi (Tatalaksana Utama):
+	Bladder Training: Kencing terjadwal setiap 2–3 jam sekali.
+	Latihan Otot Dasar Panggul (Senam Kegel): Terutama efektif untuk tipe Stress dan Urge.
+	Batasi asupan cairan pada malam hari (2–3 jam sebelum tidur) dan batasi kafein/alkohol.
+	Farmakologi (Sesuai Tipe):
+	Tipe Urge: Antikolinergik (Solifenacin 1×5" mg"  PO ATAU Tolterodine 2×2" mg"  PO) atau Agonis Beta-3 (Mirabegron 1×25"--" 50" mg"  PO).
+	Tipe Overflow akibat BPH: Alpha-blocker (Tamsulosin 1×0,4" mg"  PO).
+=== PANDUAN KLINIS: Presbiakusis / Gangguan Pendengaran Usia Lanjut (ICD-10: H91.1) ===
+	S (Subjektif):
+	Keluhan Utama: Penurunan pendengaran pada kedua telinga secara perlahan-lahan seiring bertambahnya usia.
+	Anamnesis Spesifik: Sulit memahami percakapan terutama di tempat bising (cocktail party effect), sering meminta orang lain mengulang ucapan, suara TV/radio diperkeras, merasa orang lain berbicara bergumam/tidak jelas, disertai telinga berdenging (tinnitus).
+	O (Objektif):
+	Pemeriksaan Otoskopi: Membran timpani umumnya utuh, jernih, dan normal (tidak ada tanda otitis atau perforasi). Bebas dari serumen prop yang menyumbat.
+	Tes Penala:
+	Rinne (+), Weber tidak ada lateralisasi (atau lateralisasi ke telinga yang lebih baik), Schwabach memendek pada kedua telinga.
+	Audiometri Nada Murni (Gold Standard): Tuli sensorineural (TNS) simetris bilateral, terutama pada frekuensi tinggi (>2000" Hz" ).
+	A (Asesmen):
+	Presbiakusis (ICD-10: H91.1).
+	P (Plan):
+	Farmakologi: Tidak ada terapi obat spesifik untuk mengembalikan kerusakan sel rambut koklea akibat proses penuaan.
+	Non-Farmakologi & Rehabilitasi:
+	Alat Bantu Dengar / ABD (Hearing Aid): Diindikasikan berdasarkan derajat penurunan pendengaran dari hasil audiometri.
+	Latihan membaca bibir (lip reading) dan auditori.
+	Edukasi Komunikasi Keluarga: Berbicara dengan tatap muka langsung, artikulasi jelas dan agak perlahan, hindari berteriak (karena berteriak frekuensinya makin tinggi dan justru makin sulit didengar pasien).
+=== PANDUAN KLINIS: Penyakit Jantung Koroner (PJK) pada Lansia (ICD-10: I25.1) ===
+	S (Subjektif):
+	Keluhan Utama: Sering kali menghadirkan gejala tidak khas (atypical presentation), seperti sesak napas mendadak (exertional dyspnea), rasa tidak nyaman/ulu hati tertekan, mual, lemas hebat, pusing, atau penurunan kesadaran mendadak alih-alih nyeri dada tipikal (crushing chest pain).
+	Anamnesis Spesifik: Riwayat hipertensi, diabetes melitus, dislipidemia, merokok, atau riwayat serangan jantung sebelumnya.
+	O (Objektif):
+	Pemeriksaan Fisik: Tanda vital dapat menunjukkan takikardia/bradikardia, hipertensi/hipotensi. Pemeriksaan jantung: bunyi jantung redup, dapat ditemukan gallop S3/S4 atau ronkhi basah di basal paru jika disertai gagal jantung.
+	Pemeriksaan Penunjang:
+	EKG 12-Lead: Depresi segmen ST, inversi gelombang T, Q patologis, atau elevasi segmen ST (pada STEMI).
+	Enzim Jantung: Troponin I/T atau CK-MB (meningkat pada Sindrom Koroner Akut).
+	Profil Lipid & Fungsi Ginjal: Kolesterol total, LDL, HDL, Trigliserida, Ureum, Kreatinin.
+	Foto Thorax: Menilai kardiomegali atau tanda edema paru.
+	A (Asesmen):
+	Penyakit Jantung Koroner / Penyakit Jantung Iskemik Kronis pada Lansia (ICD-10: I25.1).
+	P (Plan):
+	Farmakologi:
+	Antiplatelet: Aspirin 1×75"--" 100" mg"  PO ATAU Clopidogrel 1×75" mg"  PO.
+	Statin (Intensitas Sedang–Tinggi): Atorvastatin 1×20"--" 40" mg"  PO ATAU Simvastatin 1×20" mg"  PO (diminum malam hari).
+	Beta-Blocker: Bisoprolol 1×1,25"--" 2,5" mg"  PO (dimulai dari dosis terkecil/titrasi perlahan, pertahankan HR 55–60 x/menit).
+	Antiangina (Saat Serangan Nyeri/Sesak): Isosorbide Dinitrate (ISDN) 5 mg Sublingual (SL) prn.
+	ACE-Inhibitor / ARB (Bila ada HT/EF rendah): Ramipril 1×2,5" mg"  PO atau Candesartan 1×4"--" 8" mg"  PO.
+	Non-Farmakologi: Diet rendah garam dan rendah lemak jenuh, aktivitas fisik ringan terukur (jalan kaki sesuai toleransi).
+	Rujukan: Rujuk ke Dokter Spesialis Jantung dan Pembuluh Darah (Sp.JP) untuk evaluasi fungsi ventrikel (Ekokardiografi) atau tindakan intervensi koroner (Angiografi / PCI).
+=== PANDUAN KLINIS: Hipertensi Sistolik Terisolasi / Isolated Systolic Hypertension (ICD-10: I10) ===
+	S (Subjektif):
+	Keluhan Utama: Sering asimtomatik (silent killer), ditemukan saat pemeriksaan rutin. Jika bergejala: pusing, tengkuk terasa berat/tegang, mata kabur, atau cepat lelah.
+	Patofisiologi: Disebabkan oleh penurunan elastisitas dan peningkatan kekakuan (stiffness) pembuluh darah arteri besar akibat proses penuaan.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Tekanan Darah Sistolik (TDS) ≥140" mmHg"  dengan Tekanan Darah Diastolik (TDD) <90" mmHg"  (diukur pada minimal 2 kali kunjungan berbeda).
+	Evaluasi hipotensi ortostatik: ukur TD posisi berbaring/duduk lalu berdiri setelah 1 dan 3 menit (penurunan TDS ≥20" mmHg"  menandakan hipotensi ortostatik).
+	Pemeriksaan Penunjang: Urinalisis (mencari proteinuria), Gula Darah Sewaktu, Ureum/Kreatinin, Profil Lipid, EKG (menilai hipertrofi ventrikel kiri / LVH).
+	A (Asesmen):
+	Hipertensi Sistolik Terisolasi / Isolated Systolic Hypertension / ISH (ICD-10: I10).
+	P (Plan):
+	Farmakologi (Pilihan Utama pada ISH Geriatri):
+	Calcium Channel Blocker / CCB (Lini Pertama): Amlodipine 1×2,5"--" 5" mg"  PO (dapat ditingkatkan hingga 10" mg" ).
+	Diuretik Thiazide (Alternatif/Kombinasi): Hydrochlorothiazide (HCT) 1×12,5"--" 25" mg"  PO (pagi hari).
+	Target Tekanan Darah: TDS <130"--" 139" mmHg"  (hindari penurunan TDD <60"--" 65" mmHg"  karena mengurangi perfusi koroner).
+	Non-Farmakologi:
+	Pembatasan asupan natrium/garam dapur (<2" gram/hari" ).
+	Edukasi perubahan posisi secara perlahan (dari berbaring ke duduk, lalu berdiri) untuk mencegah pingsan akibat hipotensi ortostatik.
+=== PANDUAN KLINIS: Insomnia pada Lansia (ICD-10: G47.0) ===
+	S (Subjektif):
+	Keluhan Utama: Kesulitan memulai tidur (sleep onset), sering terbangun di malam hari dan sulit tidur kembali (sleep maintenance), atau bangun terlalu pagi dan tidak bisa tidur lagi.
+	Dampak: Mengantuk berlebih di siang hari, gangguan konsentrasi, mudah marah, dan badan terasa tidak segar.
+	Anamnesis Spesifik: Evaluasi riwayat konsumsi obat (diuretik, bronkodilator, steroid), penyakit fisik pemicu (nyeri kronis OA, BPH/nokturia, GERD, sesak napas), serta kebiasaan tidur (sleep hygiene).
+	O (Objektif):
+	Pemeriksaan Fisik & Status Mentalis: Evaluasi status kognitif, tanda-tanda ansietas/depresi, serta pemeriksaan fisik organ untuk menyingkirkan komorbid medis.
+	Pemeriksaan Penunjang: Diari tidur (sleep log) yang diisi pasien/pendamping selama 1–2 minggu.
+	A (Asesmen):
+	Insomnia Non-Organik / Gangguan Tidur pada Lansia (ICD-10: G47.0 / F51.0).
+	P (Plan):
+	Non-Farmakologi (Terapi Utama & Lini Pertama):
+	Edukasi Higiene Tidur (Sleep Hygiene): Jadwal tidur dan bangun yang konsisten setiap hari, paparan sinar matahari di pagi hari, batasi tidur siang max 30 menit (sebelum jam 15.00), hindari kafein/rokok/makanan berat sebelum tidur, gunakan kamar tidur hanya untuk tidur.
+	CBT-I (Cognitive Behavioral Therapy for Insomnia).
+	Farmakologi (Hanya Jangka Pendek & Hati-hati pada Lansia):
+	Melatonin Agonis: Melatonin 1×2"--" 3" mg"  PO (1–2 jam sebelum tidur).
+	Antidepresan Sedatif (Bila disertai Komorbid Ansietas/Depresi/Nyeri Kronis): Mirtazapine 1×7,5"--" 15" mg"  PO (malam hari) ATAU Trazodone 1×25"--" 50" mg"  PO.
+	Peringatan Penting: Hindari Golongan Benzodiazepin & Antihistamin Sedatif (seperti CTM/Dimenhidrinat) karena risiko tinggi menyebabkan delirium, jatuh, toleransi, dan memperberat gangguan kognitif.
+=== PANDUAN KLINIS: Sarkopenia / Sarcopenia (ICD-10: M62.84) ===
+	S (Subjektif):
+	Keluhan Utama: Badan terasa makin lemah, cepat lelah saat beraktivitas ringan, jalan lambat, lambat atau sulit bangkit dari posisi duduk/kursi, sering terjatuh, dan kesulitan membawa barang belanjaan.
+	Anamnesis Spesifik: Penurunan berat badan drastis tanpa sebab jelas, penurunan asupan makanan/protein, imobilisasi lama.
+	O (Objektif):
+	Pemeriksaan Kriteria Diagnosis Sarkopenia (AWGS / EWGSOP2):
+	Kekuatan Otot Menurun: Handgrip strength (dinamometer) <28" kg"  (pria) atau <18" kg"  (wanita).
+	Kuantitas/Massa Otot Menurun: Pengukuran Bioelectrical Impedance Analysis (BIA) atau DEXA scan.
+	Performa Fisik Menurun: Kecepatan jalan (gait speed) <1,0" m/detik"  (jarak 4 meter) ATAU Chair Stand Test >15 detik untuk 5 kali berdiri tanpa bantuan tangan.
+	Pemeriksaan Antropometri: Lingkar betis (calf circumference) <34" cm"  (pria) atau <33" cm"  (wanita).
+	A (Asesmen):
+	Sarkopenia / Sarcopenia (ICD-10: M62.84).
+	P (Plan):
+	Non-Farmakologi (Tatalaksana Utama):
+	Latihan Penguatan Otot / Latihan Beban (Resistance Exercise): Terstruktur 2–3 kali seminggu (misal menggunakan karet elastis/band, beban ringan, atau latihan squat kursi).
+	Nutrisi Tinggi Protein: Asupan protein 1,2"--" 1,5" g/kgBB/hari"  yang terbagi rata dalam setiap porsi makan (mengandung asam amino esensial Leusin/BCAA seperti telur, ikan, daging, susu).
+	Farmakologi:
+	Suplementasi Vitamin D: Vitamin D3 1×1000"--" 2000" IU/hari"  PO (terutama jika kadar serum 25-OH-D <30" ng/mL" ).
+	Suplemen nutrisi enteral/protein shake jika asupan oral pasien dari makanan padat kurang memadai.
+=== PANDUAN KLINIS: Delirium / Sindrom Otak Akut (ICD-10: F05) ===
+	S (Subjektif):
+	Keluhan Utama: Perubahan status mental/kesadaran dan fungsi kognitif yang terjadi secara akut/mendadak (beberapa jam hingga hari) dan fluktuatif (sering memburuk pada sore/malam hari atau sundowning).
+	Bentuk Klinis:
+	Hiperaktif: Agitasi, gelisah, meracau, ilusi/halusinasi visual, paranoid.
+	Hipoaktif (Sering missed diagnosis): Apatis, lemas, sangat mengantuk, merespons lambat.
+	Campuran (Mixed).
+	Anamnesis Spesifik (Pencetus/Penyebab Dasar): Infeksi (ISK, Pneumonia), Dehidrasi, Gangguan Elektrolit, Retensi Urine, Konstipasi/Obstipasi, Efek Samping Obat Baru (antikolinergik, sedatif, analgetik opiat), Nyeri Hebat, Hipoksia.
+	O (Objektif):
+	Pemeriksaan Fisik: Tanda-tanda vital (cek febris, hipoksia, hipotensi), tanda-tanda dehidrasi, distensi kandung kemih, atau lesi lokal infeksi.
+	Instrumen Diagnosis (CAM - Confusion Assessment Method):
+	Onset akut dan perjalanan fluktuatif (+).
+	Inatensi / gangguan fokus (+).
+	Pemikiran tidak teratur / disorganisasi (disorganized thinking).
+	Perubahan tingkat kesadaran (letergi/hiperalerta).
+	Diagnosis Delirium positif jika terdapat fitur 1 + 2 + (fitur 3 atau 4).
+	Pemeriksaan Penunjang: Darah Lengkap, GDS, Elektrolit (Na, K, Cl), Ureum/Kreatinin, Urinalisis, Foto Thorax, EKG.
+	A (Asesmen):
+	Delirium Akut Akibat Kondisi Medis Umum (ICD-10: F05).
+	P (Plan):
+	Tatalaksana Utama (Atasi Penyebab Dasar):
+	Koreksi dehidrasi/gangguan elektrolit dengan cairan IV.
+	Berikan antibiotik jika ada infeksi (ISK/Pneumonia).
+	Pasang kateter jika ada retensi urine; berikan Laksatif jika ada obstipasi.
+	Hentikan/kurangi obat-obatan pemicu (deprescribing).
+	Non-Farmakologi (Lingkungan & Reorientasi):
+	Pencahayaan terang di siang hari dan redup di malam hari.
+	Reorientasi pasien secara berkala (sediakan jam dinding, kalender, dampingi oleh anggota keluarga yang dikenali).
+	Hindari pengerakan/restrain fisik kecuali sangat terpaksa.
+	Farmakologi (Hanya bila Agitasi Berat/Berciri Membahayakan Pasien atau Petugas):
+	Antipsikotik Dosis Sangat Rendah: Haloperidol 0,5"--" 1" mg"  PO/IM (dapat diulang setelah 30–60 menit jika belum tenang, maks 2"--" 3" mg/hari" ). Gunakan dalam durasi sesingkat mungkin (1–3 hari).
+=== PANDUAN KLINIS: Hiperplasia Prostat Jinak / Benign Prostatic Hyperplasia (ICD-10: N40) ===
+	S (Subjektif):
+	Keluhan Utama: Gangguan berkemih yang sering dialami pria usia lanjut (Lower Urinary Tract Symptoms / LUTS).
+	Gejala Penyimpanan (Storage): Nokturia (sering terbangun kencing di malam hari >2 kali), frekuensi kencing meningkat, rasa mendesak ingin kencing (urgency).
+	Gejala Pengosongan (Voiding): Pancaran urine melemah, hesitansi (perlu waktu lama untuk memulai kencing), intermitensi (kencing terputus-putus), menetes di akhir kencing (terminal dribbling), rasa kencing tidak tuntas.
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Abdomen: Palpasi kandung kemih (distensi vesika urinaria/globus).
+	Colok Dubur / Digital Rectal Examination (DRE): Prostat membesar, konsistensi kenyal, permukaan rata, simetris, tidak ada nodul keras, sulkus medianus menghilang, tidak nyeri tekan.
+	Pemeriksaan Penunjang:
+	Skor IPSS (International Prostate Symptom Score): Menilai derajat keparahan gejala (Ringan 0–7, Sedang 8–19, Berat 20–35).
+	PSA (Prostate Specific Antigen): Membantu menyingkirkan karsinoma prostat (normal <4" ng/mL" ).
+	USG Urologi / Transrektal: Menilai volume prostat (membesar >30" mL" ) dan sisa urine pasca miksi (post-void residual / PVR).
+	A (Asesmen):
+	Benign Prostatic Hyperplasia / BPH (ICD-10: N40).
+	P (Plan):
+	Farmakologi:
+	Alpha-1 Blocker (Gejala Sedang–Berat): Tamsulosin 1×0,4" mg"  PO (diminum malam hari setelah makan).
+	5-Alpha Reductase Inhibitor (Bila Prostat Sangat Membesar >40" mL" ): Finasteride 1×5" mg"  PO (mengecilkan ukuran prostat jangka panjang).
+	Non-Farmakologi: Batasi minum 2–3 jam sebelum tidur, kurangi kafein dan alkohol, hindari menahan kencing.
+	Rujukan Pembedahan (TURP / Transurethral Resection of the Prostate): Jika timbul komplikasi (retensi urine berulang, infeksi saluran kemih berulang, batu buli-buli, atau gagal ginjal).
+=== PANDUAN KLINIS: Ulkus Dekubitus / Pressure Ulcer (ICD-10: L89) ===
+	S (Subjektif):
+	Keluhan Utama: Luka lecet atau terbuka pada daerah penonjolan tulang akibat penekanan lama.
+	Anamnesis Spesifik: Terjadi pada pasien yang imobilisasi total/tirah baring lama (bedridden), penurunan kesadaran, pascastroke, disertai inkontinensia urine/alvi dan malnutrisi.
+	O (Objektif):
+	Pemeriksaan Fisik (Penentuan Stadium Luka):
+	Stadium 1: Kemerahan kulit yang tidak memucat saat ditekan (non-blanchable erythema), kulit masih utuh.
+	Stadium 2: Hilangnya sebagian lapisan kulit (epidermis/dermis), tampak luka dangkal, vesikel/lepuh berair.
+	Stadium 3: Hilangnya seluruh lapisan kulit hingga jaringan subkutan/lemak tampak, belum mengenai fasia/tulang.
+	Stadium 4: Kerusakan luas hingga tampak jaringan otot, tendon, atau tulang (exposed bone/muscle).
+	Penilaian Risiko: Skala Braden (skor ≤12 menunjukkan risiko sangat tinggi).
+	A (Asesmen):
+	Ulkus Dekubitus Stadium 1 / 2 / 3 / 4 (ICD-10: L89).
+	P (Plan):
+	Non-Farmakologi & Pencegahan (Langkah Utama):
+	Ubah Posisi Baring (Alih Baring): Miring kanan - miring kiri - terlentang secara berkala setiap 2 jam sekali.
+	Gunakan alas tidur khusus (kasur angin / air mattress).
+	Menjaga kebersihan dan kelembapan kulit (segera bersihkan jika mengompol untuk mencegah maserasi).
+	Perawatan Luka (Wound Care):
+	Cuci luka menggunakan cairan steril (NaCl 0,9%).
+	Debridement jaringan nekrotik/slough (bila ada).
+	Pilih balutan luka lembap (moist wound dressing seperti hydrogel atau foam).
+	Farmakologi & Nutrisi:
+	Antibiotik sistemik hanya jika ada tanda infeksi sistemik/selulitis/osteomielitis.
+	Nutrisi tinggi protein (1,2"--" 1,5" g/kgBB/hari" ) serta suplementasi Seng (Zinc) dan Vitamin C untuk mempercepat penyembuhan jaringan.
+=== PANDUAN KLINIS: Malnutrisi pada Lansia (ICD-10: E46) ===
+	S (Subjektif):
+	Keluhan Utama: Penurunan berat badan drastis tanpa disengaja, badan makin kurus, sangat lemas, dan tidak berselera makan.
+	Anamnesis Spesifik: Evaluasi faktor pemicu (penyakit kronis, gigi tanggal/ompong, kesulitan menelan/disfagia, demensia, depresi, atau keterbatasan finansial/isolasi sosial).
+	O (Objektif):
+	Antropometri:
+	Indeks Massa Tubuh (IMT) <18,5〖" kg/m" 〗^2 (atau <20〖" kg/m" 〗^2 pada populasi lansia).
+	Penurunan berat badan >5% dalam 3 bulan terakhir atau >10% dalam 6 bulan terakhir.
+	Skrining Nutrisi: Mini Nutritional Assessment (MNA): Skor MNA <17 mengindikasikan malnutrisi.
+	Pemeriksaan Penunjang:
+	Albumin serum <3,5" g/dL"  (hipoalbuminemia).
+	Pemeriksaan Darah Lengkap (evaluasi anemia) dan kadar elektrolit.
+	A (Asesmen):
+	Malnutrisi Energetik Protein / Malnutrisi Geriatri (ICD-10: E46).
+	P (Plan):
+	Non-Farmakologi (Intervensi Nutrisi):
+	Berikan makanan porsi kecil tapi sering (5–6 kali/hari).
+	Modifikasi tekstur makanan sesuai kemampuan mengunyah/menelan (makanan lunak, saring, atau blender jika ada disfagia).
+	Tingkatkan kepadatan kalori dan protein pada makanan harian.
+	Pastikan ada pendampingan keluarga saat waktu makan.
+	Farmakologi & Suplementasi:
+	Oral Nutritional Supplements (ONS): Formula enteral tinggi kalori dan tinggi protein sebagai pendamping makanan utama.
+	Suplementasi Vitamin D, Vitamin B Kompleks, Asam Folat, dan Seng (Zinc).
+	Rujuk ke Dokter Gigi jika ada masalah pada prostesis/gigi.
+=== PANDUAN KLINIS: Instabilitas Posisi dan Gangguan Jatuh / Falls in Elderly (ICD-10: R29.6) ===
+	S (Subjektif):
+	Keluhan Utama: Riwayat pernah jatuh dalam 12 bulan terakhir atau sering merasa oleng/hampir jatuh (near fall).
+	Anamnesis Spesifik: Rasa takut jatuh (fear of falling) yang menyebabkan pasien membatasi aktivitas, kaki terasa lemas, pandangan kabur, pusing saat mendadak berdiri, riwayat penggunaan obat-obatan yang menyebabkan kantuk/pusing.
+	O (Objektif):
+	Pemeriksaan Fisik & Neurologis:
+	Evaluasi gaya berjalan (gait), kekuatan otot tungkai bawah, dan artikulasi sendi.
+	Evaluasi hipotensi ortostatik (penurunan TDS ≥20" mmHg"  saat berdiri).
+	Pemeriksaan tajam penglihatan dan pendengaran.
+	Tes Keseimbangan & Mobilitas:
+	Timed Up and Go (TUG) Test: Pasien berdiri dari kursi, berjalan 3 meter, berbalik, dan duduk kembali. Hasil >12"--" 15 detik menandakan risiko tinggi jatuh.
+	A (Asesmen):
+	Instabilitas Posisi dan Risiko Jatuh Berulang pada Lansia (ICD-10: R29.6).
+	P (Plan):
+	Non-Farmakologi (Modifikasi Lingkungan & Fisioterapi):
+	Pencegahan Jatuh di Rumah (Home Hazard Assessment): Penerangan ruangan cukup terang, pasang pegangan tangan (grab bars) di kamar mandi dan tangga, singkirkan karpet licin/kabel di lantai, gunakan sandal anti-slip.
+	Latihan fisioterapi: Latihan keseimbangan (misal Tai Chi) dan latihan penguatan otot tungkai bawah.
+	Penggunaan alat bantu jalan yang sesuai (tongkat kaki empat / walker).
+	Farmakologi & Evaluasi Medis:
+	Deprescribing: Evaluasi dan kurangi/hentikan obat-obatan berisiko tinggi pemicu jatuh (psikotropika, sedatif, antihistamin, atau obat antihipertensi dosis berlebih).
+	Suplementasi Vitamin D3 1000"--" 2000" IU/hari"  untuk perbaikan kekuatan otot dan tulang.
+=== PANDUAN KLINIS: Katarak Senilis (ICD-10: H25.9) ===
+	S (Subjektif):
+	Keluhan Utama: Penglihatan kabur atau buram secara perlahan tanpa disertai rasa nyeri pada mata.
+	Anamnesis Spesifik: Pandangan seperti tertutup kabut atau asap, silau (glare) terutama saat melihat lampu pada malam hari, warna tampak pudar, sering berganti ukuran kacamata namun tetap tidak jelas, bayangan ganda saat melihat dengan satu mata (diplopia monokular).
+	O (Objektif):
+	Pemeriksaan Tajam Penglihatan (Visus): Penurunan visus yang tidak dapat dikoreksi maksimal dengan kacamata refraksi.
+	Pemeriksaan Oftalmoskopi / Slit-Lamp:
+	Tampak kekeruhan pada lensa mata (kortikal, nuklear, atau subkapsular posterior).
+	Refleks fundus menurun atau negatif.
+	Tes Bayangan Lensa (Shadow Test): Positif pada katarak imatur; negatif pada katarak matur (lensa sudah keruh seluruhnya).
+	A (Asesmen):
+	Katarak Senilis Imatur / Matur Mata Kanan/Kiri/Bilateral (ICD-10: H25.9).
+	P (Plan):
+	Farmakologi: Tidak ada terapi obat tetes atau tablet yang terbukti secara medis dapat menghilangkan atau menyembuhkan katarak.
+	Tatalaksana Definitif:
+	Pemberian resep kacamata sementara pada stadium sangat awal.
+	Tindakan Bedah Katarak (Pilihan Definitif): Operasi Fakoemulsifikasi atau SICS (Small Incision Cataract Surgery) disusul dengan penanaman Lensa Intraokular / Intraocular Lens (IOL).
+	Edukasi: Gunakan kacamata hitam (sunglasses) pelindung UV saat beraktivitas di luar ruangan pada siang hari.
+=== PANDUAN KLINIS: Penyakit Paru Obstruktif Kronis / PPOK pada Lansia (ICD-10: J44.9) ===
+	S (Subjektif):
+	Keluhan Utama: Sesak napas yang berlangsung kronis dan makin memberat dari waktu ke waktu (progressive exertional dyspnea), disertai batuk berdahak kronis.
+	Anamnesis Spesifik: Riwayat merokok jangka panjang (hitung Indeks Brinkman), riwayat pajanan asap kayu bakar/polusi kerja, sering mengalami episode batuk-sesak berulang (eksaserbasi).
+	O (Objektif):
+	Pemeriksaan Fisik: dada cembung (barrel chest), fase ekspirasi memanjang, wheezing dan ronkhi pada kedua lapang paru, penggunaan otot bantu napas, sianosis atau clubbing finger pada kasus berat.
+	Pemeriksaan Penunjang:
+	Spirometri (Gold Standard): Nilai 〖"FEV" 〗_1/"FVC"<0,70 pasca-pemberian bronkodilator mengonfirmasi keterbatasan aliran udara yang tidak sepenuhnya reversibel.
+	Foto Thorax: Gambaran hiperinflasi paru, sela iga melebar, diafragma mendatar, dan jantung tampak menggantung (drop heart).
+	Analisis Gas Darah (AGD): Evaluasi hipoksia (〖"PaO" 〗_2<60" mmHg" ) atau hiperkapnia (〖"PaCO" 〗_2>45" mmHg" ).
+	A (Asesmen):
+	PPOK Stabil / Eksaserbasi Akut Derajat Ringan–Sedang–Berat (ICD-10: J44.9).
+	P (Plan):
+	Farmakologi:
+	Bronkodilator Kerja Singkat (SABA/SAMA - Saat Sesak/Eksaserbasi): Inhalasi Salbutamol 100" mcg"  / Ipratropium Bromide 20" mcg"  2–4 semprot prn.
+	Bronkodilator Kerja Panjang (LAMA/LABA - Terapi Pemeliharaan): Tiotropium inhalasi 1×18" mcg/hari"  ATAU Formoterol/Salmeterol.
+	Steroid Inhalasi (ICS): Ditambahkan jika ada riwayat eksaserbasi berulang dan eosinofil darah tinggi.
+	Oksigenoterapi: Berikan oksigen aliran rendah (1"--" 2" L/menit"  via kanul nasal) untuk mempertahankan saturasi 〖"SpO" 〗_2  88"--" 92%.
+	Non-Farmakologi: Berhenti merokok total, rehabilitasi pulmonal (latihan pernapasan pursed-lip breathing), vaksinasi Influenza dan Pneumokokus.
+=== PANDUAN KLINIS: Penyakit Ginjal Kronis / CKD Geriatri (ICD-10: N18.9) ===
+	S (Subjektif):
+	Keluhan Utama: Sering asimtomatik pada stadium awal. Pada stadium lanjut: lemas hebat, mual, muntah, nafsu makan menurun, bengkak pada kedua kaki, sesak napas, gatal-gatal pada kulit (uremic pruritus), serta penurunan volume urine.
+	Anamnesis Spesifik: Riwayat hipertensi lama, diabetes melitus, penggunaan obat antiinflamasi nonsteroid (OAINS/NSAID) jangka panjang tanpa pengawasan.
+	O (Objektif):
+	Pemeriksaan Fisik: Konjungtiva anemis, edema pretibial/periorbital, Tanda Vital: Hipertensi.
+	Pemeriksaan Penunjang:
+	Fungsi Ginjal: Peningkatan kadar Ureum dan Kreatinin serum.
+	Penetapan eGFR (Cockcroft-Gault / CKD-EPI): Nilai eGFR <60〖" mL/min/1,73m" 〗^2 yang bertahan >3 bulan mengonfirmasi diagnosis PGK.
+	Urinalisis: Proteinuria / Albuminuria persisten, hematuria mikroskopik.
+	USG Ginjal: Ukuran ginjal mengecil, batas korteks-medula tidak jelas (increased echogenicity).
+	A (Asesmen):
+	Penyakit Ginjal Kronis / Chronic Kidney Disease Stage 1 / 2 / 3 / 4 / 5 (ICD-10: N18.9).
+	P (Plan):
+	Farmakologi:
+	Kontrol Tekanan Darah & Proteksi Ginjal: ACE-Inhibitor (Ramipril 1×2,5" mg"  PO) ATAU ARB (Candesartan 1×8" mg"  PO) dengan penyesuaian dosis dan pemantauan kadar kalium/kreatinin secara berkala.
+	Diuretik (Bila Edema/Overload Cairan): Furosemide 1×20"--" 40" mg"  PO (pagi hari).
+	Koreksi Anemia PGK: Suplementasi Besi dan preparat Erythropoietin-Stimulating Agent (ESA) jika "Hb"<10" g/dL" .
+	Penyesuaian Dosis Obat (Dose Adjustment): Wajib menyesuaikan dosis semua obat yang diekskresi via ginjal berdasarkan nilai eGFR lansia.
+	Non-Farmakologi: Restriksi asupan protein (0,6"--" 0,8" g/kgBB/hari"  pada non-dialisis), batasi asupan garam (<2" g/hari" ), batasi makanan tinggi kalium dan fosfat.
+=== PANDUAN KLINIS: Osteoartritis Genu / Knee Osteoarthritis (ICD-10: M17.9) ===
+	S (Subjektif):
+	Keluhan Utama: Nyeri pada sendi lutut yang timbul terutama saat menumpu beban, berjalan, naik-turun tangga, atau bangkit dari posisi jongkok; nyeri membaik saat istirahat.
+	Anamnesis Spesifik: Kaku sendi pada pagi hari berlangsung singkat (<30 menit), sensasi gemeretak (krepitus) saat lutut digerakkan, keterbatasan lingkup gerak sendi.
+	O (Objektif):
+	Pemeriksaan Fisik: Nyeri tekan pada celah sendi (joint line tenderness), krepitasi (+), deformitas genu varum ("kaki O") atau genu valgum ("kaki X"), efusi sendi minimal/sedang, atrofi otot kuadrisep femoris.
+	Pemeriksaan Radiologi (Foto Polos Lutut AP/Lateral Posisi Berdiri):
+	Kriteria Kategori Kellgren-Lawrence (Grade I–IV): Penyempitan celah sendi (joint space narrowing), pembentukan osteofit pada tepi sendi, sklerosis subkondral, dan kista subkondral.
+	A (Asesmen):
+	Osteoartritis Genu Dextra / Sinistra / Bilateral Grade I / II / III / IV (ICD-10: M17.9).
+	P (Plan):
+	Non-Farmakologi (Tatalaksana Utama):
+	Penurunan berat badan pada pasien obesitas.
+	Latihan fisioterapi penguatan otot kuadrisep (isometric quadriceps exercise).
+	Penggunaan alat bantu jalan (tongkat pada sisi tangan yang sehat/kontralateral) untuk mengurangi beban sendi.
+	Farmakologi:
+	Lini Pertama Analgesik Oral: Parasetamol 3"--" 4×500"--" 1000" mg"  PO (maksimum 3000" mg/hari"  pada lansia).
+	Analgesik Topikal: Gel NSAID (Natrium Diklofenak gel 1%) dioleskan 3"--" 4 kali sehari pada lutut.
+	NSAID Oral Selektif COX-2 (Bila Parasetamol Tidak Efektif): Celecoxib 1×100"--" 200" mg"  PO (durasi sesingkat mungkin, tambahkan Gastroprotektor H2-blocker/PPI jika ada riwayat gastritis).
+	Injeksi Intra-Artikular / Rujukan: Injeksi Triamcinolone Acetonide atau Asam Hialuronat bila terjadi flare-up inflamasi; rujuk ke Spesialis Bedah Ortopedi untuk pertimbangan Total Knee Replacement (TKR) pada OA Grade IV yang tidak respon medis.
+=== PANDUAN KLINIS: Anemia pada Lansia (ICD-10: D64.9) ===
+	S (Subjektif):
+	Keluhan Utama: Badan cepat lelah, lemas, pusing, mata berkunang-kunang, konsentrasi menurun, atau sesak napas saat beraktivitas ringan.
+	Anamnesis Spesifik: Sering terabaikan karena gejala dianggap sekadar "proses penuaan normal". Cari riwayat perdarahan saluran cerna terselubung (feses berwarna hitam seperti ter/petis), penurunan berat badan, asupan gizi yang kurang, atau penyakit kronis pemicu.
+	O (Objektif):
+	Pemeriksaan Fisik: Konjungtiva anemis, telapak tangan pucat, atrofi papil lidah, turgor kulit menurun, takikardia.
+	Pemeriksaan Penunjang (Penentuan Etiologi):
+	Darah Lengkap: Kadar "Hb"<13" g/dL"  (pria) atau <12" g/dL"  (wanita).
+	Indeks Eritrosit (MCV, MCH, MCHC):
+	Mikrositik Hipokromik ("MCV"<80" fL" ): Curiga Anemia Defisiensi Besi (ADB).
+	Normositik Normokromik ("MCV " 80"--" 100" fL" ): Curiga Anemia Penyakit Kronis / Anemia Inflamasi.
+	Makrositik ("MCV">100" fL" ): Curiga Defisiensi Vitamin B12 / Asam Folat.
+	Profil Besi: Feritin serum (rendah pada ADB <30" ng/mL" ), Serum Iron (SI), TIBC.
+	Tes Darah Samar Feses / FOBT (Fecal Occult Blood Test): Untuk mendeteksi perdarahan gastrointestinal kronis.
+	A (Asesmen):
+	Anemia Mikrositik Hipokromik ec Defisiensi Besi / Anemia Penyakit Kronis (ICD-10: D64.9 / D50.9 / D63.8).
+	P (Plan):
+	Farmakologi (Koreksi Sesuai Penyebab):
+	Anemia Defisiensi Besi: Sulfas Ferosus 1"--" 2×300" mg"  PO (diminum saat perut kosong bersamaan dengan Vitamin C 100" mg"  untuk meningkatkan absorbsi).
+	Anemia Defisiensi Asam Folat: Asam Folat 1×1"--" 5" mg"  PO.
+	Anemia Defisiensi B12: Injeksi Sianokobalamin / Vitamin B12 1000" mcg"  IM berkala.
+	Transfusi Darah (PRC): Hanya diindikasikan bila "Hb"<7" g/dL"  atau jika terdapat gangguan hemodinamik/gejala angina pektoris akut.
+	Investigasi Lanjutan: Evaluasi dan atasi sumber perdarahan (misal endoskopi/kolonoskopi jika dipikirkan polip/keganasan saluran cerna).
+=== PANDUAN KLINIS: Konstipasi Kronis dan Impaksi Feses / Fecal Impaction (ICD-10: K59.0) ===
+	S (Subjektif):
+	Keluhan Utama: Frekuensi Buang Air Besar (BAB) kurang dari 3 kali seminggu, feses keras dan berbentuk gumpalan kecil (scybala), perlu mengejan ekstra kuat saat BAB, rasa tidak tuntas setelah BAB, kram atau nyeri perut bagian bawah.
+	Anamnesis Spesifik: Evaluasi asupan serat dan cairan harian, tingkat aktivitas/imobilisasi, serta riwayat konsumsi obat-obatan pemicu (suplemen kalsium/besi, analgetik opiat, antikolinergik, obat antihipertensi golongan CCB).
+	O (Objektif):
+	Pemeriksaan Fisik:
+	Abdomen: Distensi ringan, teraba massa keras masa feses (scybala) di regio kuadran kiri bawah / sepanjang traktus kolon desendens. Bising usus dapat berkurang.
+	Colok Dubur / Digital Rectal Examination (DRE): Tampak/teraba massa feses yang sangat keras membatu memenuhkan ampula rekti (fecal impaction), menilai tonus sfingter ani.
+	Pemeriksaan Penunjang: Foto polos abdomen 3 posisi (bila dicurigai obstruksi usus atau untuk menilai sebaran skibala di seluruh segmen kolon).
+	A (Asesmen):
+	Konstipasi Kronis / Impaksi Feses / Skibala pada Lansia (ICD-10: K59.0).
+	P (Plan):
+	Tatalaksana Darurat Impaksi Feses (Jika Teraba Feses Membatu di Rektum):
+	Lakukan Manual Evacuation (pengeluaran feses secara manual dengan jari terlubrikasi secara perlahan) disusul dengan pemberian Enema/Glisering Suppositoria.
+	Farmakologi (Pemeliharaan & Pencegahan):
+	Laksatif Osmotik (Pilihan Aman untuk Lansia): Laktulosa sirup 1"--" 2×15" mL"  PO ATAU Macrogol / Polyethylene Glycol (PEG).
+	Laksatif Pembentuk Massa (Bulk-Forming): Psyllium husk (syarat: asupan cairan pasien harus memadai).
+	Peringatan: Hindari penggunaan laksatif stimulansia (seperti Bisakodil/Senna) jangka panjang karena dapat menyebabkan ketergantungan dan atoni kolon.
+	Non-Farmakologi: Tingkatkan asupan serat bertahap (25"--" 30" gram/hari" ), cukupi asupan cairan (1,5"--" 2" liter/hari"  jika tidak ada kontraindikasi gagal jantung/ginjal), dan tingkatkan aktivitas fisik harian/jalan kaki ringan.
 
-=== PANDUAN KLINIS: DIABETES MELITUS ===
-Definisi & Kriteria Diagnosis:
-- Diabetes Melitus (DM) ditandai dengan kadar gula darah puasa (GDP) >= 126 mg/dL, gula darah 2 jam post-prandial (GD2PP) >= 200 mg/dL, atau HbA1c >= 6.5%.
-Tatalaksana & Terapi:
-- Terapi Nutrisi Medis: Pengaturan makan 3J (Jumlah kalori, Jadwal makan, Jenis makanan). Kurangi karbohidrat sederhana.
-- Aktivitas fisik ringan-sedang minimal 150 menit per minggu.
-- Terapi Farmakologi: Obat Antihiperglikemik Oral (OHO) seperti Metformin (pilihan pertama, golongan Biguanide), Glimepiride/Glibenclamide (Sulfonilurea), Acarbose (Alfa-glukosidase inhibitor), atau terapi Insulin jika diperlukan.
-Edukasi Pasien:
-- Rutin memeriksa kadar gula darah secara berkala.
-- Jaga kebersihan kaki untuk mencegah luka/ulkus diabetikum (selalu gunakan alas kaki).
-- Waspadai gejala Hipoglikemia (gula darah terlalu rendah <70 mg/dL): Keringat dingin, gemetar, lapar, pusing, jantung berdebar. Segera konsumsi teh manis atau permen jika mengalaminya.
-
-=== PANDUAN KLINIS: ASMA BRONKIAL ===
-Definisi & Gejala:
-- Asma adalah penyakit inflamasi kronis pada saluran napas yang ditandai dengan gejala mengi (wheezing), sesak napas, dada terasa berat, dan batuk yang bervariasi dalam waktu dan intensitas.
-Tatalaksana & Terapi:
-- Hindari faktor pencetus (debu, dingin, bulu hewan, stres, asap rokok).
-- Terapi Reliever (Pelega): Inhaler Bronkodilator jangka pendek seperti Salbutamol (Albuterol) dihirup saat terjadi serangan sesak.
-- Terapi Controller (Pengendali): Inhaler Kortikosteroid (misal Fluticasone, Budesonide) digunakan rutin setiap hari untuk mencegah kekambuhan.
-Edukasi Pasien:
-- Selalu bawa inhaler pelega (Salbutamol) ke mana saja.
-- Waspadai tanda serangan asma berat (red flags): Sesak napas hebat hingga tidak bisa berbicara satu kalimat penuh, bibir/kuku kebiruan, atau tidak ada respon setelah penggunaan inhaler pelega 3 kali dalam 1 jam (Segera ke IGD).
-
-=== PANDUAN KLINIS: ISPA & DEMAM ===
-Definisi & Gejala:
-- Infeksi Saluran Pernapasan Akut (ISPA) bagian atas umumnya disebabkan oleh virus (common cold/influenza) dengan gejala demam, batuk, pilek, nyeri tenggorokan, dan sakit kepala.
-Tatalaksana & Terapi:
-- Suportif: Istirahat yang cukup, perbanyak minum air hangat, konsumsi makanan bergizi.
-- Simptomatik: Paracetamol 500 mg (3-4 kali sehari jika demam >37.5°C atau sakit kepala/nyeri otot), CTM atau Cetirizine untuk mengurangi pilek/alergi, GG (Guaifenesin) atau Dextromethorphan untuk batuk.
-- Antibiotik: TIDAK diberikan pada ISPA yang disebabkan virus. Antibiotik hanya diberikan jika ada indikasi infeksi bakteri (misal tonsilofaringitis bakteri dengan eksudat, demam menetap >5 hari dengan dahak purulen hijau-kuning).
-Edukasi Pasien:
-- Istirahat total di rumah untuk mencegah penularan.
-- Gunakan masker dan terapkan etika batuk/bersin.
-- Waspadai tanda bahaya: Sesak napas, napas cepat, tidak bisa minum atau menyusu, atau demam tinggi menetap >3-4 hari meskipun sudah minum obat penurun demam.
-
-===

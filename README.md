@@ -6,7 +6,7 @@ Aplikasi ini merupakan sistem asistensi medis berbasis Streamlit yang menggabung
 
 - QR-based patient access
 - rekam medis elektronik pasien
-- AI chat untuk SOAP note
+- AI chat untuk SOAP note melalui teks atau rekaman suara
 - retrieval-augmented generation (RAG) untuk konteks klinis
 - NEWS2 triage untuk penilaian cepat
 
@@ -73,6 +73,7 @@ Lalu model AI diberi perintah untuk menghasilkan output JSON yang berisi:
 Setelah AI menghasilkan JSON, aplikasi menyimpan hasil ke session state dan menampilkannya di antarmuka:
 
 - preview SOAP di chat
+- transkripsi rekaman suara menjadi narasi keluhan
 - referensi RAG terkait
 - data profil pasien yang berpotensi diperbarui
 - NEWS2 triage default berdasarkan pasien
@@ -91,13 +92,14 @@ Bagian utama yang mengimplementasikan RAG ada di `app.py`:
 
 ### Contoh alur kerja program
 
-1. User mengirim narasi ke chat
-2. `process_narrative()` dipanggil
-3. `retrieve_patient_history()` mencari rekam medis pasien yang relevan
-4. `retrieve_guidelines()` mencari panduan klinis yang relevan
-5. hasil retrieval dimasukkan ke prompt
-6. Google Generative AI menghasilkan JSON SOAP + triage
-7. hasil ditampilkan ke UI dan bisa disimpan ke CSV
+1. User mengetik narasi atau merekam keluhan melalui input suara
+2. Jika berupa suara, Google Generative AI mentranskripsikannya menjadi teks
+3. `process_narrative()` memproses narasi
+4. `retrieve_patient_history()` mencari rekam medis pasien yang relevan
+5. `retrieve_guidelines()` mencari panduan klinis yang relevan
+6. hasil retrieval dimasukkan ke prompt
+7. Google Generative AI menghasilkan JSON SOAP + triage
+8. hasil ditampilkan ke UI dan bisa disimpan ke CSV
 
 ## Keuntungan RAG dalam sistem ini
 

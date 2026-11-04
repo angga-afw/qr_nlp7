@@ -5,6 +5,7 @@ import google.generativeai as genai
 import qrcode
 import os
 import base64
+import hashlib
 import csv
 import json
 import re
@@ -43,6 +44,7 @@ st.set_page_config(
 DATA_FILE = "medical_registry_v3.csv"
 ENCOUNTER_FILE = "medical_encounters.csv"
 COMPARISON_LOG_FILE = "model_comparison_results.csv"  # New file for paper data
+EXTRACTION_GROUND_TRUTH_FILE = "clinical_extraction_ground_truth.csv"
 MASTER_PASSWORD = "access123"
 
 # Ensure Data Structures
@@ -60,6 +62,10 @@ COMPARISON_STRUCTURE = [
     "S_Result", "O_Result", "A_Result", "P_Result", 
     "RR", "SpO2", "BPS", "HR", "AVPU", "Latency_sec",
     "Knowledge_Source", "RAG_History_Used", "RAG_Guidelines_Used", "RAG_Used"
+]
+EXTRACTION_GROUND_TRUTH_STRUCTURE = [
+    "Input_Narrative", "Ground_Truth_RR", "Ground_Truth_SpO2",
+    "Ground_Truth_BPS", "Ground_Truth_HR", "Ground_Truth_AVPU"
 ]
 
 if not os.path.exists(DATA_FILE):
@@ -231,25 +237,25 @@ def load_guideline_chunks():
         return []
     with open(GUIDELINES_FILE, "r", encoding="utf-8") as f:
         content = f.read()
-    
-    sections = content.split("=== PANDUAN KLINIS: ")
+
+    header_pattern = re.compile(
+        r"(?m)^[ \t]*(?:===[ \t]*)?PANDUAN KLINIS:[ \t]*(.*?)[ \t]*===[ \t]*$"
+    )
+    headers = list(header_pattern.finditer(content))
     chunks = []
-    for sec in sections:
-        if not sec.strip():
-            continue
-        parts = sec.split("===", 1)
-        if len(parts) == 2:
-            title = parts[0].strip()
-            body = parts[1].strip()
-            chunks.append({
-                "title": f"Panduan Klinis: {title}",
-                "content": body
-            })
-        else:
-            chunks.append({
-                "title": "Panduan Umum",
-                "content": sec.strip()
-            })
+    if not headers:
+        body = content.strip()
+        return [{"title": "Panduan Umum", "content": body}] if body else []
+
+    for index, header in enumerate(headers):
+        body_start = header.end()
+        body_end = headers[index + 1].start() if index + 1 < len(headers) else len(content)
+        body = content[body_start:body_end]
+        body = re.sub(r"(?m)^[ \t]*===[ \t]*\r?$", "", body).strip()
+        chunks.append({
+            "title": f"Panduan Klinis: {header.group(1).strip()}",
+            "content": body
+        })
     return chunks
 
 def get_cached_guidelines(api_key):
@@ -346,6 +352,105 @@ def parse_int_value(value, default=None):
         return int(value)
     except (TypeError, ValueError):
         return default
+
+
+def extraction_presence_metrics(ground_truth, prediction, tolerance=0):
+    ground_truth = pd.to_numeric(ground_truth, errors="coerce")
+    prediction = pd.to_numeric(prediction, errors="coerce")
+    gt_present = ground_truth.notna()
+    pred_present = prediction.notna()
+    correct = gt_present & pred_present & ((ground_truth - prediction).abs() <= tolerance)
+    tp = int(correct.sum())
+    fp = int((pred_present & ~correct).sum())
+    fn = int((gt_present & ~correct).sum())
+    precision = tp / (tp + fp) if tp + fp else 0.0
+    recall = tp / (tp + fn) if tp + fn else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+    paired = gt_present & pred_present
+    mae = float((ground_truth[paired] - prediction[paired]).abs().mean()) if paired.any() else None
+    exact_rate = float(correct.sum() / gt_present.sum()) if gt_present.any() else None
+    return {
+        "precision": precision,
+        "recall": recall,
+        "f1": f1,
+        "mae": mae,
+        "exact_rate": exact_rate,
+        "support": int(gt_present.sum()),
+    }
+
+
+def avpu_metrics(ground_truth, prediction):
+    avpu_aliases = {
+        "a": "alert", "alert": "alert",
+        "v": "verbal", "verbal": "verbal",
+        "p": "pain", "pain": "pain",
+        "u": "unresponsive", "unresponsive": "unresponsive",
+    }
+    ground_truth = ground_truth.fillna("").astype(str).str.strip().str.lower().map(avpu_aliases).fillna("")
+    prediction = prediction.fillna("").astype(str).str.strip().str.lower().map(avpu_aliases).fillna("")
+    labels = ["alert", "verbal", "pain", "unresponsive"]
+    valid = ground_truth.isin(labels)
+    gt = ground_truth[valid]
+    pred = prediction[valid]
+    per_class = []
+    for label in labels:
+        tp = int(((gt == label) & (pred == label)).sum())
+        fp = int(((gt != label) & (pred == label)).sum())
+        fn = int(((gt == label) & (pred != label)).sum())
+        precision = tp / (tp + fp) if tp + fp else 0.0
+        recall = tp / (tp + fn) if tp + fn else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+        per_class.append((precision, recall, f1))
+    if not valid.any():
+        return {"accuracy": None, "precision": None, "recall": None, "f1": None, "support": 0}
+    return {
+        "accuracy": float((gt == pred).mean()),
+        "precision": float(np.mean([item[0] for item in per_class])),
+        "recall": float(np.mean([item[1] for item in per_class])),
+        "f1": float(np.mean([item[2] for item in per_class])),
+        "support": int(valid.sum()),
+    }
+
+
+def evaluate_extraction_by_model(df_comp, df_ground_truth):
+    required = set(EXTRACTION_GROUND_TRUTH_STRUCTURE)
+    if not required.issubset(df_ground_truth.columns):
+        return pd.DataFrame(), "Ground-truth CSV belum memiliki semua kolom yang diperlukan."
+
+    ground_truth = df_ground_truth[EXTRACTION_GROUND_TRUTH_STRUCTURE].copy()
+    ground_truth["Input_Narrative"] = ground_truth["Input_Narrative"].fillna("").astype(str).str.strip()
+    ground_truth = ground_truth[ground_truth["Input_Narrative"] != ""].drop_duplicates("Input_Narrative")
+    predictions = df_comp.copy()
+    predictions["Input_Narrative"] = predictions["Input_Narrative"].fillna("").astype(str).str.strip()
+    merged = predictions.merge(ground_truth, on="Input_Narrative", how="inner")
+    if merged.empty:
+        return pd.DataFrame(), "Tidak ada Input_Narrative yang cocok antara log prediksi dan ground truth."
+
+    rows = []
+    numeric_fields = {
+        "RR": ("Ground_Truth_RR", 0),
+        "SpO2": ("Ground_Truth_SpO2", 0),
+        "BPS": ("Ground_Truth_BPS", 0),
+        "HR": ("Ground_Truth_HR", 0),
+    }
+    for model_name, model_df in merged.groupby("Model_Name", dropna=False):
+        for field, (gt_field, tolerance) in numeric_fields.items():
+            metrics = extraction_presence_metrics(model_df[gt_field], model_df[field], tolerance)
+            rows.append({
+                "Model": str(model_name), "Field": field,
+                "Accuracy / Exact": metrics["exact_rate"],
+                "MAE": metrics["mae"],
+                "Precision": metrics["precision"], "Recall": metrics["recall"],
+                "F1": metrics["f1"], "Support": metrics["support"],
+            })
+        metrics = avpu_metrics(model_df["Ground_Truth_AVPU"], model_df["AVPU"])
+        rows.append({
+            "Model": str(model_name), "Field": "AVPU",
+            "Accuracy / Exact": metrics["accuracy"], "MAE": None,
+            "Precision": metrics["precision"], "Recall": metrics["recall"],
+            "F1": metrics["f1"], "Support": metrics["support"],
+        })
+    return pd.DataFrame(rows), f"{len(merged)} prediksi cocok dengan ground truth."
 
 
 def parse_systolic_bp(value, default=120):
@@ -614,6 +719,28 @@ def process_narrative(narrative, api_key, patient_data=None):
         logger.error(traceback.format_exc())
         return None
 
+
+def transcribe_audio(audio_file, api_key):
+    if not api_key:
+        raise ValueError("Google API Key belum dikonfigurasi.")
+
+    audio_data = audio_file.getvalue()
+    if not audio_data:
+        raise ValueError("Rekaman suara kosong.")
+
+    genai.configure(api_key=api_key)
+    model_name = os.getenv("GOOGLE_MODEL_NAME", "gemini-1.5-flash")
+    model = genai.GenerativeModel(model_name)
+    response = model.generate_content([
+        "Transkripsikan audio ini ke teks sesuai bahasa yang digunakan. "
+        "Kembalikan hanya transkripsi, tanpa ringkasan atau komentar.",
+        {"mime_type": audio_file.type or "audio/wav", "data": audio_data},
+    ])
+    transcript = (getattr(response, "text", "") or "").strip()
+    if not transcript:
+        raise ValueError("AI tidak menemukan ucapan yang dapat ditranskripsikan.")
+    return transcript
+
 # ==========================================
 # 3. SIDEBAR: GLOBAL CONTROL
 # ==========================================
@@ -840,9 +967,30 @@ with t_chat:
             for msg in st.session_state.messages:
                 with st.chat_message(msg["role"]): st.markdown(msg["content"])
             
-            if prompt := st.chat_input("Hello, describe your symptoms here..."):
-                st.session_state.messages.append({"role": "user", "content": prompt})
-                with st.chat_message("user"): st.markdown(prompt)
+            audio_recording = st.audio_input(
+                "Atau rekam keluhan Anda",
+                sample_rate=16000,
+                key="soap_audio_input",
+            )
+            prompt = st.chat_input("Hello, describe your symptoms here...")
+            is_voice_message = False
+
+            if not prompt and audio_recording is not None:
+                audio_hash = hashlib.sha256(audio_recording.getvalue()).hexdigest()
+                if audio_hash != st.session_state.get("last_processed_audio_hash"):
+                    st.session_state.last_processed_audio_hash = audio_hash
+                    try:
+                        with st.spinner("Mengubah rekaman suara menjadi teks..."):
+                            prompt = transcribe_audio(audio_recording, api_key_env)
+                        is_voice_message = True
+                    except Exception as e:
+                        logger.exception("Error transcribing voice message.")
+                        st.error(f"Gagal memproses rekaman suara: {e}")
+
+            if prompt:
+                display_prompt = f"🎙️ Transkripsi suara: {prompt}" if is_voice_message else prompt
+                st.session_state.messages.append({"role": "user", "content": display_prompt})
+                with st.chat_message("user"): st.markdown(display_prompt)
                 
                 with st.spinner("AI is analyzing your symptoms..."):
                     ai_response = process_narrative(prompt, api_key_env, active_patient)
@@ -1396,6 +1544,53 @@ with t_admin:
                 mime="text/csv",
                 use_container_width=True
             )
+
+            st.divider()
+            st.subheader("🧪 Clinical Information Extraction Evaluation")
+            st.caption(
+                "Siapkan ground truth yang telah divalidasi dokter. Evaluasi dicocokkan melalui Input_Narrative."
+            )
+            template_df = pd.DataFrame(columns=EXTRACTION_GROUND_TRUTH_STRUCTURE)
+            st.download_button(
+                label="📄 Download Ground Truth Template",
+                data=template_df.to_csv(index=False).encode("utf-8"),
+                file_name="clinical_extraction_ground_truth_template.csv",
+                mime="text/csv",
+            )
+            ground_truth_upload = st.file_uploader(
+                "Upload Ground Truth CSV",
+                type=["csv"],
+                help="Kolom wajib: Input_Narrative, Ground_Truth_RR, Ground_Truth_SpO2, Ground_Truth_BPS, Ground_Truth_HR, Ground_Truth_AVPU.",
+            )
+            if ground_truth_upload is not None:
+                df_ground_truth = pd.read_csv(ground_truth_upload)
+            elif os.path.exists(EXTRACTION_GROUND_TRUTH_FILE):
+                df_ground_truth = pd.read_csv(EXTRACTION_GROUND_TRUTH_FILE)
+            else:
+                df_ground_truth = template_df
+
+            evaluation_df, evaluation_message = evaluate_extraction_by_model(
+                df_comp_view,
+                df_ground_truth,
+            )
+            if evaluation_df.empty:
+                st.info(evaluation_message)
+            else:
+                st.success(evaluation_message)
+                st.caption(
+                    "Exact/Accuracy untuk tanda vital berarti nilai sama persis; MAE dihitung dari prediksi yang tersedia. "
+                    "Precision, recall, dan F1 memperlakukan nilai sesuai ground truth sebagai ekstraksi benar."
+                )
+                st.dataframe(
+                    evaluation_df.style.format({
+                        "Accuracy / Exact": "{:.1%}",
+                        "MAE": "{:.2f}",
+                        "Precision": "{:.3f}",
+                        "Recall": "{:.3f}",
+                        "F1": "{:.3f}",
+                    }, na_rep="-"),
+                    use_container_width=True,
+                )
         else:
             st.info("No model comparison data has been saved yet.")
 
@@ -1409,7 +1604,7 @@ with t_admin:
                 "Update Clinical Guidelines (clinical_guidelines.txt)",
                 value=guideline_content,
                 height=400,
-                help="Gunakan format '=== PANDUAN KLINIS: Nama Judul ===' untuk setiap bagian baru agar sistem RAG dapat memecah konten dengan benar."
+                help="Setiap bagian harus memiliki judul 'PANDUAN KLINIS: Nama Judul ==='. Pemisah '===' boleh berada di baris tersendiri."
             )
             
             c_kb1, c_kb2 = st.columns(2)
