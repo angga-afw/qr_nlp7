@@ -5,7 +5,6 @@ import google.generativeai as genai
 import qrcode
 import os
 import base64
-import hashlib
 import csv
 import json
 import re
@@ -967,25 +966,29 @@ with t_chat:
             for msg in st.session_state.messages:
                 with st.chat_message(msg["role"]): st.markdown(msg["content"])
             
+            st.caption("Tekan tombol rekam untuk mulai berbicara, lalu tekan berhenti. Rekaman akan otomatis ditranskripsikan dan dikirim ke AI.")
+            if voice_error := st.session_state.pop("voice_input_error", None):
+                st.error(voice_error)
+
+            recording_key = f"soap_audio_input_{st.session_state.get('voice_recording_version', 0)}"
             audio_recording = st.audio_input(
-                "Atau rekam keluhan Anda",
+                "🎙️ Rekam keluhan",
                 sample_rate=16000,
-                key="soap_audio_input",
+                key=recording_key,
             )
             prompt = st.chat_input("Hello, describe your symptoms here...")
             is_voice_message = False
 
             if not prompt and audio_recording is not None:
-                audio_hash = hashlib.sha256(audio_recording.getvalue()).hexdigest()
-                if audio_hash != st.session_state.get("last_processed_audio_hash"):
-                    st.session_state.last_processed_audio_hash = audio_hash
-                    try:
-                        with st.spinner("Mengubah rekaman suara menjadi teks..."):
-                            prompt = transcribe_audio(audio_recording, api_key_env)
-                        is_voice_message = True
-                    except Exception as e:
-                        logger.exception("Error transcribing voice message.")
-                        st.error(f"Gagal memproses rekaman suara: {e}")
+                st.session_state.voice_recording_version = st.session_state.get("voice_recording_version", 0) + 1
+                try:
+                    with st.spinner("Mengubah rekaman suara menjadi teks..."):
+                        prompt = transcribe_audio(audio_recording, api_key_env)
+                    is_voice_message = True
+                except Exception as e:
+                    logger.exception("Error transcribing voice message.")
+                    st.session_state.voice_input_error = f"Gagal memproses rekaman suara: {e}"
+                    st.rerun()
 
             if prompt:
                 display_prompt = f"🎙️ Transkripsi suara: {prompt}" if is_voice_message else prompt
@@ -1015,6 +1018,9 @@ with t_chat:
                                     st.session_state.extracted_vitals[k] = v
                         
                         st.session_state.messages.append({"role": "assistant", "content": "Thank you. Your symptoms have been summarized in medical format. Review the SOAP preview and Triage section."})
+                        st.rerun()
+                    elif is_voice_message:
+                        st.session_state.voice_input_error = "AI gagal memproses keluhan. Silakan rekam kembali atau coba kirim melalui chat."
                         st.rerun()
         
         with c_r:

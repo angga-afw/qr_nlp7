@@ -92,7 +92,7 @@ Bagian utama yang mengimplementasikan RAG ada di `app.py`:
 
 ### Contoh alur kerja program
 
-1. User mengetik narasi atau merekam keluhan melalui input suara
+1. User mengetik narasi atau menekan tombol rekam, menyampaikan keluhan, lalu menekan berhenti
 2. Jika berupa suara, Google Generative AI mentranskripsikannya menjadi teks
 3. `process_narrative()` memproses narasi
 4. `retrieve_patient_history()` mencari rekam medis pasien yang relevan
