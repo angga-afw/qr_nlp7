@@ -756,7 +756,7 @@ with st.sidebar:
     st.markdown("### 🤖 AI Configuration")
     selected_model = st.selectbox(
         "Select Model (for Paper/Test)",
-        ["gemini-1.5-flash", "gemini-3.1-flash-lite", "gemini-1.0-pro"],
+        ["gemini-3-flash", "gemini-3.1-flash-lite", "gemini-3.8-flash"],
         index=0 if model_name_env == "gemini-1.5-flash" else 1
     )
     # Update environment variable for current session
